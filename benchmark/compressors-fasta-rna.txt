@@ -1,0 +1,229 @@
+# Section: [name, extension, can run in parallel tasks]
+# Compressor: options ID, maximum uncompressed file size, compress command (with pipe input).
+
+[naf, naf, 1]
+1    -   ennaf --fasta --rna --name {NAME} -1 -o {OUT}
+2    -   ennaf --fasta --rna --name {NAME} -2 -o {OUT}
+3    -   ennaf --fasta --rna --name {NAME} -3 -o {OUT}
+4    -   ennaf --fasta --rna --name {NAME} -4 -o {OUT}
+5    -   ennaf --fasta --rna --name {NAME} -5 -o {OUT}
+6    -   ennaf --fasta --rna --name {NAME} -6 -o {OUT}
+7    -   ennaf --fasta --rna --name {NAME} -7 -o {OUT}
+8    -   ennaf --fasta --rna --name {NAME} -8 -o {OUT}
+9    -   ennaf --fasta --rna --name {NAME} -9 -o {OUT}
+10   -   ennaf --fasta --rna --name {NAME} -10 -o {OUT}
+11   -   ennaf --fasta --rna --name {NAME} -11 -o {OUT}
+12   -   ennaf --fasta --rna --name {NAME} -12 -o {OUT}
+13   -   ennaf --fasta --rna --name {NAME} -13 -o {OUT}
+14   -   ennaf --fasta --rna --name {NAME} -14 -o {OUT}
+15   -   ennaf --fasta --rna --name {NAME} -15 -o {OUT}
+16   -   ennaf --fasta --rna --name {NAME} -16 -o {OUT}
+17   -   ennaf --fasta --rna --name {NAME} -17 -o {OUT}
+18   -   ennaf --fasta --rna --name {NAME} -18 -o {OUT}
+19   -   ennaf --fasta --rna --name {NAME} -19 -o {OUT}
+20   -   ennaf --fasta --rna --name {NAME} -20 -o {OUT}
+21   -   ennaf --fasta --rna --name {NAME} -21 -o {OUT}
+22   -   ennaf --fasta --rna --name {NAME} -22 -o {OUT}
+
+[blastr, blastr, 1]
+-   -   blast-compress.pl --out {OUT} --rna
+
+[blastr0, blastr0, 1]
+-   -   blast-compress.pl --out {OUT} --rna --wrapper-only
+
+[2bitr, 2bitr, 1]
+-   -   2bit-compress.pl --out {OUT} --rna
+
+[2bitr0, 2bitr0, 1]
+-   -   2bit-compress.pl --out {OUT} --rna --wrapper-only
+
+[pfishr, pfishr, 1]
+-   -   pfish-compress.pl --out {OUT} --rna
+
+[pfishr0, pfishr0, 1]
+-   -   pfish-compress.pl --out {OUT} --rna --wrapper-only
+
+[mfcr, mfcr, 1]
+1   -   mfc-compress.pl --out {OUT} --rna --level 1
+2   -   mfc-compress.pl --out {OUT} --rna --level 2
+3   -   mfc-compress.pl --out {OUT} --rna --level 3
+
+[dlimr, dlimr, 1]
+-   -   dlim-compress.pl --out {OUT} --rna
+
+[dnaxr, dnaxr, 1]
+0   -   dnax-compress.pl --out {OUT} --preset 0 --rna
+1   -   dnax-compress.pl --out {OUT} --preset 1 --rna
+2   -   dnax-compress.pl --out {OUT} --preset 2 --rna
+3   -   dnax-compress.pl --out {OUT} --preset 3 --rna
+
+[dnaxr0, dnaxr0, 1]
+-   -   dnax-compress.pl --out {OUT} --preset 0 --rna --wrapper-only
+
+[leonr, leonr, 1]
+12   10000000000   leon-compress.pl --out {OUT} --level 12 --rna
+13   10000000000   leon-compress.pl --out {OUT} --level 13 --rna
+14   10000000000   leon-compress.pl --out {OUT} --level 14 --rna
+15   10000000000   leon-compress.pl --out {OUT} --level 15 --rna
+16   10000000000   leon-compress.pl --out {OUT} --level 16 --rna
+17   10000000000   leon-compress.pl --out {OUT} --level 17 --rna
+18   10000000000   leon-compress.pl --out {OUT} --level 18 --rna
+19   10000000000   leon-compress.pl --out {OUT} --level 19 --rna
+20   10000000000   leon-compress.pl --out {OUT} --level 20 --rna
+21   10000000000   leon-compress.pl --out {OUT} --level 21 --rna
+22   10000000000   leon-compress.pl --out {OUT} --level 22 --rna
+23   10000000000   leon-compress.pl --out {OUT} --level 23 --rna
+24   10000000000   leon-compress.pl --out {OUT} --level 24 --rna
+25   10000000000   leon-compress.pl --out {OUT} --level 25 --rna
+26   10000000000   leon-compress.pl --out {OUT} --level 26 --rna
+27   10000000000   leon-compress.pl --out {OUT} --level 27 --rna
+28   10000000000   leon-compress.pl --out {OUT} --level 28 --rna
+29   10000000000   leon-compress.pl --out {OUT} --level 29 --rna
+30   10000000000   leon-compress.pl --out {OUT} --level 30 --rna
+31   10000000000   leon-compress.pl --out {OUT} --level 31 --rna
+
+[leonr0, leonr0, 1]
+-    10000000000   leon-compress.pl --out {OUT} --level 12 --rna --wrapper-only
+
+[gtz1t, gtz1t, 1]
+1   -   gtz-compress.pl --out {OUT} --level 1 --threads 1
+9   -   gtz-compress.pl --out {OUT} --level 9 --threads 1
+
+[gtz4t, gtz4t, 1]
+1   -   gtz-compress.pl --out {OUT} --level 1 --threads 4
+9   -   gtz-compress.pl --out {OUT} --level 9 --threads 4
+
+[gtz0, gtz0, 1]
+-   -   gtz-compress.pl --out {OUT} --level 1 --threads 1 --wrapper-only
+
+[quipr, quipr, 1]
+-   -   quip-compress.pl --out {OUT} --rna
+
+[quipr0, quipr0, 1]
+-   -   quip-compress.pl --out {OUT} --rna --wrapper-only
+
+[dsrcr1t, dsrcr1t, 1]
+m0   -   dsrc-compress.pl --out {OUT} --level 0 --buffer-size 8 --threads 1 --rna
+m1   -   dsrc-compress.pl --out {OUT} --level 2 --buffer-size 64 --threads 1 --rna
+m2   -   dsrc-compress.pl --out {OUT} --level 3 --buffer-size 256 --threads 1 --rna
+
+[dsrcr4t, dsrcr4t, 1]
+m0   -   dsrc-compress.pl --out {OUT} --level 0 --buffer-size 8 --threads 4 --rna
+m1   -   dsrc-compress.pl --out {OUT} --level 2 --buffer-size 64 --threads 4 --rna
+m2   -   dsrc-compress.pl --out {OUT} --level 3 --buffer-size 256 --threads 4 --rna
+
+[dsrcr0, dsrcr0, 1]
+-    -   dsrc-compress.pl --out {OUT} --level 0 --buffer-size 8 --threads 1 --rna --wrapper-only
+
+[beetlr, beetlr, 1]
+b50-zst1     -   beetl-compress.pl --out {OUT} --read-length 50 --algorithm BCR --compressor zstd1 --rna
+b200-zst1    -   beetl-compress.pl --out {OUT} --read-length 200 --algorithm BCR --compressor zstd1 --rna
+b500-zst1    -   beetl-compress.pl --out {OUT} --read-length 500 --algorithm BCR --compressor zstd1 --rna
+b50-zst22    -   beetl-compress.pl --out {OUT} --read-length 50 --algorithm BCR --compressor zstd22 --rna
+b200-zst22   -   beetl-compress.pl --out {OUT} --read-length 200 --algorithm BCR --compressor zstd22 --rna
+b500-zst22   -   beetl-compress.pl --out {OUT} --read-length 500 --algorithm BCR --compressor zstd22 --rna
+
+[beetlr0, beetlr0, 1]
+-   -   beetl-compress.pl --out {OUT} --read-length 500 --algorithm BCR --compressor zstd1 --rna --wrapper-only
+
+[harcr1t, harcr1t, 1]
+-   -   harc-compress.pl --out {OUT} --threads 1 --rna
+
+[harcr4t, harcr4t, 1]
+-   -   harc-compress.pl --out {OUT} --threads 4 --rna
+
+[harcr0, harcr0, 1]
+-   -   harc-compress.pl --out {OUT} --threads 1 --rna --wrapper-only
+
+[spring1t, spring1t, 1]
+-   -   spring-long-compress.pl --out {OUT} --threads 1
+
+[spring4t, spring4t, 1]
+-   -   spring-long-compress.pl --out {OUT} --threads 4
+
+[spring0, spring0, 1]
+-   -   spring-long-compress.pl --out {OUT} --threads 1 --wrapper-only
+
+[springshortr1t, springshortr1t, 1]
+500   -   spring-short-compress.pl --out {OUT} --read-length 500 --threads 1 --rna
+
+[springshortr4t, springshortr4t, 1]
+500   -   spring-short-compress.pl --out {OUT} --read-length 500 --threads 4 --rna
+
+[springshortr0, springshortr0, 1]
+-   -   spring-short-compress.pl --out {OUT} --read-length 500 --threads 1 --rna --wrapper-only
+
+[fastqzfr, fastqzfr, 1]
+-   -   fastqz-compress.pl --out {OUT} --mode fast --read-length 4000 --rna
+
+[fastqzsr, fastqzsr, 1]
+-   -   fastqz-compress.pl --out {OUT} --mode slow --read-length 4000 --rna
+
+[fastqzr0, fastqzr0, 1]
+-   -   fastqz-compress.pl --out {OUT} --mode fast --read-length 4000 --rna --wrapper-only
+
+[fqzcompr, fqzcompr, 1]
+1    -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 1 --rna
+2    -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 2 --rna
+3    -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 3 --rna
+4    -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 4 --rna
+5    -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 5 --rna
+6    -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 6 --rna
+7    -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 7 --rna
+8    -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 8 --rna
+#9    -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 9 --rna
+#1p   -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 1+ --rna
+#2p   -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 2+ --rna
+#3p   -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 3+ --rna
+#4p   -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 4+ --rna
+#5p   -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 5+ --rna
+#6p   -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 6+ --rna
+#7p   -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 7+ --rna
+#8p   -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 8+ --rna
+#9p   -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 9+ --rna
+
+[fqzcompr0, fqzcompr0, 1]
+-    -   fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 1 --rna --wrapper-only
+
+[lfqc, lfqc, 1]
+-   -   lfqc-compress.pl --out {OUT} --read-length 4000
+
+[lfqc0, lfqc0, 1]
+-   -   lfqc-compress.pl --out {OUT} --read-length 4000 --wrapper-only
+
+[alapyr, alapyr, 1]
+f   -   alapy-compress.pl --out {OUT} --level f --rna
+m   -   alapy-compress.pl --out {OUT} --level m --rna
+b   -   alapy-compress.pl --out {OUT} --level b --rna
+
+[alapyr0, alapyr0, 1]
+-   -   alapy-compress.pl --out {OUT} --level f --rna --wrapper-only
+
+[kicr, kicr, 1]
+0     -   kic-compress.pl --out {OUT} --mode 0 --rna
+1     -   kic-compress.pl --out {OUT} --mode 1 --rna
+2-8   -   kic-compress.pl --out {OUT} --mode 2 --level 8 --rna
+
+[kicr0, kicr0, 1]
+-     -   kic-compress.pl --out {OUT} --mode 0 --rna --wrapper-only
+
+[nuhtr, nuhtr, 1]
+-   -   nuht-compress.pl --out {OUT} --rna
+
+[nuhtr0, nuhtr0, 1]
+-   -   nuht-compress.pl --out {OUT} --rna --wrapper-only
+
+[lfastqcr, lfastqcr, 1]
+-   2000000000   lfastqc-compress.pl --out {OUT} --rna
+
+[lfastqcr0, lfastqcr0, 1]
+-   2000000000   lfastqc-compress.pl --out {OUT} --rna --wrapper-only
+
+[minicomr1t, minicomr1t, 1]
+-   -   minicom-compress.pl --out {OUT} --read-length 250 --threads 1 --rna
+
+[minicomr4t, minicomr4t, 1]
+-   -   minicom-compress.pl --out {OUT} --read-length 250 --threads 4 --rna
+
+[minicomr0, minicomr0, 1]
+-   -   minicom-compress.pl --out {OUT} --read-length 250 --threads 1 --rna --wrapper-only

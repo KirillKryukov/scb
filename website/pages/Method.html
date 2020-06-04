@@ -1,0 +1,133 @@
+<div class="text">
+
+<h2>Method</h2>
+
+<h4>Benchmark machine</h4>
+<ul class="dense">
+<li>CPU: dual Xeon E5-2643v3 (3.4 GHz, 6 cores), hyperthreading: off</li>
+<li>RAM: 128 GB DDR4-2133 ECC Registered</li>
+<li>Storage: 4 x 2 TB SSD, in RAID 0, XFS filesystem, block size: 4096 bytes (blockdev --getbsz)</li>
+<li>OS: Ubuntu 18.04.1 LTS, kernel: 4.15.0</li>
+<li>GCC: 7.4.0</li>
+</ul>
+
+<h4>What compressors/dataset combinations were tested?</h4>
+<p><a href="?page=Commands">Each setting</a> of <a href="?page=Compressors">each compressor</a> is tested on <a href="?page=Datasets">every test dataset</a>,
+except when it's difficult or impossible due to compressor limitations:</p>
+<ul class="dense">
+<li>Due to their extreme slowness, these compressors are not tested on any data larger than 10 MB:
+ cmix, DNA-COMPACT, FQSqueezer, GeCo, JARVIS, Leon, UHT and XM.</li>
+<li>BLAST, 2bit and Pufferfish don't support alignments.</li>
+<li>2bit, DELIMINATE, MFCompress and Pufferfish don't support protein sequences.</li>
+<li>Some settings of XM crash and/or produce wrong decompressed output on some data - such results are not included.</li>
+</ul>
+
+<h4>Benchmark process</h4>
+<p>The entire benchmark is orchestrated by a perl script.
+This script loads the lists of compressor settings and test data,
+and proceeds to test each combination that still has its measurements missing in the output directory.
+For each such combination (of compressor setting and test dataset),
+the following steps are performed:</p>
+<ol class="dense">
+<li>Compression is performed by piping the test data into the compressor.
+Compressed size and compression time is recorded.
+For compressed formats consisting of multiple files, sizes of all files are summed together.</li>
+<li>If compression time did not exceed 10 seconds,
+9 more compression runs are performed, recording compression times.
+Compressed data from previous run is deleted before each next compression run.</li>
+<li>The next set of compression runs is performed to measure peak memory consumption.
+This set consists of the same number of runs as in steps 1-2 (either 1 or 10 runs).
+That is, for fast compressors and for small data the measurement is repeated 10 times.</li>
+<li>Decompression test run is performed.
+In this run decompressed data is piped to the <span class="code">md5sum -b -</span> command.
+The resulting md5 signature is compared with that from the original file.
+In case of any mismatch this combination of compressor setting and dataset is disqualified and its measurements are discarded.</li>
+<li>Decompression time is measured.
+This time decompressed data is piped to /dev/null.</li>
+<li>If decompression completed within 10 seconds,
+9 more decompression runs are performed and timed.</li>
+<li>Peak decompression memory is measured.
+The number of runs is same as in steps 5-6.</li>
+<li>The measurements are stored to a file. All compressed and temporary files are removed.</li>
+</ol>
+
+<h4>How time measurement was done?</h4>
+<p>Wall clock time was measured using Perl's Time::HiRes module (gettimeofday and tv_interval subroutines).
+The resulting time was recorded with millisecond precision.</p>
+
+<h4>How was the peak memory measured?</h4>
+<p>First, the compression command is stored in a temporary shell script file.
+Then it is executed via <a href="https://www.gnu.org/software/time/">GNU Time</a>, as <span class="code">/usr/bin/time -v cmd.sh &gt;output.txt</span>.
+"Maximum resident set size" value is extracted from the output.
+1638 is then subtracted from this value and the result is stored as peak memory measurement.
+1638 is the average "Maximum resident set size" measured by GNU Time in the same way for an empty script.</p>
+
+<h4>Why not measure memory consumption and time simultaneously?</h4>
+<p>Because measuring memory makes the task noticeably slower, especially for very fast tasks.
+Of course the downside of separate measurement is that it takes twice as long,
+but we decided that accurate timing results are worth it.</p>
+
+<h4>What measurements are collected for each test?</h4>
+<ul class="dense">
+<li>Compressed size (in bytes)</li>
+<li>Compression time (in milliseconds)</li>
+<li>Decompression time (in milliseconds)</li>
+<li>Peak compression memory (in GNU Time's "Kbytes")</li>
+<li>Peak decompression memory (in GNU Time's "Kbytes")</li>
+</ul>
+<p>In cases where 10 values are collected, the average value is used by the benchmark web-site.</p>
+
+<h4>How are the other numbers computed?</h4>
+<ul class="dense">
+<li>Compressed size relative to original (%) = Compressed size / Uncompressed size * 100</li>
+<li>Compression ratio (times) = Uncompressed size / Compressed size</li>
+<li>Compression speed (MB/s) = Uncompressed size in MB / Compression time</li>
+<li>Decompression speed (MB/s) = Uncompressed size in MB / Decompression time</li>
+<li>Compression + decompression time (s) = Compression time + Decompression time</li>
+<li>Compression + decompression speed (MB/s) = Uncompressed size in MB / (Compression time + Decompression time)</li>
+<li>Transfer time (s) = Uncompressed size / Link speed in B/s</li>
+<li>Transfer speed (MB/s) = Uncompressed size in MB / Transfer time</li>
+<li>Transfer + decompression time (s) = Transfer time + Decompression time</li>
+<li>Transfer + decompression speed (MB/s) = Uncompressed size in MB / (Transfer time + Decompression time)</li>
+<li>Compression + transfer + decompression time (s) = Compression time + Transfer time + Decompression time</li>
+<li>Compression + transfer + decompression speed (MB/s) = Uncompressed size in MB / (Compression time + Transfer time + Decompression time)</li>
+</ul>
+
+<h4>Why not always perform the same number of runs in all cases?</h4>
+<p>Variable number of runs is the only way to have both accurate measurements and large test data
+ (under the constraints of using one test machine, and running benchmark within reasonable time).</p>
+<p>On one hand, benchmark takes lot of time.
+So much that some compressors can't be even tested at all on dataset larger than 10 MB in reasonable time.
+Therefore repeating every measurement 10 times is impractical.
+Or, it would imply restricting the test data to only small datasets.</p>
+<p>On the other hand, measurements are slightly noisy.
+The shorter measured time, the more noisy its measurement.
+Thus for very quick runs, multiple runs allow for substantial noise suppression.
+For longer runs it does not make much difference,
+because the relative error is already small with longer times.</p>
+<p>Using a threshold of 10 seconds seems a reasonable compromise
+between suppressing noise and including larger test data (and slow compressors).</p>
+
+<h4>Are there other ways to reduce measurement noise?</h4>
+<p>Other ways that we are using:</p>
+<ul class="dense">
+<li>Disabling hyperthreading.</li>
+<li>Not running any other tasks while benchmark is running.</li>
+<li>Running only one compression or decompression task at a time.
+(Which means that unfortunately most cores of the machine are idle while the benchmark is running).</li>
+<li>Running benchmark with high priority (<span class="code">nice -n -20</span> and <span class="code">ionice -c1</span>)</li>
+<li>Having enough RAM so that the data being compressed or decompressed is always already cached in memory
+ when running compression or decompression tasks.</li>
+<li>Piping decompressed data to /dev/null during measurements.</li>
+</ul>
+<p>Additional improvement could be achieved by utilizing multiple machines to collect larger sample.
+We may explore this in the future.</p>
+
+<h4>Is the benchmark script available?</h4>
+<p>Yes, here:</p>
+<ul class="dense">
+<li><a href="tools/benchmark/benchmark-script.zip">benchmark-script.zip</a></li>
+</ul>
+<p>It's provided for reference only, use at your own risk.</p>
+
+</div>

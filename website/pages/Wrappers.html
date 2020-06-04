@@ -1,0 +1,354 @@
+<div class="text">
+
+<h2>Wrappers</h2>
+
+<p>Unfortunately some potentially useful compressors are incomplete, in terms of supported input or interface.
+In order to make them usable for typical biological sequence compression tasks, we had to make special wrappers for many compressors.
+These wrappers are provided below, along with other required supporting tools.</p>
+<p>Using wrappers is not an ideal solution:</p>
+<ol style="margin-top: 8pt; margin-bottom: 0pt;">
+<li>Wrappers are not distributed with the original compressors, which means that those compressors are still incomplete on their own.
+(Someone planning to use those compressors would need to download our wrapper, or make their own).</li>
+<li>Wrappers are written in Perl, introducing a dependency.</li>
+<li>Wrappers are most probably slower compared to if the required functionality was supported by compressors natively.</li>
+<li>We spent minimal effort developing these wrappers, only doing necessary steps in simplest ways.</li>
+<li>We did not benchmark wrapped compressors without the wrappers.
+Therefore our results are not representative for compressor on its own.</li>
+</ol>
+<p>On the other hand, without wrappers, those compressors are often useless in practical tasks.
+Only through wrappers they are able to compress and decompress actual relevant sequence datasets, in the required streaming mode.</p>
+<p>Functionality added by the wrappers, to those compressors missing it, includes:</p>
+<ul class="dense" style="margin-top: 8pt;">
+<li>Streaming input for compression</li>
+<li>Streaming decompressed output during decompression</li>
+<li>Supporting RNA input for DNA-only compressors</li>
+<li>Supporting 'N' in DNA/RNA sequences</li>
+<li>Supporting IUPAC's ambiguous nucleotide codes</li>
+<li>Recording and restoring line lengths</li>
+<li>Restoring sequence names intact</li>
+<li>Saving and restoring sequence mask (upper/lower case)</li>
+<li>Supporting FASTA-formatted input</li>
+<li>Supporting input with more than 1 sequence</li>
+</ul>
+<p>You are welcome to use the wrappers and utilities from this page, or to adapt them to your needs.
+However please be aware that they are provided with no guarantees.
+We made these tools only for making the benchmark possible,
+they don't have production level quality, features, performance, or safety.
+Use them entirely on your own risk.</p>
+<p>Let us know if you have any questions or suggestions regarding the wrappers.</p>
+
+<h3>Wrapper scripts</h3>
+<p>All wrappers are in public domain.</p>
+<ul>
+
+<li>2bit
+<ul>
+<li><a href="tools/wrappers/2bit-compress.pl">2bit-compress.pl</a></li>
+<li><a href="tools/wrappers/2bit-decompress.pl">2bit-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>ac (AC)
+<ul>
+<li><a href="tools/wrappers/ac-fa-compress.pl">ac-fa-compress.pl</a></li>
+<li><a href="tools/wrappers/ac-fa-decompress.pl">ac-fa-decompress.pl</a></li>
+<li><a href="tools/wrappers/ac-seq-compress.pl">ac-seq-compress.pl</a></li>
+<li><a href="tools/wrappers/ac-seq-decompress.pl">ac-seq-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>alapy (ALAPY)
+<ul>
+<li><a href="tools/wrappers/alapy-compress.pl">alapy-compress.pl</a></li>
+<li><a href="tools/wrappers/alapy-decompress.pl">alapy-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>bcm
+<ul>
+<li><a href="tools/wrappers/bcm-compress.pl">bcm-compress.pl</a></li>
+<li><a href="tools/wrappers/bcm-decompress.pl">bcm-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>beetl (BEETL)
+<ul>
+<li><a href="tools/wrappers/beetl-compress.pl">beetl-compress.pl</a></li>
+<li><a href="tools/wrappers/beetl-decompress.pl">beetl-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>blast (BLAST)
+<ul>
+<li><a href="tools/wrappers/blast-compress.pl">blast-compress.pl</a></li>
+<li><a href="tools/wrappers/blast-decompress.pl">blast-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>brieflz (BriefLZ)
+<ul>
+<li><a href="tools/wrappers/brieflz-compress.pl">brieflz-compress.pl</a></li>
+<li><a href="tools/wrappers/brieflz-decompress.pl">brieflz-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>bsc
+<ul>
+<li><a href="tools/wrappers/bsc-compress.pl">bsc-compress.pl</a></li>
+<li><a href="tools/wrappers/bsc-decompress.pl">bsc-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>cmix
+<ul>
+<li><a href="tools/wrappers/cmix-compress.pl">cmix-compress.pl</a></li>
+<li><a href="tools/wrappers/cmix-decompress.pl">cmix-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>dcom (DNA-COMPACT)
+<ul>
+<li><a href="tools/wrappers/dcom-compress.pl">dcom-compress.pl</a></li>
+<li><a href="tools/wrappers/dcom-decompress.pl">dcom-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>dlim (DELIMINATE)
+<ul>
+<li><a href="tools/wrappers/dlim-compress.pl">dlim-compress.pl</a></li>
+<li><a href="tools/wrappers/dlim-decompress.pl">dlim-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>dnax (dnaX)
+<ul>
+<li><a href="tools/wrappers/dnax-compress.pl">dnax-compress.pl</a></li>
+<li><a href="tools/wrappers/dnax-decompress.pl">dnax-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>dsrc (DSRC)
+<ul>
+<li><a href="tools/wrappers/dsrc-compress.pl">dsrc-compress.pl</a></li>
+<li><a href="tools/wrappers/dsrc-decompress.pl">dsrc-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>fastqz
+<ul>
+<li><a href="tools/wrappers/fastqz-compress.pl">fastqz-compress.pl</a></li>
+<li><a href="tools/wrappers/fastqz-decompress.pl">fastqz-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>fqs
+<ul>
+<li><a href="tools/wrappers/fqsqueezer-compress.pl">fqsqueezer-compress.pl</a></li>
+<li><a href="tools/wrappers/fqsqueezer-decompress.pl">fqsqueezer-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>fqzcomp
+<ul>
+<li><a href="tools/wrappers/fqzcomp-compress.pl">fqzcomp-compress.pl</a></li>
+<li><a href="tools/wrappers/fqzcomp-decompress.pl">fqzcomp-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>geco (GeCo)
+<ul>
+<li><a href="tools/wrappers/geco-compress.pl">geco-compress.pl</a></li>
+<li><a href="tools/wrappers/geco-decompress.pl">geco-decompress.pl</a></li>
+<li><a href="tools/wrappers/geco2-compress.pl">geco2-compress.pl</a></li>
+<li><a href="tools/wrappers/geco2-decompress.pl">geco2-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>gtz (GTZ)
+<ul>
+<li><a href="tools/wrappers/gtz-compress.pl">gtz-compress.pl</a></li>
+<li><a href="tools/wrappers/gtz-decompress.pl">gtz-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>harc (HARC)
+<ul>
+<li><a href="tools/wrappers/harc-compress.pl">harc-compress.pl</a></li>
+<li><a href="tools/wrappers/harc-decompress.pl">harc-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>jarvis (JARVIS)
+<ul>
+<li><a href="tools/wrappers/jarvis-compress.pl">jarvis-compress.pl</a></li>
+<li><a href="tools/wrappers/jarvis-decompress.pl">jarvis-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>kic (KIC)
+<ul>
+<li><a href="tools/wrappers/kic-compress.pl">kic-compress.pl</a></li>
+<li><a href="tools/wrappers/kic-decompress.pl">kic-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>leon (Leon)
+<ul>
+<li><a href="tools/wrappers/leon-compress.pl">leon-compress.pl</a></li>
+<li><a href="tools/wrappers/leon-decompress.pl">leon-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>lfastqc (LFastqC)
+<ul>
+<li><a href="tools/wrappers/lfastqc-compress.pl">lfastqc-compress.pl</a></li>
+<li><a href="tools/wrappers/lfastqc-decompress.pl">lfastqc-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>lfqc (LFQC)
+<ul>
+<li><a href="tools/wrappers/lfqc-compress.pl">lfqc-compress.pl</a></li>
+<li><a href="tools/wrappers/lfqc-decompress.pl">lfqc-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>lzturbo
+<ul>
+<li><a href="tools/wrappers/lzturbo-static-decompress.pl">lzturbo-static-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>mfc (MFCompress)
+<ul>
+<li><a href="tools/wrappers/mfc-compress.pl">mfc-compress.pl</a></li>
+<li><a href="tools/wrappers/mfc-decompress.pl">mfc-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>minicom
+<ul>
+<li><a href="tools/wrappers/minicom-compress.pl">minicom-compress.pl</a></li>
+<li><a href="tools/wrappers/minicom-decompress.pl">minicom-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>nakamichi (Nakamichi)
+<ul>
+<li><a href="tools/wrappers/nakamichi-compress.pl">nakamichi-compress.pl</a></li>
+</ul>
+</li>
+
+<li>nuht (NUHT)
+<ul>
+<li><a href="tools/wrappers/nuht-compress.pl">nuht-compress.pl</a></li>
+<li><a href="tools/wrappers/nuht-decompress.pl">nuht-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>pfish (Pufferfish)
+<ul>
+<li><a href="tools/wrappers/pfish-compress.pl">pfish-compress.pl</a></li>
+<li><a href="tools/wrappers/pfish-decompress.pl">pfish-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>quip (Quip)
+<ul>
+<li><a href="tools/wrappers/quip-compress.pl">quip-compress.pl</a></li>
+<li><a href="tools/wrappers/quip-decompress.pl">quip-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>spring (SPRING)
+<ul>
+<li><a href="tools/wrappers/spring-long-compress.pl">spring-long-compress.pl</a></li>
+<li><a href="tools/wrappers/spring-long-decompress.pl">spring-long-decompress.pl</a></li>
+<li><a href="tools/wrappers/spring-short-compress.pl">spring-short-compress.pl</a></li>
+<li><a href="tools/wrappers/spring-short-decompress.pl">spring-short-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>uht (UHT)
+<ul>
+<li><a href="tools/wrappers/uht-compress.pl">uht-compress.pl</a></li>
+<li><a href="tools/wrappers/uht-decompress.pl">uht-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>xm (XM)
+<ul>
+<li><a href="tools/wrappers/xm-compress.pl">xm-compress.pl</a></li>
+<li><a href="tools/wrappers/xm-decompress.pl">xm-decompress.pl</a></li>
+</ul>
+</li>
+
+<li>zpaq
+<ul>
+<li><a href="tools/wrappers/zpaq-compress.pl">zpaq-compress.pl</a></li>
+<li><a href="tools/wrappers/zpaq-decompress.pl">zpaq-decompress.pl</a></li>
+</ul>
+</li>
+
+</ul>
+
+
+
+<h3>Utilities written in Perl</h3>
+<p>This tool is in public domain.</p>
+<ul>
+<li><a href="tools/seq-tools-perl/fasta-guess-line-length.pl">fasta-guess-line-length.pl</a></li>
+</ul>
+
+<h3>Utilities written in C</h3>
+<p>All these utilities are in public domain.</p>
+
+<ul>
+<li><a href="tools/seq-tools-c/sequence-change-case-to-upper.c">sequence-change-case-to-upper.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-add-name-ends.c">fasta-add-name-ends.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-change-line-length.c">fasta-change-line-length.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-from-names-lengths-sequence.c">fasta-from-names-lengths-sequence.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-from-sequence.c">fasta-from-sequence.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-patch.c">fasta-patch.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-replace-RYSWKMBDHV-with-A.c">fasta-replace-RYSWKMBDHV-with-A.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-soft-mask-add.c">fasta-soft-mask-add.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-soft-mask-remove.c">fasta-soft-mask-remove.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-t2u.c">fasta-t2u.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-to-fastq.c">fasta-to-fastq.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-to-names-lengths-sequence.c">fasta-to-names-lengths-sequence.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-to-sequence.c">fasta-to-sequence.c</a></li>
+<li><a href="tools/seq-tools-c/fasta-u2t.c">fasta-u2t.c</a></li>
+<li><a href="tools/seq-tools-c/fastq-from-sequence.c">fastq-from-sequence.c</a></li>
+<li><a href="tools/seq-tools-c/fastq-from-sequence-2.c">fastq-from-sequence-2.c</a></li>
+<li><a href="tools/seq-tools-c/fastq-to-fasta.c">fastq-to-fasta.c</a></li>
+<li><a href="tools/seq-tools-c/fastq-to-sequence.c">fastq-to-sequence.c</a></li>
+<li><a href="tools/seq-tools-c/sequence-iupac-add.c">sequence-iupac-add.c</a></li>
+<li><a href="tools/seq-tools-c/sequence-iupac-remove.c">sequence-iupac-remove.c</a></li>
+<li><a href="tools/seq-tools-c/sequence-merge-to-one-line.c">sequence-merge-to-one-line.c</a></li>
+<li><a href="tools/seq-tools-c/sequence-n-add.c">sequence-n-add.c</a></li>
+<li><a href="tools/seq-tools-c/sequence-n-remove.c">sequence-n-remove.c</a></li>
+<li><a href="tools/seq-tools-c/sequence-soft-mask-add.c">sequence-soft-mask-add.c</a></li>
+<li><a href="tools/seq-tools-c/sequence-soft-mask-remove.c">sequence-soft-mask-remove.c</a></li>
+<li><a href="tools/seq-tools-c/sequence-split-to-lines.c">sequence-split-to-lines.c</a></li>
+<li><a href="tools/seq-tools-c/sequence-t2u.c">sequence-t2u.c</a></li>
+<li><a href="tools/seq-tools-c/sequence-u2t.c">sequence-u2t.c</a></li>
+</ul>
+
+<!--p>Wrappers also use <a href="https://github.com/KirillKryukov/seq-tools">seq-tools</a></p-->
+
+
+
+
+<h3>Compressor fixes</h3>
+
+<p id="fix-lfastqc">LFastqC.
+Minimal fix which makes it possible to use it (many other problems are worked around in the wrapper).
+Removes one of the tar steps.
+Waits for compression and decompression sub-tasks to complete before processing their output.</p>
+<p>Shared under the Apache License 2.0, same license used in LFastqC GitHub repository.</p>
+<ul>
+<li><a href="tools/compressor-fixes/lfastqc/compress.py">compress.py</a></li>
+<li><a href="tools/compressor-fixes/lfastqc/decompress.py">decompress.py</a></li>
+</ul>
+
+</div>

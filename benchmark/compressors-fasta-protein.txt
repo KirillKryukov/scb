@@ -1,0 +1,56 @@
+# Section: [name, extension, can run in parallel tasks]
+# Compressor: options ID, maximum uncompressed file size, compress command (with pipe input).
+
+[naf, naf, 1]
+1    -   ennaf --fasta --protein --name {NAME} -1 -o {OUT}
+2    -   ennaf --fasta --protein --name {NAME} -2 -o {OUT}
+3    -   ennaf --fasta --protein --name {NAME} -3 -o {OUT}
+4    -   ennaf --fasta --protein --name {NAME} -4 -o {OUT}
+5    -   ennaf --fasta --protein --name {NAME} -5 -o {OUT}
+6    -   ennaf --fasta --protein --name {NAME} -6 -o {OUT}
+7    -   ennaf --fasta --protein --name {NAME} -7 -o {OUT}
+8    -   ennaf --fasta --protein --name {NAME} -8 -o {OUT}
+9    -   ennaf --fasta --protein --name {NAME} -9 -o {OUT}
+10   -   ennaf --fasta --protein --name {NAME} -10 -o {OUT}
+11   -   ennaf --fasta --protein --name {NAME} -11 -o {OUT}
+12   -   ennaf --fasta --protein --name {NAME} -12 -o {OUT}
+13   -   ennaf --fasta --protein --name {NAME} -13 -o {OUT}
+14   -   ennaf --fasta --protein --name {NAME} -14 -o {OUT}
+15   -   ennaf --fasta --protein --name {NAME} -15 -o {OUT}
+16   -   ennaf --fasta --protein --name {NAME} -16 -o {OUT}
+17   -   ennaf --fasta --protein --name {NAME} -17 -o {OUT}
+18   -   ennaf --fasta --protein --name {NAME} -18 -o {OUT}
+19   -   ennaf --fasta --protein --name {NAME} -19 -o {OUT}
+20   -   ennaf --fasta --protein --name {NAME} -20 -o {OUT}
+21   -   ennaf --fasta --protein --name {NAME} -21 -o {OUT}
+22   -   ennaf --fasta --protein --name {NAME} -22 -o {OUT}
+
+[blast, blast, 1]
+-   -   blast-compress.pl --out {OUT} --protein
+
+[blast0, blast0, 1]
+-   -   blast-compress.pl --out {OUT} --protein --wrapper-only
+
+[acfa, acfa, 1]
+1   -   ac-fa-compress.pl --out {OUT} --level 1
+2   -   ac-fa-compress.pl --out {OUT} --level 2
+3   -   ac-fa-compress.pl --out {OUT} --level 3
+4   -   ac-fa-compress.pl --out {OUT} --level 4
+5   -   ac-fa-compress.pl --out {OUT} --level 5
+6   -   ac-fa-compress.pl --out {OUT} --level 6
+7   -   ac-fa-compress.pl --out {OUT} --level 7
+
+[acfa0, acfa0, 1]
+-   -   ac-fa-compress.pl --out {OUT} --level 1 --wrapper-only
+
+[acseq, acseq, 1]
+1   -   ac-seq-compress.pl --out {OUT} --level 1
+2   -   ac-seq-compress.pl --out {OUT} --level 2
+3   -   ac-seq-compress.pl --out {OUT} --level 3
+4   -   ac-seq-compress.pl --out {OUT} --level 4
+5   -   ac-seq-compress.pl --out {OUT} --level 5
+6   -   ac-seq-compress.pl --out {OUT} --level 6
+7   -   ac-seq-compress.pl --out {OUT} --level 7
+
+[acseq0, acseq0, 1]
+-   -   ac-seq-compress.pl --out {OUT} --level 1 --wrapper-only

@@ -1,0 +1,295 @@
+# Section: [name, extension, can run in parallel tasks]
+# Compressor: options ID, maximum uncompressed file size, compress command (with pipe input).
+
+[copy, copy, 1]
+-   -   cat >{OUT}
+
+[snzip, sz, 1]
+-   -   snzip -c >{OUT}
+
+[bcm, bcm, 1]
+16m     -   bcm-compress.pl --b 16 --out {OUT}
+128m    -   bcm-compress.pl --b 128 --out {OUT}
+1024m   -   bcm-compress.pl --b 1024 --out {OUT}
+2047m   -   bcm-compress.pl --b 2047 --out {OUT}
+
+[bsc, bsc, 1]
+b16cfe1     -   bsc-compress.pl --b 16 --c f --e 1 --out {OUT}
+b128cfe1    -   bsc-compress.pl --b 128 --c f --e 1 --out {OUT}
+b1024cfe1   -   bsc-compress.pl --b 1024 --c f --e 1 --out {OUT}
+b16cfe2     -   bsc-compress.pl --b 16 --c f --e 2 --out {OUT}
+b128cfe2    -   bsc-compress.pl --b 128 --c f --e 2 --out {OUT}
+b1024cfe2   -   bsc-compress.pl --b 1024 --c f --e 2 --out {OUT}
+
+[lz4, lz4, 1]
+1   -   lz4 -1 -c >{OUT}
+2   -   lz4 -2 -c >{OUT}
+3   -   lz4 -3 -c >{OUT}
+4   -   lz4 -4 -c >{OUT}
+5   -   lz4 -5 -c >{OUT}
+6   -   lz4 -6 -c >{OUT}
+7   -   lz4 -7 -c >{OUT}
+8   -   lz4 -8 -c >{OUT}
+9   -   lz4 -9 -c >{OUT}
+
+[lzop, lzop, 1]
+1   -   lzop -1 -c >{OUT}
+9   -   lzop -9 -c >{OUT}
+
+[brieflz, brieflz, 1]
+1     -   brieflz-compress.pl --level 1 --out {OUT}
+2     -   brieflz-compress.pl --level 2 --out {OUT}
+3     -   brieflz-compress.pl --level 3 --out {OUT}
+4     -   brieflz-compress.pl --level 4 --out {OUT}
+5     -   brieflz-compress.pl --level 5 --out {OUT}
+6     -   brieflz-compress.pl --level 6 --out {OUT}
+7     -   brieflz-compress.pl --level 7 --out {OUT}
+8     -   brieflz-compress.pl --level 8 --out {OUT}
+9     -   brieflz-compress.pl --level 9 --out {OUT}
+opt   -   brieflz-compress.pl --level optimal --out {OUT}
+
+[brieflz3600m, brieflz3600m, 1]
+6     -   brieflz-compress.pl --level 6 --block-size 3600m --out {OUT}
+9     -   brieflz-compress.pl --level 9 --block-size 3600m --out {OUT}
+
+[zstd, zstd, 1]
+1-1t    -   zstd --single-thread -1 -c >{OUT}
+2-1t    -   zstd --single-thread -2 -c >{OUT}
+3-1t    -   zstd --single-thread -3 -c >{OUT}
+4-1t    -   zstd --single-thread -4 -c >{OUT}
+5-1t    -   zstd --single-thread -5 -c >{OUT}
+6-1t    -   zstd --single-thread -6 -c >{OUT}
+7-1t    -   zstd --single-thread -7 -c >{OUT}
+8-1t    -   zstd --single-thread -8 -c >{OUT}
+9-1t    -   zstd --single-thread -9 -c >{OUT}
+10-1t   -   zstd --single-thread -10 -c >{OUT}
+11-1t   -   zstd --single-thread -11 -c >{OUT}
+12-1t   -   zstd --single-thread -12 -c >{OUT}
+13-1t   -   zstd --single-thread -13 -c >{OUT}
+14-1t   -   zstd --single-thread -14 -c >{OUT}
+15-1t   -   zstd --single-thread -15 -c >{OUT}
+16-1t   -   zstd --single-thread -16 -c >{OUT}
+17-1t   -   zstd --single-thread -17 -c >{OUT}
+18-1t   -   zstd --single-thread -18 -c >{OUT}
+19-1t   -   zstd --single-thread -19 -c >{OUT}
+20-1t   -   zstd --single-thread --ultra -20 -c >{OUT}
+21-1t   -   zstd --single-thread --ultra -21 -c >{OUT}
+22-1t   -   zstd --single-thread --ultra -22 -c >{OUT}
+1-4t    -   zstd -T4 -1 -c >{OUT}
+2-4t    -   zstd -T4 -2 -c >{OUT}
+3-4t    -   zstd -T4 -3 -c >{OUT}
+4-4t    -   zstd -T4 -4 -c >{OUT}
+5-4t    -   zstd -T4 -5 -c >{OUT}
+6-4t    -   zstd -T4 -6 -c >{OUT}
+7-4t    -   zstd -T4 -7 -c >{OUT}
+8-4t    -   zstd -T4 -8 -c >{OUT}
+9-4t    -   zstd -T4 -9 -c >{OUT}
+10-4t   -   zstd -T4 -10 -c >{OUT}
+11-4t   -   zstd -T4 -11 -c >{OUT}
+12-4t   -   zstd -T4 -12 -c >{OUT}
+13-4t   -   zstd -T4 -13 -c >{OUT}
+14-4t   -   zstd -T4 -14 -c >{OUT}
+15-4t   -   zstd -T4 -15 -c >{OUT}
+16-4t   -   zstd -T4 -16 -c >{OUT}
+17-4t   -   zstd -T4 -17 -c >{OUT}
+18-4t   -   zstd -T4 -18 -c >{OUT}
+19-4t   -   zstd -T4 -19 -c >{OUT}
+20-4t   -   zstd -T4 --ultra -20 -c >{OUT}
+21-4t   -   zstd -T4 --ultra -21 -c >{OUT}
+22-4t   -   zstd -T4 --ultra -22 -c >{OUT}
+
+[gzip, gz, 1]
+1   -   gzip -c1 >{OUT}
+2   -   gzip -c2 >{OUT}
+3   -   gzip -c3 >{OUT}
+4   -   gzip -c4 >{OUT}
+5   -   gzip -c5 >{OUT}
+6   -   gzip -c6 >{OUT}
+7   -   gzip -c7 >{OUT}
+8   -   gzip -c8 >{OUT}
+9   -   gzip -c9 >{OUT}
+
+[pigz, pigz, 1]
+0-1t    -   pigz -p 1 -c -0 >{OUT}
+1-1t    -   pigz -p 1 -c -1 >{OUT}
+2-1t    -   pigz -p 1 -c -2 >{OUT}
+3-1t    -   pigz -p 1 -c -3 >{OUT}
+4-1t    -   pigz -p 1 -c -4 >{OUT}
+5-1t    -   pigz -p 1 -c -5 >{OUT}
+6-1t    -   pigz -p 1 -c -6 >{OUT}
+7-1t    -   pigz -p 1 -c -7 >{OUT}
+8-1t    -   pigz -p 1 -c -8 >{OUT}
+9-1t    -   pigz -p 1 -c -9 >{OUT}
+11-1t   10000000000   pigz -p 1 -c -11 >{OUT}
+0-4t    -   pigz -p 4 -c -0 >{OUT}
+1-4t    -   pigz -p 4 -c -1 >{OUT}
+2-4t    -   pigz -p 4 -c -2 >{OUT}
+3-4t    -   pigz -p 4 -c -3 >{OUT}
+4-4t    -   pigz -p 4 -c -4 >{OUT}
+5-4t    -   pigz -p 4 -c -5 >{OUT}
+6-4t    -   pigz -p 4 -c -6 >{OUT}
+7-4t    -   pigz -p 4 -c -7 >{OUT}
+8-4t    -   pigz -p 4 -c -8 >{OUT}
+9-4t    -   pigz -p 4 -c -9 >{OUT}
+11-4t   10000000000   pigz -p 4 -c -11 >{OUT}
+
+[bzip2, bz2, 1]
+1   -   bzip2 -cz1 >{OUT}
+2   -   bzip2 -cz2 >{OUT}
+3   -   bzip2 -cz3 >{OUT}
+4   -   bzip2 -cz4 >{OUT}
+5   -   bzip2 -cz5 >{OUT}
+6   -   bzip2 -cz6 >{OUT}
+7   -   bzip2 -cz7 >{OUT}
+8   -   bzip2 -cz8 >{OUT}
+9   -   bzip2 -cz9 >{OUT}
+
+[pbzip2, pbz2, 1]
+1-1t   -   pbzip2 -1 -c -z -p1 >{OUT}
+2-1t   -   pbzip2 -2 -c -z -p1 >{OUT}
+3-1t   -   pbzip2 -3 -c -z -p1 >{OUT}
+4-1t   -   pbzip2 -4 -c -z -p1 >{OUT}
+5-1t   -   pbzip2 -5 -c -z -p1 >{OUT}
+6-1t   -   pbzip2 -6 -c -z -p1 >{OUT}
+7-1t   -   pbzip2 -7 -c -z -p1 >{OUT}
+8-1t   -   pbzip2 -8 -c -z -p1 >{OUT}
+9-1t   -   pbzip2 -9 -c -z -p1 >{OUT}
+1-4t   -   pbzip2 -1 -c -z -p4 >{OUT}
+2-4t   -   pbzip2 -2 -c -z -p4 >{OUT}
+3-4t   -   pbzip2 -3 -c -z -p4 >{OUT}
+4-4t   -   pbzip2 -4 -c -z -p4 >{OUT}
+5-4t   -   pbzip2 -5 -c -z -p4 >{OUT}
+6-4t   -   pbzip2 -6 -c -z -p4 >{OUT}
+7-4t   -   pbzip2 -7 -c -z -p4 >{OUT}
+8-4t   -   pbzip2 -8 -c -z -p4 >{OUT}
+9-4t   -   pbzip2 -9 -c -z -p4 >{OUT}
+
+[xz, xz, 1]
+0    -   xz -zkc0 >{OUT}
+1    -   xz -zkc1 >{OUT}
+2    -   xz -zkc2 >{OUT}
+3    -   xz -zkc3 >{OUT}
+4    -   xz -zkc4 >{OUT}
+5    -   xz -zkc5 >{OUT}
+6    -   xz -zkc6 >{OUT}
+7    -   xz -zkc7 >{OUT}
+8    -   xz -zkc8 >{OUT}
+9    -   xz -zkc9 >{OUT}
+e0   -   xz -zkce0 >{OUT}
+e1   -   xz -zkce1 >{OUT}
+e2   -   xz -zkce2 >{OUT}
+e3   -   xz -zkce3 >{OUT}
+e4   -   xz -zkce4 >{OUT}
+e5   -   xz -zkce5 >{OUT}
+e6   -   xz -zkce6 >{OUT}
+e7   -   xz -zkce7 >{OUT}
+e8   -   xz -zkce8 >{OUT}
+e9   -   xz -zkce9 >{OUT}
+
+[brotli, br, 1]
+0       -   brotli -q 0 -c >{OUT}
+1       -   brotli -q 1 -c >{OUT}
+2       -   brotli -q 2 -c >{OUT}
+3       -   brotli -q 3 -c >{OUT}
+4       -   brotli -q 4 -c >{OUT}
+5       -   brotli -q 5 -c >{OUT}
+6       -   brotli -q 6 -c >{OUT}
+7       -   brotli -q 7 -c >{OUT}
+8       -   brotli -q 8 -c >{OUT}
+9       -   brotli -q 9 -c >{OUT}
+10      -   brotli -q 10 -c >{OUT}
+11      -   brotli -q 11 -c >{OUT}
+11w30   -   brotli -q 11 --large_window=30 -c >{OUT}
+
+[lzturbo, lzt, 1]
+10-1t   -   lzturbo_static -10 -p0 -o >{OUT}
+11-1t   -   lzturbo_static -11 -p0 -o >{OUT}
+12-1t   -   lzturbo_static -12 -p0 -o >{OUT}
+19-1t   -   lzturbo_static -19 -p0 -o >{OUT}
+20-1t   -   lzturbo_static -20 -p0 -o >{OUT}
+21-1t   -   lzturbo_static -21 -p0 -o >{OUT}
+22-1t   -   lzturbo_static -22 -p0 -o >{OUT}
+29-1t   -   lzturbo_static -29 -p0 -o >{OUT}
+30-1t   -   lzturbo_static -30 -p0 -o >{OUT}
+31-1t   -   lzturbo_static -31 -p0 -o >{OUT}
+32-1t   -   lzturbo_static -32 -p0 -o >{OUT}
+39-1t   -   lzturbo_static -39 -p0 -o >{OUT}
+49-1t   -   lzturbo_static -49 -p0 -o >{OUT}
+10-4t   -   lzturbo_static -10 -p4 -o >{OUT}
+11-4t   -   lzturbo_static -11 -p4 -o >{OUT}
+12-4t   -   lzturbo_static -12 -p4 -o >{OUT}
+19-4t   -   lzturbo_static -19 -p4 -o >{OUT}
+20-4t   -   lzturbo_static -20 -p4 -o >{OUT}
+21-4t   -   lzturbo_static -21 -p4 -o >{OUT}
+22-4t   -   lzturbo_static -22 -p4 -o >{OUT}
+29-4t   -   lzturbo_static -29 -p4 -o >{OUT}
+30-4t   -   lzturbo_static -30 -p4 -o >{OUT}
+31-4t   -   lzturbo_static -31 -p4 -o >{OUT}
+32-4t   -   lzturbo_static -32 -p4 -o >{OUT}
+39-4t   -   lzturbo_static -39 -p4 -o >{OUT}
+49-4t   -   lzturbo_static -49 -p4 -o >{OUT}
+
+[lizard, liz, 1]
+10   -   lizard -10 - {OUT} >/dev/null 2>&1
+11   -   lizard -11 - {OUT} >/dev/null 2>&1
+12   -   lizard -12 - {OUT} >/dev/null 2>&1
+13   -   lizard -13 - {OUT} >/dev/null 2>&1
+14   -   lizard -14 - {OUT} >/dev/null 2>&1
+15   -   lizard -15 - {OUT} >/dev/null 2>&1
+16   -   lizard -16 - {OUT} >/dev/null 2>&1
+17   -   lizard -17 - {OUT} >/dev/null 2>&1
+18   -   lizard -18 - {OUT} >/dev/null 2>&1
+19   -   lizard -19 - {OUT} >/dev/null 2>&1
+20   -   lizard -20 - {OUT} >/dev/null 2>&1
+21   -   lizard -21 - {OUT} >/dev/null 2>&1
+22   -   lizard -22 - {OUT} >/dev/null 2>&1
+23   -   lizard -23 - {OUT} >/dev/null 2>&1
+24   -   lizard -24 - {OUT} >/dev/null 2>&1
+25   -   lizard -25 - {OUT} >/dev/null 2>&1
+26   -   lizard -26 - {OUT} >/dev/null 2>&1
+27   -   lizard -27 - {OUT} >/dev/null 2>&1
+28   -   lizard -28 - {OUT} >/dev/null 2>&1
+29   -   lizard -29 - {OUT} >/dev/null 2>&1
+30   -   lizard -30 - {OUT} >/dev/null 2>&1
+31   -   lizard -31 - {OUT} >/dev/null 2>&1
+32   -   lizard -32 - {OUT} >/dev/null 2>&1
+33   -   lizard -33 - {OUT} >/dev/null 2>&1
+34   -   lizard -34 - {OUT} >/dev/null 2>&1
+35   -   lizard -35 - {OUT} >/dev/null 2>&1
+36   -   lizard -36 - {OUT} >/dev/null 2>&1
+37   -   lizard -37 - {OUT} >/dev/null 2>&1
+38   -   lizard -38 - {OUT} >/dev/null 2>&1
+39   -   lizard -39 - {OUT} >/dev/null 2>&1
+40   -   lizard -40 - {OUT} >/dev/null 2>&1
+41   -   lizard -41 - {OUT} >/dev/null 2>&1
+42   -   lizard -42 - {OUT} >/dev/null 2>&1
+43   -   lizard -43 - {OUT} >/dev/null 2>&1
+44   -   lizard -44 - {OUT} >/dev/null 2>&1
+45   -   lizard -45 - {OUT} >/dev/null 2>&1
+46   -   lizard -46 - {OUT} >/dev/null 2>&1
+47   -   lizard -47 - {OUT} >/dev/null 2>&1
+48   -   lizard -48 - {OUT} >/dev/null 2>&1
+49   -   lizard -49 - {OUT} >/dev/null 2>&1
+
+[zpaq, zpaq, 1]
+1-1t             -   zpaq-compress.pl --out {OUT} --level 1 --threads 1
+2-1t             -   zpaq-compress.pl --out {OUT} --level 2 --threads 1
+3-1t             -   zpaq-compress.pl --out {OUT} --level 3 --threads 1
+4-1t             -   zpaq-compress.pl --out {OUT} --level 4 --threads 1
+5-1t   20000000000   zpaq-compress.pl --out {OUT} --level 5 --threads 1
+1-4t             -   zpaq-compress.pl --out {OUT} --level 1 --threads 4
+2-4t             -   zpaq-compress.pl --out {OUT} --level 2 --threads 4
+3-4t             -   zpaq-compress.pl --out {OUT} --level 3 --threads 4
+4-4t             -   zpaq-compress.pl --out {OUT} --level 4 --threads 4
+5-4t   20000000000   zpaq-compress.pl --out {OUT} --level 5 --threads 4
+
+[zpipe, zpipe, 1]
+1             -   zpipe -1 >{OUT}
+2             -   zpipe -2 >{OUT}
+3   20000000000   zpipe -3 >{OUT}
+
+[nakamichi, Nakamichi, 1]
+28-81000-i   200000000   nakamichi-compress.pl --out {OUT} --hashsize 28 --treesize 81000 --treetype i
+
+[cmix, cmix, 1]
+-   10000000   cmix-compress.pl --out {OUT}

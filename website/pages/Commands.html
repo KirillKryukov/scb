@@ -1,0 +1,1643 @@
+<div class="text">
+
+<h2>Commands</h2>
+<p>This page lists all actual benchmarked commands.
+The commands are templates, parts in curly brackets were substituted before running them.
+Note that many compressors were used via <a href="?page=Wrappers">wrappers</a>.</p>
+<p>Jump to:
+<a href="#2bit">2bit</a>
+<a href="#ac">ac</a>
+<a href="#alapy">alapy</a>
+<a href="#bcm">bcm</a>
+<a href="#beetl">beetl</a>
+<a href="#blast">blast</a>
+<a href="#brieflz">brieflz</a>
+<a href="#brotli">brotli</a>
+<a href="#bsc">bsc</a>
+<a href="#bzip2">bzip2</a>
+<a href="#cmix">cmix</a>
+<a href="#copy">copy</a>
+<a href="#dcom">dcom</a>
+<a href="#dlim">dlim</a>
+<a href="#dnax">dnax</a>
+<a href="#dsrc">dsrc</a>
+<a href="#fastqz">fastqz</a>
+<a href="#fqs">fqs</a>
+<a href="#fqzcomp">fqzcomp</a>
+<a href="#geco">geco</a>
+<a href="#gtz">gtz</a>
+<a href="#gzip">gzip</a>
+<a href="#harc">harc</a>
+<a href="#jarvis">jarvis</a>
+<a href="#kic">kic</a>
+<a href="#leon">leon</a>
+<a href="#lfastqc">lfastqc</a>
+<a href="#lfqc">lfqc</a>
+<a href="#lizard">lizard</a>
+<a href="#lz4">lz4</a>
+<a href="#lzop">lzop</a>
+<a href="#lzturbo">lzturbo</a>
+<a href="#mfc">mfc</a>
+<a href="#minicom">minicom</a>
+<a href="#naf">naf</a>
+<a href="#nakamichi">nakamichi</a>
+<a href="#nuht">nuht</a>
+<a href="#pbzip2">pbzip2</a>
+<a href="#pigz">pigz</a>
+<a href="#pfish">pfish</a>
+<a href="#quip">quip</a>
+<a href="#snzip">snzip</a>
+<a href="#spring">spring</a>
+<a href="#uht">uht</a>
+<a href="#xm">xm</a>
+<a href="#xz">xz</a>
+<a href="#zpaq">zpaq</a>
+<a href="#zpipe">zpipe</a>
+<a href="#zstd">zstd</a></p>
+
+</div>
+
+
+
+<h3 id="2bit" class="cc">2bit</h3>
+<table class="cc">
+<tr><td>DNA compression</td></tr>
+<tr><td class="c">2bit-compress.pl --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>RNA compression</td></tr>
+<tr><td class="c">2bit-compress.pl --out {OUT} --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td>DNA decompression</td></tr>
+<tr><td class="c">2bit-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td>RNA decompression</td></tr>
+<tr><td class="c">2bit-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td>DNA compression, wrapper only</td></tr>
+<tr><td class="c">2bit-compress.pl --out {OUT} --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td>RNA compression, wrapper only</td></tr>
+<tr><td class="c">2bit-compress.pl --out {OUT} --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td>DNA decompression, wrapper only</td></tr>
+<tr><td class="c">2bit-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td>RNA decompression, wrapper only</td></tr>
+<tr><td class="c">2bit-decompress.pl --in '{IN}' --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="ac" class="cc">ac</h3>
+<table class="cc">
+<tr><td colspan="2">Protein compression</td></tr>
+<tr><td class="n">ac-fa-1</td><td class="c">ac-fa-compress.pl --out {OUT} --level 1</td></tr>
+<tr><td class="n">ac-fa-2</td><td class="c">ac-fa-compress.pl --out {OUT} --level 2</td></tr>
+<tr><td class="n">ac-fa-3</td><td class="c">ac-fa-compress.pl --out {OUT} --level 3</td></tr>
+<tr><td class="n">ac-fa-4</td><td class="c">ac-fa-compress.pl --out {OUT} --level 4</td></tr>
+<tr><td class="n">ac-fa-5</td><td class="c">ac-fa-compress.pl --out {OUT} --level 5</td></tr>
+<tr><td class="n">ac-fa-6</td><td class="c">ac-fa-compress.pl --out {OUT} --level 6</td></tr>
+<tr><td class="n">ac-fa-7</td><td class="c">ac-fa-compress.pl --out {OUT} --level 7</td></tr>
+<tr><td class="n">ac-seq-1</td><td class="c">ac-seq-compress.pl --out {OUT} --level 1</td></tr>
+<tr><td class="n">ac-seq-2</td><td class="c">ac-seq-compress.pl --out {OUT} --level 2</td></tr>
+<tr><td class="n">ac-seq-3</td><td class="c">ac-seq-compress.pl --out {OUT} --level 3</td></tr>
+<tr><td class="n">ac-seq-4</td><td class="c">ac-seq-compress.pl --out {OUT} --level 4</td></tr>
+<tr><td class="n">ac-seq-5</td><td class="c">ac-seq-compress.pl --out {OUT} --level 5</td></tr>
+<tr><td class="n">ac-seq-6</td><td class="c">ac-seq-compress.pl --out {OUT} --level 6</td></tr>
+<tr><td class="n">ac-seq-7</td><td class="c">ac-seq-compress.pl --out {OUT} --level 7</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Protein decompression</td></tr>
+<tr><td class="n">ac-fa-*</td><td class="c">ac-fa-decompress.pl --in '{IN}'</td></tr>
+<tr><td class="n">ac-seq-*</td><td class="c">ac-seq-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Protein compression, wrapper only</td></tr>
+<tr><td class="n">wrap-ac-fa</td><td class="c">ac-fa-compress.pl --out {OUT} --level 1 --wrapper-only</td></tr>
+<tr><td class="n">wrap-ac-seq</td><td class="c">ac-seq-compress.pl --out {OUT} --level 1 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Protein decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-ac-fa</td><td class="c">ac-fa-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+<tr><td class="n">wrap-ac-seq</td><td class="c">ac-seq-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+
+
+
+
+<h3 id="alapy" class="cc">alapy</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">alapy-f</td><td class="c">alapy-compress.pl --out {OUT} --level f</td></tr>
+<tr><td class="n">alapy-m</td><td class="c">alapy-compress.pl --out {OUT} --level m</td></tr>
+<tr><td class="n">alapy-b</td><td class="c">alapy-compress.pl --out {OUT} --level b</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">alapy-f</td><td class="c">alapy-compress.pl --out {OUT} --level f --rna</td></tr>
+<tr><td class="n">alapy-m</td><td class="c">alapy-compress.pl --out {OUT} --level m --rna</td></tr>
+<tr><td class="n">alapy-b</td><td class="c">alapy-compress.pl --out {OUT} --level b --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">alapy-*</td><td class="c">alapy-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">alapy-*</td><td class="c">alapy-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-alapy</td><td class="c">alapy-compress.pl --out {OUT} --level f --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-alapy</td><td class="c">alapy-compress.pl --out {OUT} --level f --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-alapy</td><td class="c">alapy-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-alapy</td><td class="c">alapy-decompress.pl --in '{IN}' --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="bcm" class="cc">bcm</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">bcm-b16</td><td class="c">bcm-compress.pl --b 16 --out {OUT}</td></tr>
+<tr><td class="n">bcm-b128</td><td class="c">bcm-compress.pl --b 128 --out {OUT}</td></tr>
+<tr><td class="n">bcm-b1024</td><td class="c">bcm-compress.pl --b 1024 --out {OUT}</td></tr>
+<tr><td class="n">bcm-b2047</td><td class="c">bcm-compress.pl --b 2047 --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">bcm-decompress.pl '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="beetl" class="cc">beetl</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">beetl-b50-zst1</td><td class="c">beetl-compress.pl --out {OUT} --read-length 50 --algorithm BCR --compressor zstd1</td></tr>
+<tr><td class="n">beetl-b200-zst1</td><td class="c">beetl-compress.pl --out {OUT} --read-length 200 --algorithm BCR --compressor zstd1</td></tr>
+<tr><td class="n">beetl-b500-zst1</td><td class="c">beetl-compress.pl --out {OUT} --read-length 500 --algorithm BCR --compressor zstd1</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">beetl-b50-zst1</td><td class="c">beetl-compress.pl --out {OUT} --read-length 50 --algorithm BCR --compressor zstd1 --rna</td></tr>
+<tr><td class="n">beetl-b200-zst1</td><td class="c">beetl-compress.pl --out {OUT} --read-length 200 --algorithm BCR --compressor zstd1 --rna</td></tr>
+<tr><td class="n">beetl-b500-zst1</td><td class="c">beetl-compress.pl --out {OUT} --read-length 500 --algorithm BCR --compressor zstd1 --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">beetl-*</td><td class="c">beetl-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">beetl-*</td><td class="c">beetl-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-beetl</td><td class="c">beetl-compress.pl --out {OUT} --read-length 500 --algorithm BCR --compressor zstd1 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-beetl</td><td class="c">beetl-compress.pl --out {OUT} --read-length 500 --algorithm BCR --compressor zstd1 --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-beetl</td><td class="c">beetl-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-beetl</td><td class="c">beetl-decompress.pl --in '{IN}' --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="blast" class="cc">blast</h3>
+<table class="cc">
+<tr><td>DNA compression</td></tr>
+<tr><td class="c">blast-compress.pl --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>RNA compression</td></tr>
+<tr><td class="c">blast-compress.pl --out {OUT} --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td>Protein compression</td></tr>
+<tr><td class="c">blast-compress.pl --out {OUT} --protein</td></tr>
+</table>
+<table class="cc">
+<tr><td>DNA &amp; protein decompression</td></tr>
+<tr><td class="c">blast-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td>RNA decompression</td></tr>
+<tr><td class="c">blast-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td>DNA compression, wrapper only</td></tr>
+<tr><td class="c">blast-compress.pl --out {OUT} --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td>RNA compression, wrapper only</td></tr>
+<tr><td class="c">blast-compress.pl --out {OUT} --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td>Protein compression, wrapper only</td></tr>
+<tr><td class="c">blast-compress.pl --out {OUT} --protein --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td>DNA &amp; protein decompression, wrapper only</td></tr>
+<tr><td class="c">blast-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td>RNA decompression, wrapper only</td></tr>
+<tr><td class="c">blast-decompress.pl --in '{IN}' --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="brieflz" class="cc">brieflz</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">brieflz-1</td><td class="c">brieflz-compress.pl --level 1 --out {OUT}</td></tr>
+<tr><td class="n">brieflz-2</td><td class="c">brieflz-compress.pl --level 2 --out {OUT}</td></tr>
+<tr><td class="n">brieflz-3</td><td class="c">brieflz-compress.pl --level 3 --out {OUT}</td></tr>
+<tr><td class="n">brieflz-4</td><td class="c">brieflz-compress.pl --level 4 --out {OUT}</td></tr>
+<tr><td class="n">brieflz-5</td><td class="c">brieflz-compress.pl --level 5 --out {OUT}</td></tr>
+<tr><td class="n">brieflz-6</td><td class="c">brieflz-compress.pl --level 6 --out {OUT}</td></tr>
+<tr><td class="n">brieflz-6-3600m</td><td class="c">brieflz-compress.pl --level 6 --block-size 3600m --out {OUT}</td></tr>
+<tr><td class="n">brieflz-7</td><td class="c">brieflz-compress.pl --level 7 --out {OUT}</td></tr>
+<tr><td class="n">brieflz-8</td><td class="c">brieflz-compress.pl --level 8 --out {OUT}</td></tr>
+<tr><td class="n">brieflz-9</td><td class="c">brieflz-compress.pl --level 9 --out {OUT}</td></tr>
+<tr><td class="n">brieflz-9-3600m</td><td class="c">brieflz-compress.pl --level 9 --block-size 3600m --out {OUT}</td></tr>
+<tr><td class="n">brieflz-opt</td><td class="c">brieflz-compress.pl --level optimal --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression</td></tr>
+<tr><td class="n">brieflz-#</td><td class="c">brieflz-decompress.pl --in '{IN}'</td></tr>
+<tr><td class="n">brieflz-#-3600m</td><td class="c">brieflz-decompress.pl --in '{IN}' --block-size 3600m</td></tr>
+</table>
+
+
+
+<h3 id="brotli" class="cc">brotli</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">brotli-0</td><td class="c">brotli -q 0 -c &gt;{OUT}</td></tr>
+<tr><td class="n">brotli-1</td><td class="c">brotli -q 1 -c &gt;{OUT}</td></tr>
+<tr><td class="n">brotli-2</td><td class="c">brotli -q 2 -c &gt;{OUT}</td></tr>
+<tr><td class="n">brotli-3</td><td class="c">brotli -q 3 -c &gt;{OUT}</td></tr>
+<tr><td class="n">brotli-4</td><td class="c">brotli -q 4 -c &gt;{OUT}</td></tr>
+<tr><td class="n">brotli-5</td><td class="c">brotli -q 5 -c &gt;{OUT}</td></tr>
+<tr><td class="n">brotli-6</td><td class="c">brotli -q 6 -c &gt;{OUT}</td></tr>
+<tr><td class="n">brotli-7</td><td class="c">brotli -q 7 -c &gt;{OUT}</td></tr>
+<tr><td class="n">brotli-8</td><td class="c">brotli -q 8 -c &gt;{OUT}</td></tr>
+<tr><td class="n">brotli-9</td><td class="c">brotli -q 9 -c &gt;{OUT}</td></tr>
+<tr><td class="n">brotli-10</td><td class="c">brotli -q 10 -c &gt;{OUT}</td></tr>
+<tr><td class="n">brotli-11</td><td class="c">brotli -q 11 -c &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Compression with undocumented settings</td></tr>
+<tr><td class="n">brotli-11w30</td><td class="c">brotli -q 11 --large_window=30 -c &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">brotli -dc '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="bsc" class="cc">bsc</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">bsc-b16cfe1</td><td class="c">bsc-compress.pl --b 16 --c f --e 1 --out {OUT}</td></tr>
+<tr><td class="n">bsc-b128cfe1</td><td class="c">bsc-compress.pl --b 128 --c f --e 1 --out {OUT}</td></tr>
+<tr><td class="n">bsc-b1024cfe1</td><td class="c">bsc-compress.pl --b 1024 --c f --e 1 --out {OUT}</td></tr>
+<tr><td class="n">bsc-b16cfe2</td><td class="c">bsc-compress.pl --b 16 --c f --e 2 --out {OUT}</td></tr>
+<tr><td class="n">bsc-b128cfe2</td><td class="c">bsc-compress.pl --b 128 --c f --e 2 --out {OUT}</td></tr>
+<tr><td class="n">bsc-b1024cfe2</td><td class="c">bsc-compress.pl --b 1024 --c f --e 2 --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">bsc-decompress.pl '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="bzip2" class="cc">bzip2</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">bzip2-1</td><td class="c">bzip2 -cz1 &gt;{OUT}</td></tr>
+<tr><td class="n">bzip2-2</td><td class="c">bzip2 -cz2 &gt;{OUT}</td></tr>
+<tr><td class="n">bzip2-3</td><td class="c">bzip2 -cz3 &gt;{OUT}</td></tr>
+<tr><td class="n">bzip2-4</td><td class="c">bzip2 -cz4 &gt;{OUT}</td></tr>
+<tr><td class="n">bzip2-5</td><td class="c">bzip2 -cz5 &gt;{OUT}</td></tr>
+<tr><td class="n">bzip2-6</td><td class="c">bzip2 -cz6 &gt;{OUT}</td></tr>
+<tr><td class="n">bzip2-7</td><td class="c">bzip2 -cz7 &gt;{OUT}</td></tr>
+<tr><td class="n">bzip2-8</td><td class="c">bzip2 -cz8 &gt;{OUT}</td></tr>
+<tr><td class="n">bzip2-9</td><td class="c">bzip2 -cz9 &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">bzip2 -dc '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="cmix" class="cc">cmix</h3>
+<table class="cc">
+<tr><td>Compression</td></tr>
+<tr><td class="c">cmix-compress.pl --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">cmix-decompress.pl '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="copy" class="cc">copy</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">copy-cat</td><td class="c">cat &gt;{OUT}</td></tr>
+<tr><td class="n">copy-pigz-0-1t</td><td class="c">pigz -p 1 -c -0 &gt;{OUT}</td></tr>
+<tr><td class="n">copy-pigz-0-4t</td><td class="c">pigz -p 4 -c -0 &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression</td></tr>
+<tr><td class="n">copy-cat</td><td class="c">cat '{IN}'</td></tr>
+<tr><td class="n">copy-pigz-0-1t</td><td class="c">pigz -dc '{IN}'</td></tr>
+<tr><td class="n">copy-pigz-0-4t</td><td class="c">pigz -dc '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="dcom" class="cc">dcom</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">dcom-9</td><td class="c">dcom-compress.pl --out {OUT} --level 9</td></tr>
+<tr><td class="n">dcom-10</td><td class="c">dcom-compress.pl --out {OUT} --level 10</td></tr>
+<tr><td class="n">dcom-11</td><td class="c">dcom-compress.pl --out {OUT} --level 11</td></tr>
+<tr><td class="n">dcom-12</td><td class="c">dcom-compress.pl --out {OUT} --level 12</td></tr>
+<tr><td class="n">dcom-13</td><td class="c">dcom-compress.pl --out {OUT} --level 13</td></tr>
+<tr><td class="n">dcom-14</td><td class="c">dcom-compress.pl --out {OUT} --level 14</td></tr>
+<tr><td class="n">dcom-15</td><td class="c">dcom-compress.pl --out {OUT} --level 15</td></tr>
+<tr><td class="n">dcom-16</td><td class="c">dcom-compress.pl --out {OUT} --level 16</td></tr>
+<tr><td class="n">dcom-17</td><td class="c">dcom-compress.pl --out {OUT} --level 17</td></tr>
+<tr><td class="n">dcom-18</td><td class="c">dcom-compress.pl --out {OUT} --level 18</td></tr>
+<tr><td class="n">dcom-19</td><td class="c">dcom-compress.pl --out {OUT} --level 19</td></tr>
+<tr><td class="n">dcom-20</td><td class="c">dcom-compress.pl --out {OUT} --level 20</td></tr>
+<tr><td class="n">dcom-21</td><td class="c">dcom-compress.pl --out {OUT} --level 21</td></tr>
+<tr><td class="n">dcom-22</td><td class="c">dcom-compress.pl --out {OUT} --level 22</td></tr>
+<tr><td class="n">dcom-23</td><td class="c">dcom-compress.pl --out {OUT} --level 23</td></tr>
+<tr><td class="n">dcom-24</td><td class="c">dcom-compress.pl --out {OUT} --level 24</td></tr>
+<tr><td class="n">dcom-25</td><td class="c">dcom-compress.pl --out {OUT} --level 25</td></tr>
+<tr><td class="n">dcom-26</td><td class="c">dcom-compress.pl --out {OUT} --level 26</td></tr>
+<tr><td class="n">dcom-27</td><td class="c">dcom-compress.pl --out {OUT} --level 27</td></tr>
+<tr><td class="n">dcom-28</td><td class="c">dcom-compress.pl --out {OUT} --level 28</td></tr>
+<tr><td class="n">dcom-29</td><td class="c">dcom-compress.pl --out {OUT} --level 29</td></tr>
+<tr><td class="n">dcom-30</td><td class="c">dcom-compress.pl --out {OUT} --level 30</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">dcom-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td>Compression, wrapper only</td></tr>
+<tr><td class="c">dcom-compress.pl --out {OUT} --level 9 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression, wrapper only</td></tr>
+<tr><td class="c">dcom-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="dlim" class="cc">dlim</h3>
+<table class="cc">
+<tr><td>DNA compression</td></tr>
+<tr><td class="c">dlim-compress.pl --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>RNA compression</td></tr>
+<tr><td class="c">dlim-compress.pl --out {OUT} --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td>DNA decompression</td></tr>
+<tr><td class="c">dlim-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td>RNA decompression</td></tr>
+<tr><td class="c">dlim-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+
+
+
+<h3 id="dnax" class="cc">dnax</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">dnax-0</td><td class="c">dnax-compress.pl --out {OUT} --preset 0</td></tr>
+<tr><td class="n">dnax-1</td><td class="c">dnax-compress.pl --out {OUT} --preset 1</td></tr>
+<tr><td class="n">dnax-2</td><td class="c">dnax-compress.pl --out {OUT} --preset 2</td></tr>
+<tr><td class="n">dnax-3</td><td class="c">dnax-compress.pl --out {OUT} --preset 3</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">dnax-0</td><td class="c">dnax-compress.pl --out {OUT} --preset 0 --rna</td></tr>
+<tr><td class="n">dnax-1</td><td class="c">dnax-compress.pl --out {OUT} --preset 1 --rna</td></tr>
+<tr><td class="n">dnax-2</td><td class="c">dnax-compress.pl --out {OUT} --preset 2 --rna</td></tr>
+<tr><td class="n">dnax-3</td><td class="c">dnax-compress.pl --out {OUT} --preset 3 --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">dnax-*</td><td class="c">dnax-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">dnax-*</td><td class="c">dnax-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-dnax</td><td class="c">dnax-compress.pl --out {OUT} --preset 0 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-dnax</td><td class="c">dnax-compress.pl --out {OUT} --preset 0 --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-dnax</td><td class="c">dnax-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-dnax</td><td class="c">dnax-decompress.pl --in '{IN}' --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="dsrc" class="cc">dsrc</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">dsrc-m0-1t</td><td class="c">dsrc-compress.pl --out {OUT} --level 0 --buffer-size 8 --threads 1</td></tr>
+<tr><td class="n">dsrc-m1-1t</td><td class="c">dsrc-compress.pl --out {OUT} --level 2 --buffer-size 64 --threads 1</td></tr>
+<tr><td class="n">dsrc-m2-1t</td><td class="c">dsrc-compress.pl --out {OUT} --level 3 --buffer-size 256 --threads 1</td></tr>
+<tr><td class="n">dsrc-m0-4t</td><td class="c">dsrc-compress.pl --out {OUT} --level 0 --buffer-size 8 --threads 4</td></tr>
+<tr><td class="n">dsrc-m1-4t</td><td class="c">dsrc-compress.pl --out {OUT} --level 2 --buffer-size 64 --threads 4</td></tr>
+<tr><td class="n">dsrc-m2-4t</td><td class="c">dsrc-compress.pl --out {OUT} --level 3 --buffer-size 256 --threads 4</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">dsrc-m0-1t</td><td class="c">dsrc-compress.pl --out {OUT} --level 0 --buffer-size 8 --threads 1 --rna</td></tr>
+<tr><td class="n">dsrc-m1-1t</td><td class="c">dsrc-compress.pl --out {OUT} --level 2 --buffer-size 64 --threads 1 --rna</td></tr>
+<tr><td class="n">dsrc-m2-1t</td><td class="c">dsrc-compress.pl --out {OUT} --level 3 --buffer-size 256 --threads 1 --rna</td></tr>
+<tr><td class="n">dsrc-m0-4t</td><td class="c">dsrc-compress.pl --out {OUT} --level 0 --buffer-size 8 --threads 4 --rna</td></tr>
+<tr><td class="n">dsrc-m1-4t</td><td class="c">dsrc-compress.pl --out {OUT} --level 2 --buffer-size 64 --threads 4 --rna</td></tr>
+<tr><td class="n">dsrc-m2-4t</td><td class="c">dsrc-compress.pl --out {OUT} --level 3 --buffer-size 256 --threads 4 --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">dsrc-*-1t</td><td class="c">dsrc-decompress.pl --in '{IN}' --threads 1</td></tr>
+<tr><td class="n">dsrc-*-4t</td><td class="c">dsrc-decompress.pl --in '{IN}' --threads 4</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">dsrc-*-1t</td><td class="c">dsrc-decompress.pl --in '{IN}' --threads 1 --rna</td></tr>
+<tr><td class="n">dsrc-*-4t</td><td class="c">dsrc-decompress.pl --in '{IN}' --threads 4 --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-dsrc</td><td class="c">dsrc-compress.pl --out {OUT} --level 0 --buffer-size 8 --threads 1 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-dsrc</td><td class="c">dsrc-compress.pl --out {OUT} --level 0 --buffer-size 8 --threads 1 --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-dsrc</td><td class="c">dsrc-decompress.pl --in '{IN}' --threads 1 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-dsrc</td><td class="c">dsrc-decompress.pl --in '{IN}' --threads 1 --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="fastqz" class="cc">fastqz</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">fastqz-fast</td><td class="c">fastqz-compress.pl --out {OUT} --mode fast --read-length 4000</td></tr>
+<tr><td class="n">fastqz-slow</td><td class="c">fastqz-compress.pl --out {OUT} --mode slow --read-length 4000</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">fastqz-fast</td><td class="c">fastqz-compress.pl --out {OUT} --mode fast --read-length 4000 --rna</td></tr>
+<tr><td class="n">fastqz-slow</td><td class="c">fastqz-compress.pl --out {OUT} --mode slow --read-length 4000 --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">fastqz-fast</td><td class="c">fastqz-decompress.pl --in '{IN}' --mode fast</td></tr>
+<tr><td class="n">fastqz-slow</td><td class="c">fastqz-decompress.pl --in '{IN}' --mode slow</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">fastqz-fast</td><td class="c">fastqz-decompress.pl --in '{IN}' --mode fast --rna</td></tr>
+<tr><td class="n">fastqz-slow</td><td class="c">fastqz-decompress.pl --in '{IN}' --mode slow --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-fastqz</td><td class="c">fastqz-compress.pl --out {OUT} --mode fast --read-length 4000 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-fastqz</td><td class="c">fastqz-compress.pl --out {OUT} --mode fast --read-length 4000 --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-fastqz</td><td class="c">fastqz-decompress.pl --in '{IN}' --mode fast --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-fastqz</td><td class="c">fastqz-decompress.pl --in '{IN}' --mode fast --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="fqs" class="cc">fqs</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">fqs-1t</td><td class="c">fqsqueezer-compress.pl --out {OUT} --read-length 4000 --threads 1</td></tr>
+<tr><td class="n">fqs-4t</td><td class="c">fqsqueezer-compress.pl --out {OUT} --read-length 4000 --threads 4</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">fqs-*</td><td class="c">fqsqueezer-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-fqs</td><td class="c">fqsqueezer-compress.pl --out {OUT} --read-length 250 --threads 1 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-fqs</td><td class="c">fqsqueezer-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="fqzcomp" class="cc">fqzcomp</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">fqzcomp-1</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 1</td></tr>
+<tr><td class="n">fqzcomp-2</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 2</td></tr>
+<tr><td class="n">fqzcomp-3</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 3</td></tr>
+<tr><td class="n">fqzcomp-4</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 4</td></tr>
+<tr><td class="n">fqzcomp-5</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 5</td></tr>
+<tr><td class="n">fqzcomp-6</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 6</td></tr>
+<tr><td class="n">fqzcomp-7</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 7</td></tr>
+<tr><td class="n">fqzcomp-8</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 8</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">fqzcomp-1</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 1 --rna</td></tr>
+<tr><td class="n">fqzcomp-2</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 2 --rna</td></tr>
+<tr><td class="n">fqzcomp-3</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 3 --rna</td></tr>
+<tr><td class="n">fqzcomp-4</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 4 --rna</td></tr>
+<tr><td class="n">fqzcomp-5</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 5 --rna</td></tr>
+<tr><td class="n">fqzcomp-6</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 6 --rna</td></tr>
+<tr><td class="n">fqzcomp-7</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 7 --rna</td></tr>
+<tr><td class="n">fqzcomp-8</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 8 --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">fqzcomp-*</td><td class="c">fqzcomp-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">fqzcomp-*</td><td class="c">fqzcomp-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-fqzcomp</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 1 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-fqzcomp</td><td class="c">fqzcomp-compress.pl --out {OUT} --read-length 4000 -s 1 --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-fqzcomp</td><td class="c">fqzcomp-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-fqzcomp</td><td class="c">fqzcomp-decompress.pl --in '{IN}' --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="geco" class="cc">geco</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">geco-2</td><td class="c">geco-compress.pl --level 2 --out {OUT}</td></tr>
+<tr><td class="n">geco-3</td><td class="c">geco-compress.pl --level 3 --out {OUT}</td></tr>
+<tr><td class="n">geco-4</td><td class="c">geco-compress.pl --level 4 --out {OUT}</td></tr>
+<tr><td class="n">geco-5</td><td class="c">geco-compress.pl --level 5 --out {OUT}</td></tr>
+<tr><td class="n">geco-6</td><td class="c">geco-compress.pl --level 6 --out {OUT}</td></tr>
+<tr><td class="n">geco-7</td><td class="c">geco-compress.pl --level 7 --out {OUT}</td></tr>
+<tr><td class="n">geco-8</td><td class="c">geco-compress.pl --level 8 --out {OUT}</td></tr>
+<tr><td class="n">geco-9</td><td class="c">geco-compress.pl --level 9 --out {OUT}</td></tr>
+<tr><td class="n">geco-10</td><td class="c">geco-compress.pl --level 10 --out {OUT}</td></tr>
+<tr><td class="n">geco2-1</td><td class="c">geco2-compress.pl --level 1 --out {OUT}</td></tr>
+<tr><td class="n">geco2-2</td><td class="c">geco2-compress.pl --level 2 --out {OUT}</td></tr>
+<tr><td class="n">geco2-3</td><td class="c">geco2-compress.pl --level 3 --out {OUT}</td></tr>
+<tr><td class="n">geco2-4</td><td class="c">geco2-compress.pl --level 4 --out {OUT}</td></tr>
+<tr><td class="n">geco2-5</td><td class="c">geco2-compress.pl --level 5 --out {OUT}</td></tr>
+<tr><td class="n">geco2-6</td><td class="c">geco2-compress.pl --level 6 --out {OUT}</td></tr>
+<tr><td class="n">geco2-7</td><td class="c">geco2-compress.pl --level 7 --out {OUT}</td></tr>
+<tr><td class="n">geco2-8</td><td class="c">geco2-compress.pl --level 8 --out {OUT}</td></tr>
+<tr><td class="n">geco2-9</td><td class="c">geco2-compress.pl --level 9 --out {OUT}</td></tr>
+<tr><td class="n">geco2-10</td><td class="c">geco2-compress.pl --level 10 --out {OUT}</td></tr>
+<tr><td class="n">geco2-11</td><td class="c">geco2-compress.pl --level 11 --out {OUT}</td></tr>
+<tr><td class="n">geco2-12</td><td class="c">geco2-compress.pl --level 12 --out {OUT}</td></tr>
+<tr><td class="n">geco2-13</td><td class="c">geco2-compress.pl --level 13 --out {OUT}</td></tr>
+<tr><td class="n">geco2-14</td><td class="c">geco2-compress.pl --level 14 --out {OUT}</td></tr>
+<tr><td class="n">geco2-15</td><td class="c">geco2-compress.pl --level 15 --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression</td></tr>
+<tr><td class="n">geco-*</td><td class="c">geco-decompress.pl --in '{IN}'</td></tr>
+<tr><td class="n">geco2-*</td><td class="c">geco2-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Compression, wrapper only</td></tr>
+<tr><td class="n">wrap-geco</td><td class="c">geco-compress.pl --level 2 --out {OUT} --wrapper-only</td></tr>
+<tr><td class="n">wrap-geco2</td><td class="c">geco2-compress.pl --level 1 --out {OUT} --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-geco</td><td class="c">geco-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+<tr><td class="n">wrap-geco2</td><td class="c">geco2-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="gtz" class="cc">gtz</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">gtz-1-1t</td><td class="c">gtz-compress.pl --out {OUT} --level 1 --threads 1</td></tr>
+<tr><td class="n">gtz-9-1t</td><td class="c">gtz-compress.pl --out {OUT} --level 9 --threads 1</td></tr>
+<tr><td class="n">gtz-1-4t</td><td class="c">gtz-compress.pl --out {OUT} --level 1 --threads 4</td></tr>
+<tr><td class="n">gtz-9-4t</td><td class="c">gtz-compress.pl --out {OUT} --level 9 --threads 4</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression</td></tr>
+<tr><td class="n">gtz-*-1t</td><td class="c">gtz-decompress.pl --in '{IN}' --threads 1</td></tr>
+<tr><td class="n">gtz-*-4t</td><td class="c">gtz-decompress.pl --in '{IN}' --threads 4</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Compression, wrapper only</td></tr>
+<tr><td class="n">wrap-gtz</td><td class="c">gtz-compress.pl --out {OUT} --level 1 --threads 1 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-gtz</td><td class="c">gtz-decompress.pl --in '{IN}' --threads 1 --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="gzip" class="cc">gzip</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">gzip-1</td><td class="c">gzip -c1 &gt;{OUT}</td></tr>
+<tr><td class="n">gzip-2</td><td class="c">gzip -c2 &gt;{OUT}</td></tr>
+<tr><td class="n">gzip-3</td><td class="c">gzip -c3 &gt;{OUT}</td></tr>
+<tr><td class="n">gzip-4</td><td class="c">gzip -c4 &gt;{OUT}</td></tr>
+<tr><td class="n">gzip-5</td><td class="c">gzip -c5 &gt;{OUT}</td></tr>
+<tr><td class="n">gzip-6</td><td class="c">gzip -c6 &gt;{OUT}</td></tr>
+<tr><td class="n">gzip-7</td><td class="c">gzip -c7 &gt;{OUT}</td></tr>
+<tr><td class="n">gzip-8</td><td class="c">gzip -c8 &gt;{OUT}</td></tr>
+<tr><td class="n">gzip-9</td><td class="c">gzip -c9 &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">gzip -dc '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="harc" class="cc">harc</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">harc-1t</td><td class="c">harc-compress.pl --out {OUT} --threads 1</td></tr>
+<tr><td class="n">harc-4t</td><td class="c">harc-compress.pl --out {OUT} --threads 4</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">harc-1t</td><td class="c">harc-compress.pl --out {OUT} --threads 1 --rna</td></tr>
+<tr><td class="n">harc-4t</td><td class="c">harc-compress.pl --out {OUT} --threads 4 --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">harc-1t</td><td class="c">harc-decompress.pl --in '{IN}' --threads 1</td></tr>
+<tr><td class="n">harc-4t</td><td class="c">harc-decompress.pl --in '{IN}' --threads 4</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">harc-1t</td><td class="c">harc-decompress.pl --in '{IN}' --threads 1 --rna</td></tr>
+<tr><td class="n">harc-4t</td><td class="c">harc-decompress.pl --in '{IN}' --threads 4 --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-harc</td><td class="c">harc-compress.pl --out {OUT} --threads 1 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-harc</td><td class="c">harc-compress.pl --out {OUT} --threads 1 --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-harc</td><td class="c">harc-decompress.pl --in '{IN}' --threads 1 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-harc</td><td class="c">harc-decompress.pl --in '{IN}' --threads 1 --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="jarvis" class="cc">jarvis</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">jarvis-1</td><td class="c">jarvis-compress.pl --level 1 --out {OUT}</td></tr>
+<tr><td class="n">jarvis-2</td><td class="c">jarvis-compress.pl --level 2 --out {OUT}</td></tr>
+<tr><td class="n">jarvis-3</td><td class="c">jarvis-compress.pl --level 3 --out {OUT}</td></tr>
+<tr><td class="n">jarvis-4</td><td class="c">jarvis-compress.pl --level 4 --out {OUT}</td></tr>
+<tr><td class="n">jarvis-5</td><td class="c">jarvis-compress.pl --level 5 --out {OUT}</td></tr>
+<tr><td class="n">jarvis-6</td><td class="c">jarvis-compress.pl --level 6 --out {OUT}</td></tr>
+<tr><td class="n">jarvis-7</td><td class="c">jarvis-compress.pl --level 7 --out {OUT}</td></tr>
+<tr><td class="n">jarvis-8</td><td class="c">jarvis-compress.pl --level 8 --out {OUT}</td></tr>
+<tr><td class="n">jarvis-9</td><td class="c">jarvis-compress.pl --level 9 --out {OUT}</td></tr>
+<tr><td class="n">jarvis-10</td><td class="c">jarvis-compress.pl --level 10 --out {OUT}</td></tr>
+<tr><td class="n">jarvis-11</td><td class="c">jarvis-compress.pl --level 11 --out {OUT}</td></tr>
+<tr><td class="n">jarvis-12</td><td class="c">jarvis-compress.pl --level 12 --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression</td></tr>
+<tr><td class="n">jarvis-*</td><td class="c">jarvis-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Compression, wrapper only</td></tr>
+<tr><td class="n">wrap-jarvis</td><td class="c">jarvis-compress.pl --level 1 --out {OUT} --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-jarvis</td><td class="c">jarvis-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="kic" class="cc">kic</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">kic-0</td><td class="c">kic-compress.pl --out {OUT} --mode 0</td></tr>
+<tr><td class="n">kic-1</td><td class="c">kic-compress.pl --out {OUT} --mode 1</td></tr>
+<tr><td class="n">kic-2-8</td><td class="c">kic-compress.pl --out {OUT} --mode 2 --level 8</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">kic-0</td><td class="c">kic-compress.pl --out {OUT} --mode 0 --rna</td></tr>
+<tr><td class="n">kic-1</td><td class="c">kic-compress.pl --out {OUT} --mode 1 --rna</td></tr>
+<tr><td class="n">kic-2-8</td><td class="c">kic-compress.pl --out {OUT} --mode 2 --level 8 --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">kic-*</td><td class="c">kic-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">kic-*</td><td class="c">kic-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-kic</td><td class="c">kic-compress.pl --out {OUT} --mode 0 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-kic</td><td class="c">kic-compress.pl --out {OUT} --mode 0 --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-kic</td><td class="c">kic-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-kic</td><td class="c">kic-decompress.pl --in '{IN}' --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="leon" class="cc">leon</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">leon-12</td><td class="c">leon-compress.pl --out {OUT} --level 12</td></tr>
+<tr><td class="n">leon-13</td><td class="c">leon-compress.pl --out {OUT} --level 13</td></tr>
+<tr><td class="n">leon-14</td><td class="c">leon-compress.pl --out {OUT} --level 14</td></tr>
+<tr><td class="n">leon-15</td><td class="c">leon-compress.pl --out {OUT} --level 15</td></tr>
+<tr><td class="n">leon-16</td><td class="c">leon-compress.pl --out {OUT} --level 16</td></tr>
+<tr><td class="n">leon-17</td><td class="c">leon-compress.pl --out {OUT} --level 17</td></tr>
+<tr><td class="n">leon-18</td><td class="c">leon-compress.pl --out {OUT} --level 18</td></tr>
+<tr><td class="n">leon-19</td><td class="c">leon-compress.pl --out {OUT} --level 19</td></tr>
+<tr><td class="n">leon-20</td><td class="c">leon-compress.pl --out {OUT} --level 20</td></tr>
+<tr><td class="n">leon-21</td><td class="c">leon-compress.pl --out {OUT} --level 21</td></tr>
+<tr><td class="n">leon-22</td><td class="c">leon-compress.pl --out {OUT} --level 22</td></tr>
+<tr><td class="n">leon-23</td><td class="c">leon-compress.pl --out {OUT} --level 23</td></tr>
+<tr><td class="n">leon-24</td><td class="c">leon-compress.pl --out {OUT} --level 24</td></tr>
+<tr><td class="n">leon-25</td><td class="c">leon-compress.pl --out {OUT} --level 25</td></tr>
+<tr><td class="n">leon-26</td><td class="c">leon-compress.pl --out {OUT} --level 26</td></tr>
+<tr><td class="n">leon-27</td><td class="c">leon-compress.pl --out {OUT} --level 27</td></tr>
+<tr><td class="n">leon-28</td><td class="c">leon-compress.pl --out {OUT} --level 28</td></tr>
+<tr><td class="n">leon-29</td><td class="c">leon-compress.pl --out {OUT} --level 29</td></tr>
+<tr><td class="n">leon-30</td><td class="c">leon-compress.pl --out {OUT} --level 30</td></tr>
+<tr><td class="n">leon-31</td><td class="c">leon-compress.pl --out {OUT} --level 31</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">leon-12</td><td class="c">leon-compress.pl --out {OUT} --level 12 --rna</td></tr>
+<tr><td class="n">leon-13</td><td class="c">leon-compress.pl --out {OUT} --level 13 --rna</td></tr>
+<tr><td class="n">leon-14</td><td class="c">leon-compress.pl --out {OUT} --level 14 --rna</td></tr>
+<tr><td class="n">leon-15</td><td class="c">leon-compress.pl --out {OUT} --level 15 --rna</td></tr>
+<tr><td class="n">leon-16</td><td class="c">leon-compress.pl --out {OUT} --level 16 --rna</td></tr>
+<tr><td class="n">leon-17</td><td class="c">leon-compress.pl --out {OUT} --level 17 --rna</td></tr>
+<tr><td class="n">leon-18</td><td class="c">leon-compress.pl --out {OUT} --level 18 --rna</td></tr>
+<tr><td class="n">leon-19</td><td class="c">leon-compress.pl --out {OUT} --level 19 --rna</td></tr>
+<tr><td class="n">leon-20</td><td class="c">leon-compress.pl --out {OUT} --level 20 --rna</td></tr>
+<tr><td class="n">leon-21</td><td class="c">leon-compress.pl --out {OUT} --level 21 --rna</td></tr>
+<tr><td class="n">leon-22</td><td class="c">leon-compress.pl --out {OUT} --level 22 --rna</td></tr>
+<tr><td class="n">leon-23</td><td class="c">leon-compress.pl --out {OUT} --level 23 --rna</td></tr>
+<tr><td class="n">leon-24</td><td class="c">leon-compress.pl --out {OUT} --level 24 --rna</td></tr>
+<tr><td class="n">leon-25</td><td class="c">leon-compress.pl --out {OUT} --level 25 --rna</td></tr>
+<tr><td class="n">leon-26</td><td class="c">leon-compress.pl --out {OUT} --level 26 --rna</td></tr>
+<tr><td class="n">leon-27</td><td class="c">leon-compress.pl --out {OUT} --level 27 --rna</td></tr>
+<tr><td class="n">leon-28</td><td class="c">leon-compress.pl --out {OUT} --level 28 --rna</td></tr>
+<tr><td class="n">leon-29</td><td class="c">leon-compress.pl --out {OUT} --level 29 --rna</td></tr>
+<tr><td class="n">leon-30</td><td class="c">leon-compress.pl --out {OUT} --level 30 --rna</td></tr>
+<tr><td class="n">leon-31</td><td class="c">leon-compress.pl --out {OUT} --level 31 --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">leon-*</td><td class="c">leon-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">leon-*</td><td class="c">leon-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-leon</td><td class="c">leon-compress.pl --out {OUT} --level 12 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-leon</td><td class="c">leon-compress.pl --out {OUT} --level 12 --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-leon</td><td class="c">leon-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-leon</td><td class="c">leon-decompress.pl --in '{IN}' --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="lfastqc" class="cc">lfastqc</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">lfastqc</td><td class="c">lfastqc-compress.pl --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">lfastqc</td><td class="c">lfastqc-compress.pl --out {OUT} --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">lfastqc</td><td class="c">lfastqc-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">lfastqc</td><td class="c">lfastqc-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-lfastqc</td><td class="c">lfastqc-compress.pl --out {OUT} --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-lfastqc</td><td class="c">lfastqc-compress.pl --out {OUT} --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-lfastqc</td><td class="c">lfastqc-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-lfastqc</td><td class="c">lfastqc-decompress.pl --in '{IN}' --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="lfqc" class="cc">lfqc</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">lfqc</td><td class="c">lfqc-compress.pl --out {OUT} --read-length 4000</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Dompression</td></tr>
+<tr><td class="n">lfqc</td><td class="c">lfqc-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Compression, wrapper only</td></tr>
+<tr><td class="n">lfqc</td><td class="c">lfqc-compress.pl --out {OUT} --read-length 4000 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Dompression, wrapper only</td></tr>
+<tr><td class="n">lfqc</td><td class="c">lfqc-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="lizard" class="cc">lizard</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">lizard-10</td><td class="c">lizard -10 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-11</td><td class="c">lizard -11 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-12</td><td class="c">lizard -12 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-13</td><td class="c">lizard -13 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-14</td><td class="c">lizard -14 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-15</td><td class="c">lizard -15 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-16</td><td class="c">lizard -16 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-17</td><td class="c">lizard -17 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-18</td><td class="c">lizard -18 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-19</td><td class="c">lizard -19 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-20</td><td class="c">lizard -20 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-21</td><td class="c">lizard -21 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-22</td><td class="c">lizard -22 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-23</td><td class="c">lizard -23 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-24</td><td class="c">lizard -24 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-25</td><td class="c">lizard -25 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-26</td><td class="c">lizard -26 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-27</td><td class="c">lizard -27 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-28</td><td class="c">lizard -28 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-29</td><td class="c">lizard -29 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-30</td><td class="c">lizard -30 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-31</td><td class="c">lizard -31 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-32</td><td class="c">lizard -32 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-33</td><td class="c">lizard -33 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-34</td><td class="c">lizard -34 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-35</td><td class="c">lizard -35 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-36</td><td class="c">lizard -36 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-37</td><td class="c">lizard -37 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-38</td><td class="c">lizard -38 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-39</td><td class="c">lizard -39 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-40</td><td class="c">lizard -40 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-41</td><td class="c">lizard -41 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-42</td><td class="c">lizard -42 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-43</td><td class="c">lizard -43 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-44</td><td class="c">lizard -44 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-45</td><td class="c">lizard -45 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-46</td><td class="c">lizard -46 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-47</td><td class="c">lizard -47 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-48</td><td class="c">lizard -48 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+<tr><td class="n">lizard-49</td><td class="c">lizard -49 - {OUT} &gt;/dev/null 2&gt;&amp;1</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">lizard -dc '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="lz4" class="cc">lz4</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">lz4-1</td><td class="c">lz4 -1 -c &gt;{OUT}</td></tr>
+<tr><td class="n">lz4-2</td><td class="c">lz4 -2 -c &gt;{OUT}</td></tr>
+<tr><td class="n">lz4-3</td><td class="c">lz4 -3 -c &gt;{OUT}</td></tr>
+<tr><td class="n">lz4-4</td><td class="c">lz4 -4 -c &gt;{OUT}</td></tr>
+<tr><td class="n">lz4-5</td><td class="c">lz4 -5 -c &gt;{OUT}</td></tr>
+<tr><td class="n">lz4-6</td><td class="c">lz4 -6 -c &gt;{OUT}</td></tr>
+<tr><td class="n">lz4-7</td><td class="c">lz4 -7 -c &gt;{OUT}</td></tr>
+<tr><td class="n">lz4-8</td><td class="c">lz4 -8 -c &gt;{OUT}</td></tr>
+<tr><td class="n">lz4-9</td><td class="c">lz4 -9 -c &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">lz4 -dc '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="lzop" class="cc">lzop</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">lzop-1</td><td class="c">lzop -1 -c &gt;{OUT}</td></tr>
+<tr><td class="n">lzop-9</td><td class="c">lzop -9 -c &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">lzop -dc '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="lzturbo" class="cc">lzturbo</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">lzturbo-10-1t</td><td class="c">lzturbo_static -10 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-11-1t</td><td class="c">lzturbo_static -11 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-12-1t</td><td class="c">lzturbo_static -12 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-19-1t</td><td class="c">lzturbo_static -19 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-20-1t</td><td class="c">lzturbo_static -20 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-21-1t</td><td class="c">lzturbo_static -21 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-22-1t</td><td class="c">lzturbo_static -22 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-29-1t</td><td class="c">lzturbo_static -29 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-30-1t</td><td class="c">lzturbo_static -30 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-31-1t</td><td class="c">lzturbo_static -31 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-32-1t</td><td class="c">lzturbo_static -32 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-39-1t</td><td class="c">lzturbo_static -39 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-49-1t</td><td class="c">lzturbo_static -49 -p0 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-10-4t</td><td class="c">lzturbo_static -10 -p4 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-11-4t</td><td class="c">lzturbo_static -11 -p4 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-12-4t</td><td class="c">lzturbo_static -12 -p4 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-19-4t</td><td class="c">lzturbo_static -19 -p4 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-20-4t</td><td class="c">lzturbo_static -20 -p4 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-21-4t</td><td class="c">lzturbo_static -21 -p4 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-22-4t</td><td class="c">lzturbo_static -22 -p4 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-29-4t</td><td class="c">lzturbo_static -29 -p4 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-30-4t</td><td class="c">lzturbo_static -30 -p4 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-31-4t</td><td class="c">lzturbo_static -31 -p4 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-32-4t</td><td class="c">lzturbo_static -32 -p4 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-39-4t</td><td class="c">lzturbo_static -39 -p4 -o &gt;{OUT}</td></tr>
+<tr><td class="n">lzturbo-49-4t</td><td class="c">lzturbo_static -49 -p4 -o &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">lzturbo-static-decompress.pl '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="mfc" class="cc">mfc</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">mfc-1</td><td class="c">mfc-compress.pl --out {OUT} --level 1</td></tr>
+<tr><td class="n">mfc-2</td><td class="c">mfc-compress.pl --out {OUT} --level 2</td></tr>
+<tr><td class="n">mfc-3</td><td class="c">mfc-compress.pl --out {OUT} --level 3</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">mfc-1</td><td class="c">mfc-compress.pl --out {OUT} --rna --level 1</td></tr>
+<tr><td class="n">mfc-2</td><td class="c">mfc-compress.pl --out {OUT} --rna --level 2</td></tr>
+<tr><td class="n">mfc-3</td><td class="c">mfc-compress.pl --out {OUT} --rna --level 3</td></tr>
+</table>
+<table class="cc">
+<tr><td>DNA decompression</td></tr>
+<tr><td class="c">mfc-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td>RNA decompression</td></tr>
+<tr><td class="c">mfc-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+
+
+
+<h3 id="minicom" class="cc">minicom</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">minicom-1t</td><td class="c">minicom-compress.pl --out {OUT} --read-length 250 --threads 1</td></tr>
+<tr><td class="n">minicom-4t</td><td class="c">minicom-compress.pl --out {OUT} --read-length 250 --threads 4</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">minicom-1t</td><td class="c">minicom-decompress.pl --in '{IN}' --threads 1</td></tr>
+<tr><td class="n">minicom-4t</td><td class="c">minicom-decompress.pl --in '{IN}' --threads 4</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-minicom</td><td class="c">minicom-compress.pl --out {OUT} --read-length 250 --threads 1 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-minicom</td><td class="c">minicom-decompress.pl --in '{IN}' --threads 1 --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="naf" class="cc">naf</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">naf-1</td><td class="c">ennaf --fasta --dna --name {NAME} -1 -o {OUT}</td></tr>
+<tr><td class="n">naf-2</td><td class="c">ennaf --fasta --dna --name {NAME} -2 -o {OUT}</td></tr>
+<tr><td class="n">naf-3</td><td class="c">ennaf --fasta --dna --name {NAME} -3 -o {OUT}</td></tr>
+<tr><td class="n">naf-4</td><td class="c">ennaf --fasta --dna --name {NAME} -4 -o {OUT}</td></tr>
+<tr><td class="n">naf-5</td><td class="c">ennaf --fasta --dna --name {NAME} -5 -o {OUT}</td></tr>
+<tr><td class="n">naf-6</td><td class="c">ennaf --fasta --dna --name {NAME} -6 -o {OUT}</td></tr>
+<tr><td class="n">naf-7</td><td class="c">ennaf --fasta --dna --name {NAME} -7 -o {OUT}</td></tr>
+<tr><td class="n">naf-8</td><td class="c">ennaf --fasta --dna --name {NAME} -8 -o {OUT}</td></tr>
+<tr><td class="n">naf-9</td><td class="c">ennaf --fasta --dna --name {NAME} -9 -o {OUT}</td></tr>
+<tr><td class="n">naf-10</td><td class="c">ennaf --fasta --dna --name {NAME} -10 -o {OUT}</td></tr>
+<tr><td class="n">naf-11</td><td class="c">ennaf --fasta --dna --name {NAME} -11 -o {OUT}</td></tr>
+<tr><td class="n">naf-12</td><td class="c">ennaf --fasta --dna --name {NAME} -12 -o {OUT}</td></tr>
+<tr><td class="n">naf-13</td><td class="c">ennaf --fasta --dna --name {NAME} -13 -o {OUT}</td></tr>
+<tr><td class="n">naf-14</td><td class="c">ennaf --fasta --dna --name {NAME} -14 -o {OUT}</td></tr>
+<tr><td class="n">naf-15</td><td class="c">ennaf --fasta --dna --name {NAME} -15 -o {OUT}</td></tr>
+<tr><td class="n">naf-16</td><td class="c">ennaf --fasta --dna --name {NAME} -16 -o {OUT}</td></tr>
+<tr><td class="n">naf-17</td><td class="c">ennaf --fasta --dna --name {NAME} -17 -o {OUT}</td></tr>
+<tr><td class="n">naf-18</td><td class="c">ennaf --fasta --dna --name {NAME} -18 -o {OUT}</td></tr>
+<tr><td class="n">naf-19</td><td class="c">ennaf --fasta --dna --name {NAME} -19 -o {OUT}</td></tr>
+<tr><td class="n">naf-20</td><td class="c">ennaf --fasta --dna --name {NAME} -20 -o {OUT}</td></tr>
+<tr><td class="n">naf-21</td><td class="c">ennaf --fasta --dna --name {NAME} -21 -o {OUT}</td></tr>
+<tr><td class="n">naf-22</td><td class="c">ennaf --fasta --dna --name {NAME} -22 -o {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">naf-1</td><td class="c">ennaf --fasta --rna --name {NAME} -1 -o {OUT}</td></tr>
+<tr><td class="n">naf-2</td><td class="c">ennaf --fasta --rna --name {NAME} -2 -o {OUT}</td></tr>
+<tr><td class="n">naf-3</td><td class="c">ennaf --fasta --rna --name {NAME} -3 -o {OUT}</td></tr>
+<tr><td class="n">naf-4</td><td class="c">ennaf --fasta --rna --name {NAME} -4 -o {OUT}</td></tr>
+<tr><td class="n">naf-5</td><td class="c">ennaf --fasta --rna --name {NAME} -5 -o {OUT}</td></tr>
+<tr><td class="n">naf-6</td><td class="c">ennaf --fasta --rna --name {NAME} -6 -o {OUT}</td></tr>
+<tr><td class="n">naf-7</td><td class="c">ennaf --fasta --rna --name {NAME} -7 -o {OUT}</td></tr>
+<tr><td class="n">naf-8</td><td class="c">ennaf --fasta --rna --name {NAME} -8 -o {OUT}</td></tr>
+<tr><td class="n">naf-9</td><td class="c">ennaf --fasta --rna --name {NAME} -9 -o {OUT}</td></tr>
+<tr><td class="n">naf-10</td><td class="c">ennaf --fasta --rna --name {NAME} -10 -o {OUT}</td></tr>
+<tr><td class="n">naf-11</td><td class="c">ennaf --fasta --rna --name {NAME} -11 -o {OUT}</td></tr>
+<tr><td class="n">naf-12</td><td class="c">ennaf --fasta --rna --name {NAME} -12 -o {OUT}</td></tr>
+<tr><td class="n">naf-13</td><td class="c">ennaf --fasta --rna --name {NAME} -13 -o {OUT}</td></tr>
+<tr><td class="n">naf-14</td><td class="c">ennaf --fasta --rna --name {NAME} -14 -o {OUT}</td></tr>
+<tr><td class="n">naf-15</td><td class="c">ennaf --fasta --rna --name {NAME} -15 -o {OUT}</td></tr>
+<tr><td class="n">naf-16</td><td class="c">ennaf --fasta --rna --name {NAME} -16 -o {OUT}</td></tr>
+<tr><td class="n">naf-17</td><td class="c">ennaf --fasta --rna --name {NAME} -17 -o {OUT}</td></tr>
+<tr><td class="n">naf-18</td><td class="c">ennaf --fasta --rna --name {NAME} -18 -o {OUT}</td></tr>
+<tr><td class="n">naf-19</td><td class="c">ennaf --fasta --rna --name {NAME} -19 -o {OUT}</td></tr>
+<tr><td class="n">naf-20</td><td class="c">ennaf --fasta --rna --name {NAME} -20 -o {OUT}</td></tr>
+<tr><td class="n">naf-21</td><td class="c">ennaf --fasta --rna --name {NAME} -21 -o {OUT}</td></tr>
+<tr><td class="n">naf-22</td><td class="c">ennaf --fasta --rna --name {NAME} -22 -o {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Protein compression</td></tr>
+<tr><td class="n">naf-1</td><td class="c">ennaf --fasta --protein --name {NAME} -1 -o {OUT}</td></tr>
+<tr><td class="n">naf-2</td><td class="c">ennaf --fasta --protein --name {NAME} -2 -o {OUT}</td></tr>
+<tr><td class="n">naf-3</td><td class="c">ennaf --fasta --protein --name {NAME} -3 -o {OUT}</td></tr>
+<tr><td class="n">naf-4</td><td class="c">ennaf --fasta --protein --name {NAME} -4 -o {OUT}</td></tr>
+<tr><td class="n">naf-5</td><td class="c">ennaf --fasta --protein --name {NAME} -5 -o {OUT}</td></tr>
+<tr><td class="n">naf-6</td><td class="c">ennaf --fasta --protein --name {NAME} -6 -o {OUT}</td></tr>
+<tr><td class="n">naf-7</td><td class="c">ennaf --fasta --protein --name {NAME} -7 -o {OUT}</td></tr>
+<tr><td class="n">naf-8</td><td class="c">ennaf --fasta --protein --name {NAME} -8 -o {OUT}</td></tr>
+<tr><td class="n">naf-9</td><td class="c">ennaf --fasta --protein --name {NAME} -9 -o {OUT}</td></tr>
+<tr><td class="n">naf-10</td><td class="c">ennaf --fasta --protein --name {NAME} -10 -o {OUT}</td></tr>
+<tr><td class="n">naf-11</td><td class="c">ennaf --fasta --protein --name {NAME} -11 -o {OUT}</td></tr>
+<tr><td class="n">naf-12</td><td class="c">ennaf --fasta --protein --name {NAME} -12 -o {OUT}</td></tr>
+<tr><td class="n">naf-13</td><td class="c">ennaf --fasta --protein --name {NAME} -13 -o {OUT}</td></tr>
+<tr><td class="n">naf-14</td><td class="c">ennaf --fasta --protein --name {NAME} -14 -o {OUT}</td></tr>
+<tr><td class="n">naf-15</td><td class="c">ennaf --fasta --protein --name {NAME} -15 -o {OUT}</td></tr>
+<tr><td class="n">naf-16</td><td class="c">ennaf --fasta --protein --name {NAME} -16 -o {OUT}</td></tr>
+<tr><td class="n">naf-17</td><td class="c">ennaf --fasta --protein --name {NAME} -17 -o {OUT}</td></tr>
+<tr><td class="n">naf-18</td><td class="c">ennaf --fasta --protein --name {NAME} -18 -o {OUT}</td></tr>
+<tr><td class="n">naf-19</td><td class="c">ennaf --fasta --protein --name {NAME} -19 -o {OUT}</td></tr>
+<tr><td class="n">naf-20</td><td class="c">ennaf --fasta --protein --name {NAME} -20 -o {OUT}</td></tr>
+<tr><td class="n">naf-21</td><td class="c">ennaf --fasta --protein --name {NAME} -21 -o {OUT}</td></tr>
+<tr><td class="n">naf-22</td><td class="c">ennaf --fasta --protein --name {NAME} -22 -o {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">unnaf '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="nakamichi" class="cc">nakamichi</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">nakamichi</td><td class="c">nakamichi-compress.pl --out {OUT} --hashsize 28 --treesize 81000 --treetype i</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression</td></tr>
+<tr><td class="n">nakamichi</td><td class="c">nakamichi '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="nuht" class="cc">nuht</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">nuht</td><td class="c">nuht-compress.pl --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">nuht</td><td class="c">nuht-compress.pl --out {OUT} --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">nuht</td><td class="c">nuht-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">nuht</td><td class="c">nuht-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-nuht</td><td class="c">nuht-compress.pl --out {OUT} --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-nuht</td><td class="c">nuht-compress.pl --out {OUT} --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-nuht</td><td class="c">nuht-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-nuht</td><td class="c">nuht-decompress.pl --in '{IN}' --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="pbzip2" class="cc">pbzip2</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">pbzip2-1-1t</td><td class="c">pbzip2 -1 -c -z -p1 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-2-1t</td><td class="c">pbzip2 -2 -c -z -p1 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-3-1t</td><td class="c">pbzip2 -3 -c -z -p1 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-4-1t</td><td class="c">pbzip2 -4 -c -z -p1 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-5-1t</td><td class="c">pbzip2 -5 -c -z -p1 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-6-1t</td><td class="c">pbzip2 -6 -c -z -p1 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-7-1t</td><td class="c">pbzip2 -7 -c -z -p1 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-8-1t</td><td class="c">pbzip2 -8 -c -z -p1 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-9-1t</td><td class="c">pbzip2 -9 -c -z -p1 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-1-4t</td><td class="c">pbzip2 -1 -c -z -p4 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-2-4t</td><td class="c">pbzip2 -2 -c -z -p4 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-3-4t</td><td class="c">pbzip2 -3 -c -z -p4 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-4-4t</td><td class="c">pbzip2 -4 -c -z -p4 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-5-4t</td><td class="c">pbzip2 -5 -c -z -p4 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-6-4t</td><td class="c">pbzip2 -6 -c -z -p4 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-7-4t</td><td class="c">pbzip2 -7 -c -z -p4 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-8-4t</td><td class="c">pbzip2 -8 -c -z -p4 &gt;{OUT}</td></tr>
+<tr><td class="n">pbzip2-9-4t</td><td class="c">pbzip2 -9 -c -z -p4 &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">pbzip2 -dc '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="pigz" class="cc">pigz</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">pigz-1-1t</td><td class="c">pigz -p 1 -c -1 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-2-1t</td><td class="c">pigz -p 1 -c -2 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-3-1t</td><td class="c">pigz -p 1 -c -3 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-4-1t</td><td class="c">pigz -p 1 -c -4 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-5-1t</td><td class="c">pigz -p 1 -c -5 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-6-1t</td><td class="c">pigz -p 1 -c -6 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-7-1t</td><td class="c">pigz -p 1 -c -7 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-8-1t</td><td class="c">pigz -p 1 -c -8 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-9-1t</td><td class="c">pigz -p 1 -c -9 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-11-1t</td><td class="c">pigz -p 1 -c -11 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-1-4t</td><td class="c">pigz -p 4 -c -1 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-2-4t</td><td class="c">pigz -p 4 -c -2 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-3-4t</td><td class="c">pigz -p 4 -c -3 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-4-4t</td><td class="c">pigz -p 4 -c -4 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-5-4t</td><td class="c">pigz -p 4 -c -5 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-6-4t</td><td class="c">pigz -p 4 -c -6 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-7-4t</td><td class="c">pigz -p 4 -c -7 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-8-4t</td><td class="c">pigz -p 4 -c -8 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-9-4t</td><td class="c">pigz -p 4 -c -9 &gt;{OUT}</td></tr>
+<tr><td class="n">pigz-11-4t</td><td class="c">pigz -p 4 -c -11 &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">pigz -dc '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="pfish" class="cc">pfish</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">pfish</td><td class="c">pfish-compress.pl --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">pfish</td><td class="c">pfish-compress.pl --out {OUT} --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">pfish</td><td class="c">pfish-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">pfish</td><td class="c">pfish-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-pfish</td><td class="c">pfish-compress.pl --out {OUT} --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-pfish</td><td class="c">pfish-compress.pl --out {OUT} --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-pfish</td><td class="c">pfish-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-pfish</td><td class="c">pfish-decompress.pl --in '{IN}' --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="quip" class="cc">quip</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">quip</td><td class="c">quip-compress.pl --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">quip</td><td class="c">quip-compress.pl --out {OUT} --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">quip</td><td class="c">quip-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">quip</td><td class="c">quip-decompress.pl --in '{IN}' --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-quip</td><td class="c">quip-compress.pl --out {OUT} --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-quip</td><td class="c">quip-compress.pl --out {OUT} --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-quip</td><td class="c">quip-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-quip</td><td class="c">quip-decompress.pl --in '{IN}' --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="snzip" class="cc">snzip</h3>
+<table class="cc">
+<tr><td>Compression</td></tr>
+<tr><td class="c">snzip -c &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">snzip -dc '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="spring" class="cc">spring</h3>
+<table class="cc">
+<tr><td colspan="2">DNA compression</td></tr>
+<tr><td class="n">spring-l-1t</td><td class="c">spring-long-compress.pl --out {OUT} --threads 1</td></tr>
+<tr><td class="n">spring-l-4t</td><td class="c">spring-long-compress.pl --out {OUT} --threads 4</td></tr>
+<tr><td class="n">spring-s-1t</td><td class="c">spring-short-compress.pl --out {OUT} --read-length 500 --threads 1</td></tr>
+<tr><td class="n">spring-s-4t</td><td class="c">spring-short-compress.pl --out {OUT} --read-length 500 --threads 4</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression</td></tr>
+<tr><td class="n">spring-l-1t</td><td class="c">spring-long-compress.pl --out {OUT} --threads 1</td></tr>
+<tr><td class="n">spring-l-4t</td><td class="c">spring-long-compress.pl --out {OUT} --threads 4</td></tr>
+<tr><td class="n">spring-s-1t</td><td class="c">spring-short-compress.pl --out {OUT} --read-length 500 --threads 1 --rna</td></tr>
+<tr><td class="n">spring-s-4t</td><td class="c">spring-short-compress.pl --out {OUT} --read-length 500 --threads 4 --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression</td></tr>
+<tr><td class="n">spring-l-1t</td><td class="c">spring-long-decompress.pl --in '{IN}' --threads 1</td></tr>
+<tr><td class="n">spring-l-4t</td><td class="c">spring-long-decompress.pl --in '{IN}' --threads 4</td></tr>
+<tr><td class="n">spring-s-1t</td><td class="c">spring-short-decompress.pl --in '{IN}' --threads 1</td></tr>
+<tr><td class="n">spring-s-4t</td><td class="c">spring-short-decompress.pl --in '{IN}' --threads 4</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression</td></tr>
+<tr><td class="n">spring-l-1t</td><td class="c">spring-long-decompress.pl --in '{IN}' --threads 1</td></tr>
+<tr><td class="n">spring-l-4t</td><td class="c">spring-long-decompress.pl --in '{IN}' --threads 4</td></tr>
+<tr><td class="n">spring-s-1t</td><td class="c">spring-short-decompress.pl --in '{IN}' --threads 1 --rna</td></tr>
+<tr><td class="n">spring-s-4t</td><td class="c">spring-short-decompress.pl --in '{IN}' --threads 4 --rna</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-spring-l</td><td class="c">spring-long-compress.pl --out {OUT} --threads 1 --wrapper-only</td></tr>
+<tr><td class="n">wrap-spring-s</td><td class="c">spring-short-compress.pl --out {OUT} --read-length 500 --threads 1 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA compression, wrapper only</td></tr>
+<tr><td class="n">wrap-spring-l</td><td class="c">spring-long-compress.pl --out {OUT} --threads 1 --wrapper-only</td></tr>
+<tr><td class="n">wrap-spring-s</td><td class="c">spring-short-compress.pl --out {OUT} --read-length 500 --threads 1 --rna --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">DNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-spring-l</td><td class="c">spring-long-decompress.pl --in '{IN}' --threads 1 --wrapper-only</td></tr>
+<tr><td class="n">wrap-spring-s</td><td class="c">spring-short-decompress.pl --in '{IN}' --threads 1 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">RNA decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-spring-l</td><td class="c">spring-long-decompress.pl --in '{IN}' --threads 1 --wrapper-only</td></tr>
+<tr><td class="n">wrap-spring-s</td><td class="c">spring-short-decompress.pl --in '{IN}' --threads 1 --rna --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="uht" class="cc">uht</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">uht</td><td class="c">uht-compress.pl --out {OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression</td></tr>
+<tr><td class="n">uht</td><td class="c">uht-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Compression, wrapper only</td></tr>
+<tr><td class="n">wrap-uht</td><td class="c">uht-compress.pl --out {OUT} --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-uht</td><td class="c">uht-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="xm" class="cc">xm</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">xm-9-0.15</td><td class="c">xm-compress.pl --out {OUT} --hashSize 9 --context 15 --limit 200 --threshold 0.15 --chance 20</td></tr>
+<tr><td class="n">xm-9-0.50</td><td class="c">xm-compress.pl --out {OUT} --hashSize 9 --context 15 --limit 200 --threshold 0.50 --chance 20</td></tr>
+<tr><td class="n">xm-10-0.15</td><td class="c">xm-compress.pl --out {OUT} --hashSize 10 --context 15 --limit 200 --threshold 0.15 --chance 20</td></tr>
+<tr><td class="n">xm-10-0.50</td><td class="c">xm-compress.pl --out {OUT} --hashSize 10 --context 15 --limit 200 --threshold 0.50 --chance 20</td></tr>
+<tr><td class="n">xm-11-0.15</td><td class="c">xm-compress.pl --out {OUT} --hashSize 11 --context 15 --limit 200 --threshold 0.15 --chance 20</td></tr>
+<tr><td class="n">xm-11-0.50</td><td class="c">xm-compress.pl --out {OUT} --hashSize 11 --context 15 --limit 200 --threshold 0.50 --chance 20</td></tr>
+<tr><td class="n">xm-12-0.15</td><td class="c">xm-compress.pl --out {OUT} --hashSize 12 --context 15 --limit 200 --threshold 0.15 --chance 20</td></tr>
+<tr><td class="n">xm-12-0.50</td><td class="c">xm-compress.pl --out {OUT} --hashSize 12 --context 15 --limit 200 --threshold 0.50 --chance 20</td></tr>
+<tr><td class="n">xm-13-0.15</td><td class="c">xm-compress.pl --out {OUT} --hashSize 13 --context 15 --limit 200 --threshold 0.15 --chance 20</td></tr>
+<tr><td class="n">xm-13-0.50</td><td class="c">xm-compress.pl --out {OUT} --hashSize 13 --context 15 --limit 200 --threshold 0.50 --chance 20</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression</td></tr>
+<tr><td class="n">xm-*</td><td class="c">xm-decompress.pl --in '{IN}'</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Compression, wrapper only</td></tr>
+<tr><td class="n">wrap-xm</td><td class="c">xm-compress.pl --out {OUT} --hashSize 9 --context 15 --limit 200 --threshold 0.15 --chance 20 --wrapper-only</td></tr>
+</table>
+<table class="cc">
+<tr><td colspan="2">Decompression, wrapper only</td></tr>
+<tr><td class="n">wrap-xm</td><td class="c">xm-decompress.pl --in '{IN}' --wrapper-only</td></tr>
+</table>
+
+
+
+<h3 id="xz" class="cc">xz</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">xz-0</td><td class="c">xz -zkc0 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-1</td><td class="c">xz -zkc1 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-2</td><td class="c">xz -zkc2 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-3</td><td class="c">xz -zkc3 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-4</td><td class="c">xz -zkc4 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-5</td><td class="c">xz -zkc5 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-6</td><td class="c">xz -zkc6 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-7</td><td class="c">xz -zkc7 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-8</td><td class="c">xz -zkc8 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-9</td><td class="c">xz -zkc9 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-e0</td><td class="c">xz -zkce0 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-e1</td><td class="c">xz -zkce1 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-e2</td><td class="c">xz -zkce2 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-e3</td><td class="c">xz -zkce3 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-e4</td><td class="c">xz -zkce4 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-e5</td><td class="c">xz -zkce5 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-e6</td><td class="c">xz -zkce6 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-e7</td><td class="c">xz -zkce7 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-e8</td><td class="c">xz -zkce8 &gt;{OUT}</td></tr>
+<tr><td class="n">xz-e9</td><td class="c">xz -zkce9 &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">xz -dc '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="zpaq" class="cc">zpaq</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">zpaq-1-1t</td><td class="c">zpaq-compress.pl --out {OUT} --level 1 --threads 1</td></tr>
+<tr><td class="n">zpaq-2-1t</td><td class="c">zpaq-compress.pl --out {OUT} --level 2 --threads 1</td></tr>
+<tr><td class="n">zpaq-3-1t</td><td class="c">zpaq-compress.pl --out {OUT} --level 3 --threads 1</td></tr>
+<tr><td class="n">zpaq-4-1t</td><td class="c">zpaq-compress.pl --out {OUT} --level 4 --threads 1</td></tr>
+<tr><td class="n">zpaq-5-1t</td><td class="c">zpaq-compress.pl --out {OUT} --level 5 --threads 1</td></tr>
+<tr><td class="n">zpaq-1-4t</td><td class="c">zpaq-compress.pl --out {OUT} --level 1 --threads 4</td></tr>
+<tr><td class="n">zpaq-2-4t</td><td class="c">zpaq-compress.pl --out {OUT} --level 2 --threads 4</td></tr>
+<tr><td class="n">zpaq-3-4t</td><td class="c">zpaq-compress.pl --out {OUT} --level 3 --threads 4</td></tr>
+<tr><td class="n">zpaq-4-4t</td><td class="c">zpaq-compress.pl --out {OUT} --level 4 --threads 4</td></tr>
+<tr><td class="n">zpaq-5-4t</td><td class="c">zpaq-compress.pl --out {OUT} --level 5 --threads 4</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">zpaq-decompress.pl '{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="zpipe" class="cc">zpipe</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">zpipe-1</td><td class="c">zpipe -1 &gt;{OUT}</td></tr>
+<tr><td class="n">zpipe-2</td><td class="c">zpipe -2 &gt;{OUT}</td></tr>
+<tr><td class="n">zpipe-3</td><td class="c">zpipe -3 &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">zpipe -d &lt;'{IN}'</td></tr>
+</table>
+
+
+
+<h3 id="zstd" class="cc">zstd</h3>
+<table class="cc">
+<tr><td colspan="2">Compression</td></tr>
+<tr><td class="n">zstd-1-1t</td><td class="c">zstd --single-thread -1 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-2-1t</td><td class="c">zstd --single-thread -2 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-3-1t</td><td class="c">zstd --single-thread -3 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-4-1t</td><td class="c">zstd --single-thread -4 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-5-1t</td><td class="c">zstd --single-thread -5 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-6-1t</td><td class="c">zstd --single-thread -6 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-7-1t</td><td class="c">zstd --single-thread -7 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-8-1t</td><td class="c">zstd --single-thread -8 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-9-1t</td><td class="c">zstd --single-thread -9 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-10-1t</td><td class="c">zstd --single-thread -10 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-11-1t</td><td class="c">zstd --single-thread -11 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-12-1t</td><td class="c">zstd --single-thread -12 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-13-1t</td><td class="c">zstd --single-thread -13 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-14-1t</td><td class="c">zstd --single-thread -14 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-15-1t</td><td class="c">zstd --single-thread -15 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-16-1t</td><td class="c">zstd --single-thread -16 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-17-1t</td><td class="c">zstd --single-thread -17 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-18-1t</td><td class="c">zstd --single-thread -18 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-19-1t</td><td class="c">zstd --single-thread -19 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-20-1t</td><td class="c">zstd --single-thread --ultra -20 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-21-1t</td><td class="c">zstd --single-thread --ultra -21 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-22-1t</td><td class="c">zstd --single-thread --ultra -22 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-1-4t</td><td class="c">zstd -T4 -1 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-2-4t</td><td class="c">zstd -T4 -2 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-3-4t</td><td class="c">zstd -T4 -3 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-4-4t</td><td class="c">zstd -T4 -4 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-5-4t</td><td class="c">zstd -T4 -5 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-6-4t</td><td class="c">zstd -T4 -6 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-7-4t</td><td class="c">zstd -T4 -7 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-8-4t</td><td class="c">zstd -T4 -8 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-9-4t</td><td class="c">zstd -T4 -9 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-10-4t</td><td class="c">zstd -T4 -10 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-11-4t</td><td class="c">zstd -T4 -11 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-12-4t</td><td class="c">zstd -T4 -12 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-13-4t</td><td class="c">zstd -T4 -13 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-14-4t</td><td class="c">zstd -T4 -14 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-15-4t</td><td class="c">zstd -T4 -15 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-16-4t</td><td class="c">zstd -T4 -16 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-17-4t</td><td class="c">zstd -T4 -17 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-18-4t</td><td class="c">zstd -T4 -18 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-19-4t</td><td class="c">zstd -T4 -19 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-20-4t</td><td class="c">zstd -T4 --ultra -20 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-21-4t</td><td class="c">zstd -T4 --ultra -21 -c &gt;{OUT}</td></tr>
+<tr><td class="n">zstd-22-4t</td><td class="c">zstd -T4 --ultra -22 -c &gt;{OUT}</td></tr>
+</table>
+<table class="cc">
+<tr><td>Decompression</td></tr>
+<tr><td class="c">zstd -dc '{IN}' 2&gt;/dev/null</td></tr>
+</table>

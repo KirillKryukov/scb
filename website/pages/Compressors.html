@@ -1,0 +1,764 @@
+<div class="text">
+
+<h2>Criteria</h2>
+<p>We include compressors suitable to practical tasks of sequence comparison.
+Specifically, we benchmark lossless reference-free compression of well-formed FASTA files.
+We use all specialized sequence compressors that we could find and make to work.
+For general-purpose compressors we use only the major ones, in terms of performance, historical importance, or popularity.
+Suggestions for adding more compressors are welcome!</p>
+<p>Any included compressors must:</p>
+<ul class="dense">
+<li>Be available and free to use (at least for academic purpose)</li>
+<li>Work on a typical modern Linux machine</li>
+<li>Have command line interface</li>
+</ul>
+<p>Below is the list of all tested compressors with brief comments.
+However please check the benchmark data for more complete picture.
+Better yet, install and evaluate any promising compressors on your own machine and with your own data.</p>
+
+<p><a href="?page=Missing-Compressors">Missing Compressors page</a> lists compressors that are not included.</p>
+
+<hr>
+<p><b>Jump to:</b></p>
+<p><b>Specialized compressors:</b>
+<a href="#2bit">2bit</a>
+<a href="#ac">ac</a>
+<a href="#alapy">alapy</a>
+<a href="#beetl">beetl</a>
+<a href="#blast">blast</a>
+<a href="#dcom">dcom</a>
+<a href="#dlim">dlim</a>
+<a href="#dnax">dnax</a>
+<a href="#dsrc">dsrc</a>
+<a href="#fastqz">fastqz</a>
+<a href="#fqs">fqs</a>
+<a href="#fqzcomp">fqzcomp</a>
+<a href="#geco">geco</a>
+<a href="#gtz">gtz</a>
+<a href="#harc">harc</a>
+<a href="#jarvis">jarvis</a>
+<a href="#kic">kic</a>
+<a href="#leon">leon</a>
+<a href="#lfastqc">lfastqc</a>
+<a href="#lfqc">lfqc</a>
+<a href="#mfc">mfc</a>
+<a href="#minicom">minicom</a>
+<a href="#naf">naf</a>
+<a href="#nuht">nuht</a>
+<a href="#pfish">pfish</a>
+<a href="#quip">quip</a>
+<a href="#spring">spring</a>
+<a href="#uht">uht</a>
+<a href="#xm">xm</a>
+</p>
+
+<p><b>General-purpose compressors:</b>
+<a href="#bcm">bcm</a>
+<a href="#brieflz">brieflz</a>
+<a href="#brotli">brotli</a>
+<a href="#bsc">bsc</a>
+<a href="#bzip2">bzip2</a>
+<a href="#cmix">cmix</a>
+<a href="#copy">copy</a>
+<a href="#gzip">gzip</a>
+<a href="#lizard">lizard</a>
+<a href="#lz4">lz4</a>
+<a href="#lzop">lzop</a>
+<a href="#lzturbo">lzturbo</a>
+<a href="#nakamichi">nakamichi</a>
+<a href="#pbzip2">pbzip2</a>
+<a href="#pigz">pigz</a>
+<a href="#snzip">snzip</a>
+<a href="#xz">xz</a>
+<a href="#zpaq">zpaq</a>
+<a href="#zpipe">zpipe</a>
+<a href="#zstd">zstd</a></p>
+
+<hr>
+
+<h2>Specialized compressors</h2>
+
+
+<h3 id="2bit">2bit</h3>
+<ul>
+<li>Paper: W. James Kent (2002)
+  "BLAT - The BLAST-Like Alignment Tool",
+  Genome Research, 12(4), 656-664,
+  <a href="https://doi.org/10.1101/gr.229202">https://doi.org/10.1101/gr.229202</a></li>
+<li>About: <a href="https://genome.ucsc.edu/goldenpath/help/twoBit.html">https://genome.ucsc.edu/goldenpath/help/twoBit.html</a></li>
+<li>Sources: <a href="http://hgdownload.soe.ucsc.edu/admin/">http://hgdownload.soe.ucsc.edu/admin/</a></li>
+<li>Binaries: <a href="http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/">http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/</a></li>
+<li>Format: <a href="http://genome.ucsc.edu/FAQ/FAQformat.html#format7">http://genome.ucsc.edu/FAQ/FAQformat.html#format7</a></li>
+</ul>
+<p>2bit is a database format used by BLAT: <a href="https://genome.ucsc.edu/FAQ/FAQblat">https://genome.ucsc.edu/FAQ/FAQblat</a>.
+It used to be limited to 4 GB input, but recently support for long input has been finally added with "-long" switch.</p>
+<p>Version tested: "faToTwoBit" and "twoBitToFa" binaries dated 2018-11-07,
+ from UCSC: <a href="http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/">http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/</a>.</p>
+<p class="cons"><b>Comments:</b> No support for RNA or protein sequences.
+ Requires wrapper to preserve sequence names, line lengths and IUPAC characters.
+ Non-free to use: <i>"Blat source and executables are freely available for academic,
+ nonprofit and personal use. Commercial licensing information is available
+ on the Kent Informatics website."</i> - from FAQ: <a href="https://genome.ucsc.edu/FAQ/FAQblat">https://genome.ucsc.edu/FAQ/FAQblat</a></p>
+
+
+<h3 id="ac">ac</h3>
+<ul>
+<li>Paper: Diogo Pratas, Morteza Hosseini, Armando J. Pinho (2018)
+  "Compression of Amino Acid Sequences",
+  In International Conference on Practical Applications of Computational Biology & Bioinformatics, May 2018, pp. 105-113, Springer, Cham.</li>
+<li>Paper: Morteza Hosseini, Diogo Pratas, Armando J. Pinho (2019)
+  "AC: A Compression Tool for Amino Acid Sequences",
+  Interdisciplinary Sciences: Computational Life Sciences, 11, 68-76,
+  <a href="https://doi.org/10.1007/s12539-019-00322-1">https://doi.org/10.1007/s12539-019-00322-1</a></li>
+<li>GitHub: <a href="https://github.com/cobilab/ac">https://github.com/cobilab/ac</a></li>
+</ul>
+<p>Version tested: 1.1, 2020-01-29,
+  <a href="https://github.com/cobilab/ac/tree/fc136fc403d1cf4f61eb701ccabe567c3a7db00e">commit fc136fc</a>,
+  built from source.</p>
+
+
+<h3 id="alapy">alapy</h3>
+<ul>
+<li>Homepage: <a href="http://alapy.com/services/alapy-compressor/">http://alapy.com/services/alapy-compressor/</a></li>
+<li>GitHub: <a href="https://github.com/ALAPY/alapy_arc">https://github.com/ALAPY/alapy_arc</a></li>
+</ul>
+<p><i>"ALAPY Compressor - is a cross-platform software tool used for efficient compression of NGS data.
+  Latest version utilizes lossless compression algorithm developed by our data scientists for fastq files
+  and optimized for the latest sequencing machines from Illumina."</i></p>
+<p>Version tested: 1.3.0, 2017-07-25, binary from GitHub.</p>
+<p class="cons"><b>Comments:</b>
+Closed source and non-free.
+Limited to one instance at a time.
+alapy-b (<span class="code">alapy_arc -l b</span>) performs nearly identically to fastqz-slow (<span class="code">fastqz c</span>).</p>
+
+
+<h3 id="beetl">beetl</h3>
+<ul>
+<li>Paper: Markus J. Bauer, Anthony J. Cox, Giovanna Rosone (2011)
+  "Lightweight BWT construction for very large string collections"
+  In Combinatorial Pattern Matching (Lecture Notes in Computer Science 6661), Springer Berlin, 219-231,
+  <a href="https://doi.org/10.1007/978-3-642-21458-5_20">https://doi.org/10.1007/978-3-642-21458-5_20</a></li>
+<li>Paper: Anthony J. Cox, Markus J. Bauer, Tobias Jakobi, Giovanna Rosone (2012)
+  "Large-scale compression of genomic sequence databases with the Burrows-Wheeler transform"
+  Bioinformatics, 28(11), 1415-1419,
+  <a href="https://doi.org/10.1093/bioinformatics/bts173">https://doi.org/10.1093/bioinformatics/bts173</a></li>
+<li>GitHub: <a href="https://github.com/BEETL/BEETL">https://github.com/BEETL/BEETL</a></li>
+</ul>
+<p>BEETL: Burrows-Wheeler Extended Tool Library, from Ilumina.</p>
+<p>Version tested: <a href="https://github.com/BEETL/BEETL/tree/327cc65eb408dfb1ec31a107614140a11efe1152">commit 327cc65</a>, 2019-11-14, built from source.</p>
+<p class="cons"><b>Comments:</b>
+Requires sequences of identical length.
+Works only on short sequences.
+Not a complete compressor - it only computes BWT which then has to be compressed with another compressor (zstd in this benchmark).</p>
+
+
+<h3 id="blast">blast</h3>
+<ul>
+<li>Paper: Stephen F. Altschul, Warren Gish, Webb Miller, Eugene W. Myers, David J. Lipman (1990)
+  "Basic local alignment search tool"
+  Journal of Molecular Biology, 215(3), 403-410,
+  <a href="https://doi.org/10.1016/S0022-2836(05)80360-2">https://doi.org/10.1016/S0022-2836(05)80360-2</a></li>
+<li>BLAST Homepage: <a href="https://blast.ncbi.nlm.nih.gov/">https://blast.ncbi.nlm.nih.gov/</a></li>
+<li>BLAST FTP: <a href="ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/">ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/</a></li>
+</ul>
+<p>Database format of BLAST, the most popular homology search tool.</p>
+<p>Version tested: "convert2blastmask", "makeblastdb" and "blastdbcmd" binaries from BLAST 2.8.1+, 2018-11-26,
+  64-bit Linux binaries from FTP:
+  <a href="ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.8.1/ncbi-blast-2.8.1+-x64-linux.tar.gz">ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.8.1/ncbi-blast-2.8.1+-x64-linux.tar.gz</a></p>
+<p class="cons"><b>Comments:</b>
+ Does not preserve line length, does not support RNA.
+ It's a multi-file format, even tiny data is represented in several files when converted to blast format.</p>
+
+
+<h3 id="dcom">dcom</h3>
+<ul>
+<li>Paper: Pinghao Li, Shuang Wang, Jihoon Kim, Hongkai Xiong, Lucila Ohno-Machado, Xiaoqian Jiang (2013)
+  "DNA-COMPACT: DNA COMpression Based on a Pattern-Aware Contextual Modeling Technique"
+  PLOS ONE, 8(11), e80377,
+  <a href="https://doi.org/10.1371/journal.pone.0080377">https://doi.org/10.1371/journal.pone.0080377</a></li>
+<li>Sourceforge: <a href="https://sourceforge.net/projects/dnacompact/">https://sourceforge.net/projects/dnacompact/</a></li>
+</ul>
+<p>DNA-COMPACT is a DNA-only compressor. It can compress with and without reference.
+(Only compression without reference was tested here).</p>
+<p>Version tested: Built from latest public source on Sourceforge
+  (<a href="https://sourceforge.net/projects/dnacompact/files/">https://sourceforge.net/projects/dnacompact/files/</a>, dated 2013-08-29</p>
+<p class="cons"><b>Comments:</b> Does not support FASTA format, expects single nameless DNA sequence as input.
+Basic functionality has to be added via wrapper. This includes support of FASTA input and output,
+support for 'N' and IUPAC codes, support for masked sequence.
+Creates a temporary file 'tmphuff.txt' in current directory.
+This results in problems when running multiple DNA-COMPACT compression tasks in parallel:
+ some of them crash and produce corrupted compressed files.
+ Needs 2 decompression commands.
+ Fails with "Segmentation fault", needs "ulimit -s unlimited" before running to avoid this crash.
+ (All these issues are also worked around in the wrapper).</p>
+
+
+<h3 id="dlim">dlim</h3>
+<ul>
+<li>Paper: Monzoorul Haque Mohammed, Anirban Dutta, Tungadri Bose, Sudha Chadaram, Sharmila S. Mande (2012)
+  "DELIMINATE - a fast and efficient method for loss-less compression of genomic sequences"
+  Bioinformatics, 28(19), 2527-2529,
+  <a href="https://doi.org/10.1093/bioinformatics/bts467">https://doi.org/10.1093/bioinformatics/bts467</a></li>
+</ul>
+<p>Version tested: Version 1.3c, binary received from authors by email.</p>
+<p class="cons"><b>Comments:</b> No website - the only way to obtain this compressor is by contacting the authors.
+Closed source. Not free to use: <i>"Kindly note that this tool is free for academic use. In case you plan to use
+it commercially, kindly get in touch with [authors]"</i> - email from one of the authors.
+Creates temporary files in the current directory, which causes crashes when running parallel compression tasks.
+Has no streaming mode.
+Relies on "7za" binary.</p>
+
+
+<h3 id="dnax">dnax</h3>
+<ul>
+<li>Paper: Giovanni Manzini, Marcella Rastero (2004)
+  "A simple and fast DNA compressor"
+  Software - Practice and Experience, 34, 1397-1411,
+  <a href="https://doi.org/10.1002/spe.619">https://doi.org/10.1002/spe.619</a></li>
+</ul>
+<p>Version tested: dnaX 0.1.0, source received from authors by email and built using bundled makefile.</p>
+<p class="cons"><b>Comments:</b>
+No website - the only way to obtain this compressor is by contacting the authors.
+Creates temporary files in the current directory.
+Has no streaming mode.
+Does not support FASTA format, N, IUPAC codes, mask, RNA and protein sequences.
+Memory consumption growth proportionally to data size.
+Does not support data larger than 2 GB.
+Crashes on some data (reported to author).
+Freezes while decompressing 10 kB poly-A sequence.</p>
+
+
+<h3 id="dsrc">dsrc</h3>
+<ul>
+<li>Paper: Sebastian Deorowicz and Szymon Grabowski (2011)
+  "Compression of DNA sequence reads in FASTQ format"
+  Bioinformatics, 27(6), 860-862,
+  <a href="https://doi.org/10.1093/bioinformatics/btr014">https://doi.org/10.1093/bioinformatics/btr014</a></li>
+<li>Paper: Lukasz Roguski, Sebastian Deorowicz (2014)
+  "DSRC 2&mdash;Industry-oriented compression of FASTQ files"
+  Bioinformatics, 30(15), 2213-2215,
+  <a href="https://doi.org/10.1093/bioinformatics/btu208">https://doi.org/10.1093/bioinformatics/btu208</a></li>
+<li>GitHub: <a href="https://github.com/refresh-bio/DSRC">https://github.com/refresh-bio/DSRC</a></li>
+<li>Homepage: <a href="http://sun.aei.polsl.pl/dsrc/">http://sun.aei.polsl.pl/dsrc/</a></li>
+</ul>
+<p>Version tested: "2.02 @ 30.09.2014",
+  <a href="https://github.com/refresh-bio/DSRC/tree/5eda82cb1546b71cd3480bc0aba1d321b52bd0b4">commit 5eda82c</a>,
+  2015-06-04, built with <span class="code">make -f Makefile.c++11 bin</span>.</p>
+<p class="cons"><b>Comments:</b>
+Corrupts data if input contains non-ACGT characters (such as "H") (<a href="https://github.com/refresh-bio/DSRC/issues/24">Issue #24</a>).</p>
+
+
+<h3 id="fastqz">fastqz</h3>
+<ul>
+<li>Paper: James K. Bonfield, Matthew V. Mahoney (2013)
+  "Compression of FASTQ and SAM Format Sequencing Data"
+  PLoS ONE, 8(3), e59190, 
+  <a href="https://doi.org/10.1371/journal.pone.0059190">https://doi.org/10.1371/journal.pone.0059190</a></li>
+<li>GitHub: <a href="https://github.com/fwip/fastqz">https://github.com/fwip/fastqz</a></li>
+<li>Homepage: <a href="http://mattmahoney.net/dc/fastqz/">http://mattmahoney.net/dc/fastqz/</a></li>
+</ul>
+<p>Version tested: 1.5, 2012-03-15, obtained from GitHub mirror,
+  <a href="https://github.com/fwip/fastqz/tree/39b2bbc1df8fc677c21396f93cc786813723d0d9">commit 39b2bbc</a>,
+  built after changing <span class="code">-lpthread</span> to <span class="code">-pthread</span> in Makefile.</p>
+<p class="cons"><b>Comments:</b>
+It's tuned to specific distribution of qualities.</p>
+
+
+<h3 id="fqs">fqs</h3>
+<ul>
+<li>Paper: Sebastian Deorowicz (2020)
+  "FQSqueezer: k-mer-based compression of sequencing data"
+  Scientific Reports, 10, 578,
+  <a href="https://doi.org/10.1038/s41598-020-57452-6">https://doi.org/10.1038/s41598-020-57452-6</a></li>
+<li>GitHub: <a href="https://github.com/refresh-bio/fqsqueezer">https://github.com/refresh-bio/fqsqueezer</a></li>
+</ul>
+<p><i>"We present FQSqueezer, a novel compression algorithm for sequencing data able to process single- and paired-end reads of variable lengths.
+  It is based on the ideas from the famous prediction by partial matching and dynamic Markov coder algorithms known from the general-purpose-compressors world."</i></p>
+<p>Version tested: FQSqueezer 0.1, <a href="https://github.com/refresh-bio/fqsqueezer/tree/5741fc53de7153802d4741b2ac6b911da9082421">commit 5741fc5</a>, 2019-05-17.</p>
+
+
+<h3 id="fqzcomp">fqzcomp</h3>
+<ul>
+<li>Paper: James K. Bonfield, Matthew V. Mahoney (2013)
+  "Compression of FASTQ and SAM Format Sequencing Data"
+  PLoS ONE, 8(3), e59190,
+  <a href="https://doi.org/10.1371/journal.pone.0059190">https://doi.org/10.1371/journal.pone.0059190</a></li>
+<li>GitHub: <a href="https://github.com/jkbonfield/fqzcomp">https://github.com/jkbonfield/fqzcomp</a></li>
+</ul>
+<p>Version tested: 4.6,
+  <a href="https://github.com/jkbonfield/fqzcomp/tree/96f2f61eecc4f83d520f3c7201b5a3487f512514">commit 96f2f61</a>,
+  2019-12-02.</p>
+<p class="cons"><b>Comments:</b>
+<span class="code">fqzcomp -s9</span> crashes during compression (<a href="https://github.com/jkbonfield/fqzcomp/issues/2">Issue #2</a>).</p>
+
+
+<h3 id="geco">geco</h3>
+<ul>
+<li>Paper: Diogo Pratas, Armando J. Pinho, Paulo J. S. G. Ferreira (2016)
+  "Efficient compression of genomic sequences"
+  Data Compression Conference 2016 (DCC-2016), Snowbird, UT, 231-240.</li>
+<li>GeCo at GitHub: <a href="https://github.com/cobilab/geco">https://github.com/cobilab/geco</a></li>
+<li>GeCo2 at GitHub: <a href="https://github.com/pratas/geco2">https://github.com/pratas/geco2</a></li>
+<li>GeCo homepage: <a href="http://bioinformatics.ua.pt/software/geco/">http://bioinformatics.ua.pt/software/geco/</a></li>
+</ul>
+<p>GeCo version tested: v.2.1, 2016-12-24, built from source,
+  <a href="https://github.com/cobilab/geco/tree/5569304d204a66f0e08ca539908f9447bf9b5932">commit 5569304</a>.</p>
+<p>Geco2 version tested: v.1.1, 2019-02-02, built from source,
+  <a href="https://github.com/pratas/geco2/tree/062a8c0529f5965043e09cb8f7e0f434cba092e5">commit 062a8c0</a>.</p>
+<p class="cons"><b>Comments:</b>
+Compresses only DNA sequence.
+Does not support FASTA format, N, IUPAC codes, mask.</p>
+
+
+<h3 id="gtz">gtz</h3>
+<ul>
+<li>Paper: Yuting Xing, Gen Li, Zhenguo Wang, Bolun Feng, Zhuo Song, Chengkun Wu (2017)
+  "GTZ: a fast compression and cloud transmission tool optimized for FASTQ files"
+  BMC Bioinformatics, 18(Suppl 16), 549,
+  <a href="https://doi.org/10.1186/s12859-017-1973-5">https://doi.org/10.1186/s12859-017-1973-5</a></li>
+<li>GitHub: <a href="https://github.com/Genetalks/gtz">https://github.com/Genetalks/gtz</a></li>
+</ul>
+<p>Version tested: GTX.Zip PROFESSIONAL-2.1.3-V-2020-03-18 07:11:20,
+  binary from <a href="https://gtz.io/gtz_latest.run">https://gtz.io/gtz_latest.run</a></p>
+<p class="cons"><b>Comments:</b>
+Does not accept data from standard input during compression.
+Refuses to compress if output file name does not end with ".gtz".
+According to EULA it phones home.
+GTZ.Zip Profesional expires and stops working 6 months after installation,
+rendering it useless for reproducible experiments (<a href="https://github.com/Genetalks/gtz/issues/20">Issue #20</a>).
+Installation script modifies user's .bashrc file without asking or notifying the user (<a href="https://github.com/Genetalks/gtz/issues/19">Issue #19</a>).
+Closed source and non-free.</p>
+
+
+<h3 id="harc">harc</h3>
+<ul>
+<li>Paper: Shubham Chandak, Kedar Tatwawadi, Tsachy Weissman (2018)
+  "Compression of genomic sequencing reads via hash-based reordering: algorithm and analysis"
+  Bioinformatics, 34(4), 558-567,
+  <a href="https://doi.org/10.1093/bioinformatics/btx639">https://doi.org/10.1093/bioinformatics/btx639</a></li>
+<li>GitHub: <a href="https://github.com/shubhamchandak94/HARC">https://github.com/shubhamchandak94/HARC</a></li>
+</ul>
+<p>Version tested: HARC
+  <a href="https://github.com/shubhamchandak94/HARC/tree/cf35cafc55e4b6d5775ba5abf5981ab36b0d9d63">commit cf35caf</a>, 
+  2019-10-04, built from source.</p>
+<p class="cons"><b>Comments:</b>
+Has to be run from its own source directory.
+Recompiles itself on every run, which would be problematic in case of trying to run multiple harc compression tasks in parallel.
+Uses 7z and bsc binaries.
+GitHub repository has no license.</p>
+
+
+<h3 id="jarvis">jarvis</h3>
+<ul>
+<li>Paper: Diogo Pratas, Morteza Hosseini, Jorge M. Silva, Armando J. Pinho (2019)
+  "A Reference-Free Lossless Compression Algorithm for DNA Sequences Using a Competitive Prediction of Two Classes of Weighted Models"
+  Entropy 2019, 21, 1074,
+  <a href="https://doi.org/10.3390/e21111074">https://doi.org/10.3390/e21111074</a></li>
+<li>GitHub: <a href="https://github.com/cobilab/jarvis">https://github.com/cobilab/jarvis</a></li>
+</ul>
+<p>JARVIS appears to be a further development of GeCo and GeCo2.</p>
+<p>Version tested: JARVIS v.1.1, 2019-04-30,
+  built from source, <a href="https://github.com/cobilab/jarvis/tree/d7daef5c0919d109c78e6179599d13572fb677de">commit d7daef5</a></p>
+<p class="cons"><b>Comments:</b>
+Compresses only DNA sequence.
+Does not support FASTA format, N, IUPAC codes, mask.</p>
+
+
+<h3 id="kic">kic</h3>
+<ul>
+<li>Paper: Yeting Zhang, Khyati Patel, Tony Endrawis, Autumn Bowers, Yazhou Sun (2016)
+  "A FASTQ compressor based on integer-mapped k-mer indexing for biologist"
+  Gene, 579(1), 75-81,
+  <a href="https://doi.org/10.1016/j.gene.2015.12.053">https://doi.org/10.1016/j.gene.2015.12.053</a></li>
+<li>Homepage: <a href="http://www.ysunlab.org/kic.jsp">http://www.ysunlab.org/kic.jsp</a></li>
+</ul>
+<p>Version tested: KIC 0.2, 2015-11-25, binary from homepage:
+  <a href="http://www.ysunlab.org/dist/kic.V0.2.zip">http://www.ysunlab.org/dist/kic.V0.2.zip</a>.</p>
+<p class="cons"><b>Comments:</b>
+Closed source.
+Uses 4 cores by default, trying to change to 1 core with "-n 1" always crashes.</p>
+
+
+<h3 id="leon">leon</h3>
+<ul>
+<li>Paper: Gaetan Benoit, Claire Lemaitre, Dominique Lavenier, Erwan Drezen, Thibault Dayris, Raluca Uricaru, Guillaume Rizk (2015)
+  "Reference-free compression of high throughput sequencing data with a probabilistic de Bruijn graph"
+  BMC Bioinformatics, 16, 288,
+  <a href="https://doi.org/10.1186/s12859-015-0709-7">https://doi.org/10.1186/s12859-015-0709-7</a></li>
+<li>GitHub: <a href="https://github.com/GATB/leon">https://github.com/GATB/leon</a></li>
+<li>Homepage: <a href="http://gatb.inria.fr/software/leon/">http://gatb.inria.fr/software/leon/</a></li>
+</ul>
+<p>Version tested: Leon 1.0.0, 2016-02-27, Linux binary from GitHub: <a href="https://github.com/GATB/leon/releases">https://github.com/GATB/leon/releases</a>.</p>
+<p class="cons"><b>Comments:</b>
+Massively slows down with the increased read length.
+Does not support IUPAC codes. Has no streaming mode.
+Crashes when compressing sequence with 1-character name (<a href="https://github.com/GATB/leon/issues/6">Issue #6</a>).
+Uses current directory for temporary files (<a href="https://github.com/GATB/leon/issues/7">Issue #7</a>).
+Generates broken read numbers when decompressing archive with no headers (<a href="https://github.com/GATB/leon/issues/8">Issue #8</a>).
+Crashes on some large data (<a href="https://github.com/GATB/leon/issues/9">Issue #9</a>).
+Does not allow specifying output file name.</p>
+
+
+<h3 id="lfastqc">lfastqc</h3>
+<ul>
+<li>Paper: Sultan Al Yami, Chun-Hsi Huang (2019)
+  "LFastqC: A lossless non-reference-based FASTQ compressor"
+  PLoS One, 14(11), e0224806,
+  <a href="https://doi.org/10.1371/journal.pone.0224806">https://doi.org/10.1371/journal.pone.0224806</a></li>
+<li>GitHub: <a href="https://github.uconn.edu/sya12005/LFastqC">https://github.uconn.edu/sya12005/LFastqC</a></li>
+</ul>
+<p>Version tested: LFastqC <a href="https://github.uconn.edu/sya12005/LFastqC/tree/60e5fda373d3d724af36af10f65ff9c69367df00">commit 60e5fda</a>,
+  2019-02-28, with <a href="?page=Wrappers#fix-lfastqc">necessary fixes</a>.</p>
+<p class="cons"><b>Comments:</b>
+Works only when executed from its directory.
+Expects input in its directory.
+Uses current directory for temporary files, instead of TMPDIR.
+Fails during tar step.
+Expects sequence names to have identical length.
+During decompression it attempts to read incomplete sequence data while it's still being written by the MFCompressD.
+Uses " | grep Hello" to silence colsole output of compressors that it uses.
+Not free since it depends on non-free MFCompress.
+Compression fails on 2.76 GB Helicobacter dataset and on larger data.</p>
+
+
+<h3 id="lfqc">lfqc</h3>
+<ul>
+<li>Paper: Marius Nicolae, Sudipta Pathak, Sanguthevar Rajasekaran (2015)
+  "LFQC: a lossless compression algorithm for FASTQ files"
+  Bioinformatics, 31(20), 3276-3281,
+  <a href="https://doi.org/10.1093/bioinformatics/btv384">https://doi.org/10.1093/bioinformatics/btv384</a></li>
+<li>GitHub: <a href="https://github.com/mariusmni/lfqc">https://github.com/mariusmni/lfqc</a></li>
+</ul>
+<p>Version tested: LFQC <a href="https://github.com/mariusmni/lfqc/tree/59f56e006168df7d9f1775bd26feee6c1232f923">commit 59f56e0</a>,
+  2016-01-06, with added fix from <a href="https://github.com/mariusmni/lfqc/issues/4">Issue #4</a>.
+  Also, parallel processing of names, sequences and qualities in lfqc.rb is changed to sequential to fix compression failures.</p>
+<p class="cons"><b>Comments:</b>
+Corrupts data with irregularly formatted read names (<a href="https://github.com/mariusmni/lfqc/issues/5">Issue #5</a>).
+Critical <a href="https://github.com/mariusmni/lfqc/issues/4">Issue #4</a> is closed but not fixed.
+Compression fails due to race condition (fixed by disabling parallel compression of names, sequences and qualities).
+Has to be run from its source directory.
+Uses zpaq with 4 threads, with no option to disable multithreading.</p>
+
+
+<h3 id="mfc">mfc</h3>
+<ul>
+<li>Paper: Armando J. Pinho, Diogo Pratas (2014)
+  "MFCompress: a compression tool for FASTA and multi-FASTA data"
+  Bioinformatics, 30(1), 117-118,
+  <a href="https://doi.org/10.1093/bioinformatics/btt594">https://doi.org/10.1093/bioinformatics/btt594</a></li>
+<li>Homepage: <a href="http://bioinformatics.ua.pt/software/mfcompress/">http://bioinformatics.ua.pt/software/mfcompress/</a></li>
+</ul>
+<p>Version tested: MFCompress 1.01, 2013-09-03, 64-bit Linux binary from homepage:
+  <a href="http://bioinformatics.ua.pt/software/mfcompress/">http://bioinformatics.ua.pt/software/mfcompress/</a>.</p>
+<p class="cons"><b>Comments:</b>
+Supports only DNA data.
+Has no streaming mode.
+Not free to use: <i>"available for non-commercial use. For other uses, please send an email to [author's email]"</i> - homepage.</p>
+
+
+<h3 id="minicom">minicom</h3>
+<ul>
+<li>Paper: Yuansheng Liu, Zuguo Yu, Marcel E. Dinger, Jinyan Li (2019)
+  "Index suffix-prefix overlaps by (w, k)-minimizer to generate long contigs for reads compression"
+  Bioinformatics, 35(12), 2066-2074,
+  <a href="https://doi.org/10.1093/bioinformatics/bty936">https://doi.org/10.1093/bioinformatics/bty936</a></li>
+<li>GitHub: <a href="https://github.com/yuansliu/minicom">https://github.com/yuansliu/minicom</a></li>
+</ul>
+<p><i>"Minicom is a tool for compressing short reads in FASTQ. The minicom program is written in C++11 and works on Linux.
+  It is availble under an open-source license."</i></p>
+<p>The main minicom program is a shell script.
+  It calls other tools, including bsc, 7z, md5sum, head, cp, mv, mkdir, tar, rm, make,
+  as well as their own C++ code, which is recompiled on every run (this is where "make" comes in).</p>
+<p>Version tested: <a href="https://github.com/yuansliu/minicom/tree/2360dd90a140b5df9f0e960c180935dff38a8eac">commit 2360dd9</a>, 2019-09-09.</p>
+<p class="cons"><b>Comments:</b> Does not reproduce the original FASTQ file during decompression, but only sequence.
+Corrupts data with 5.6 GB input (<a href="https://github.com/yuansliu/minicom/issues/3">Issue #3</a>).
+Recompiles its C++ code for every run.
+Has to be run from within its directory.
+Automatically names output files.
+Has no streaming mode.</p>
+
+
+<h3 id="naf">naf</h3>
+<ul>
+<li>Paper: Kirill Kryukov, Mahoko Takahashi Ueda, So Nakagawa, Tadashi Imanishi (2019)
+  "Nucleotide Archival Format (NAF) enables efficient lossless reference-free compression of DNA sequences"
+  Bioinformatics, 35(19), 3826-3828,
+  <a href="https://doi.org/10.1093/bioinformatics/btz144">https://doi.org/10.1093/bioinformatics/btz144</a></li>
+<li>GitHub: <a href="https://github.com/KirillKryukov/naf">https://github.com/KirillKryukov/naf</a></li>
+<li>Homepage: <a href="http://kirill-kryukov.com/study/naf/">http://kirill-kryukov.com/study/naf/</a></li>
+</ul>
+<p>Version tested: 1.1.0, 2019-10-01, built from source, obtained from GitHub: <a href="https://github.com/KirillKryukov/naf">https://github.com/KirillKryukov/naf</a>.</p>
+
+
+<h3 id="nuht">nuht</h3>
+<ul>
+<li>Paper: Sultan Alyami, Chun-Hsi Huang (2019)
+  "Nongreedy Unbalanced Huffman Tree Compressor for Single and Multifasta Files"
+  Journal of Computational Biology, 26(0), 1-9,
+  <a href="https://doi.org/10.1089/cmb.2019.0249">https://doi.org/10.1089/cmb.2019.0249</a></li>
+<li>Homepage:
+  <a href="https://github.uconn.edu/sya12005/Non-Greedy-Unbalanced-Huffman-Tree-Compressor-for-single-and-multi-fasta-files">https://github.uconn.edu/sya12005/Non-Greedy-Unbalanced-Huffman-Tree-Compressor-for-single-and-multi-fasta-files</a></li>
+</ul>
+<p>Version tested:
+  <a href="https://github.uconn.edu/sya12005/Non-Greedy-Unbalanced-Huffman-Tree-Compressor-for-single-and-multi-fasta-files/tree/08a42a889c67eefba277a86112fee615ceca01da">commit
+  08a42a8</a>, 2018-09-26, Linux binary.</p>
+<p class="cons"><b>Comments:</b>
+Paper is not open access.
+Closed source.
+Uses 30x times memory compared to input size.
+Auto-names output files.</p>
+
+
+<h3 id="pfish">pfish</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/alexholehouse/pufferfish">https://github.com/alexholehouse/pufferfish</a></li>
+</ul>
+<p>Version tested: Pufferfish v.1.0 alpha, 2012-04-11, built from source,
+  <a href="https://github.com/alexholehouse/pufferfish/tree/f1ddc4adda86496ab9d665655235fca671a914bd">commit f1ddc4a</a>.</p>
+<p class="cons"><b>Comments:</b> Does not support FASTA format.
+Leaks memory during decompression (<a href="https://github.com/alexholehouse/pufferfish/issues/2">Issue #2</a>).
+Fails on large data, such as 33 GB salamander genome (<a href="https://github.com/alexholehouse/pufferfish/issues/1">Issue #1</a>).</p>
+
+
+<h3 id="quip">quip</h3>
+<ul>
+<li>Paper: Daniel C. Jones, Walter L. Ruzzo, Xinxia Peng, Michael G. Katze (2012)
+  "Compression of next-generation sequencing reads aided by highly efficient de novo assembly"
+  Nucleic Acids Research, 40(22), e171,
+  <a href="https://doi.org/10.1093/nar/gks754">https://doi.org/10.1093/nar/gks754</a></li>
+<li>GitHub: <a href="https://github.com/dcjones/quip">https://github.com/dcjones/quip</a></li>
+<li>Homepage: <a href="https://homes.cs.washington.edu/~dcjones/quip/">https://homes.cs.washington.edu/~dcjones/quip/</a></li>
+</ul>
+<p>Version tested: Quip 1.1.8-8-g9165bb5, 2017-12-17, built from source,
+  <a href="https://github.com/dcjones/quip/tree/9165bb5ac17a2cf2822e437df573487d7adfa1cc">commit 9165bb5</a>.
+  Only compression without assembly is tested here.</p>
+<p class="cons"><b>Comments:</b>
+Does not support non-standard sequence characters.
+Crashes during decompression if compressed file name does not end with ".quip",
+also if the compressed file is not in current directory.</p>
+
+
+<h3 id="spring">spring</h3>
+<ul>
+<li>Paper: Shubham Chandak, Kedar Tatwawadi, Idoia Ochoa, Mikel Hernaez, Tsachy Weissman (2019)
+  "SPRING: a next-generation compressor for FASTQ data"
+  Bioinformatics, 35(15), 2674-2676,
+  <a href="https://doi.org/10.1093/bioinformatics/bty1015">https://doi.org/10.1093/bioinformatics/bty1015</a></li>
+<li>GitHub: <a href="https://github.com/shubhamchandak94/Spring">https://github.com/shubhamchandak94/Spring</a></li>
+</ul>
+<p>Version tested: SPRING <a href="https://github.com/shubhamchandak94/Spring/tree/6536b1b03146d44344b20ae097a553a9e3bf12a5">commit 6536b1b</a>,
+  2019-11-28, built from source.</p>
+<p class="cons"><b>Comments:</b>
+Paper is not open access.
+GitHub repository has no license.</p>
+
+
+<h3 id="uht">uht</h3>
+<ul>
+<li>Paper: Anas Al-Okaily, Badar Almarri, Sultan Al Yami, Chun-Hsi Huang (2017)
+  "Toward a Better Compression for DNA Sequences Using Huffman Encoding"
+  Journal of Computational Biology, 24(4), 280-288,
+  <a href="https://doi.org/10.1089/cmb.2016.0151">https://doi.org/10.1089/cmb.2016.0151</a></li>
+<li>GitHub: <a href="https://github.com/aalokaily/Unbalanced-Huffman-Tree">https://github.com/aalokaily/Unbalanced-Huffman-Tree</a></li>
+</ul>
+<p>Version tested: UHT binaries from 2016-12-27, downloaded from GitHub:
+  <a href="https://github.com/aalokaily/Unbalanced-Huffman-Tree">https://github.com/aalokaily/Unbalanced-Huffman-Tree</a>.</p>
+<p class="cons"><b>Comments:</b>
+Closed source. Does not support masked sequence.
+Fails on 245 MB dataset and larger datasets.</p>
+
+
+<h3 id="xm">xm</h3>
+<ul>
+<li>Paper: Minh Duc Cao, Trevor I. Dix, Lloyd Allison, Chris Mears (2007)
+  "A simple statistical algorithm for biological sequence compression"
+  Data Compression Conference, 2007 (DCC'07), Snowbird, UT, pp.43-52</li>
+<li>XM GitHub: <a href="https://github.com/mdcao/xm">https://github.com/mdcao/xm</a></li>
+<li>JAPSA GitHub: <a href="https://github.com/mdcao/japsa">https://github.com/mdcao/japsa</a></li>
+</ul>
+<p>Version tested: 3.0, <a href="https://github.com/mdcao/japsa/commit/9b9ea577db820c2e9479bf52d31067f55263be2f">commit 9b9ea57</a>, 2019-01-07.</p>
+<p class="cons"><b>Comments:</b>
+May corrupt data (<a href="https://github.com/mdcao/japsa/issues/29">Issue #29</a>).</p>
+
+
+<hr style="margin-top: 20pt;">
+<h2>General-purpose compressors</h2>
+
+
+<h3 id="bcm">bcm</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/encode84/bcm">https://github.com/encode84/bcm</a></li>
+<li>Homepage: <a href="http://compressme.net/">http://compressme.net/</a></li>
+</ul>
+<p>Version tested: BCM 1.30, 2018-01-21, <a href="https://github.com/encode84/bcm/tree/24b601752cddd07e045e409730e8d1c03e7fbe7e">commit 24b6017</a>,
+  built with: <span class="code">g++ -o bcm -O3 -march=native -ffast-math -s bcm.cpp divsufsort.c</span>.</p>
+<p class="cons"><b>Comments:</b> No streaming mode.</p>
+
+
+<h3 id="brieflz">brieflz</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/jibsen/brieflz">https://github.com/jibsen/brieflz</a></li>
+</ul>
+<p>Version tested: BriefLZ 1.3.0, 2020-02-15, <a href="https://github.com/jibsen/brieflz/tree/0ab07a51d838364064ff256b90b3cb7f48e5f15a">commit 0ab07a5</a>,
+  built from source using: <span class="code">mkdir build; cd build; cmake -DCMAKE_BUILD_TYPE=Release ..; cmake --build . --config Release</span>.</p>
+<p class="cons"><b>Comments:</b> No streaming mode.
+Unpredictable compression speed when using "--optimal" setting (<a href="https://github.com/jibsen/brieflz/issues/11">Issue #11</a>).</p>
+
+
+<h3 id="brotli">brotli</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/google/brotli">https://github.com/google/brotli</a></li>
+</ul>
+<p>Version tested: 1.0.7, 2018-10-23.</p>
+
+
+<h3 id="bsc">bsc</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/IlyaGrebnov/libbsc">https://github.com/IlyaGrebnov/libbsc</a></li>
+<li>Homepage: <a href="http://libbsc.com/">http://libbsc.com/</a></li>
+</ul>
+<p>Version tested: 3.1.0, 2016-01-01,
+  <a href="https://github.com/IlyaGrebnov/libbsc/tree/3dea3471251fbac72c895f42f22a1aa75b81da33">commit 3dea347</a>,
+  built from source using bundled makefile.</p>
+<p class="cons"><b>Comments:</b> No streaming mode.</p>
+
+
+<h3 id="bzip2">bzip2</h3>
+<ul>
+<li>SourceForge: <a href="https://sourceforge.net/projects/bzip2/files/">https://sourceforge.net/projects/bzip2/files/</a></li>
+<li>Archive: <a href="https://web.archive.org/web/20180801004107/http://www.bzip.org/">https://web.archive.org/web/20180801004107/http://www.bzip.org/</a></li>
+</ul>
+<p>Version tested: 1.0.6, 2010-09-06</p>
+
+
+<h3 id="cmix">cmix</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/byronknoll/cmix">https://github.com/byronknoll/cmix</a></li>
+<li>Homepage: <a href="https://www.byronknoll.com/cmix.html">https://www.byronknoll.com/cmix.html</a></li>
+</ul>
+<p>Version tested: 17, 2019-03-24.</p>
+<p class="cons"><b>Comments:</b> No streaming mode.
+Because of compression speed of less than 1 kB/s, it is currently benchmarked only on data smaller than 10 MB.</p>
+
+
+<h3 id="copy">copy</h3>
+<p>"Copy" compressors don't compress the data, but make its exact uncompressed duplicate.
+Such processes tested here include the "cat" command, and the "-0" mode of pigz.
+They are included for control.</p>
+
+
+<h3 id="gzip">gzip</h3>
+<ul>
+<li>Homepage: <a href="https://www.gzip.org/">https://www.gzip.org/</a></li>
+<li>GNU: <a href="https://www.gnu.org/software/gzip/">https://www.gnu.org/software/gzip/</a></li>
+</ul>
+<p>Version tested: 1.6, 2013-06-09, default install that came with the OS (Ubuntu).</p>
+
+
+<h3 id="lizard">lizard</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/inikep/lizard">https://github.com/inikep/lizard</a></li>
+</ul>
+<p>Version tested: 1.0.0, <a href="https://github.com/inikep/lizard/tree/dda3b335e92ecd5caceccc9c577b39dd4e3c9950">commit dda3b33</a>, 2019-03-08.</p>
+
+
+<h3 id="lz4">lz4</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/lz4/lz4">https://github.com/lz4/lz4</a></li>
+<li>Homepage: <a href="https://lz4.github.io/lz4/">https://lz4.github.io/lz4/</a></li>
+</ul>
+<p>Version tested: LZ4 1.9.1, 2019-04-24.</p>
+
+
+<h3 id="lzop">lzop</h3>
+<ul>
+<li>Homepage: <a href="https://www.lzop.org/">https://www.lzop.org/</a></li>
+</ul>
+<p>Version tested: 1.04, 2017-08-10.</p>
+
+
+<h3 id="lzturbo">lzturbo</h3>
+<ul>
+<li>Homepage: <a href="https://sites.google.com/site/powturbo/">https://sites.google.com/site/powturbo/</a></li>
+</ul>
+<p>Version tested: 1.2, 2014-08-11.</p>
+<p class="cons"><b>Comments:</b> Closed source.</p>
+
+
+<h3 id="nakamichi">nakamichi</h3>
+<ul>
+<li>Homepage: <a href="http://www.sanmayce.com/Nakamichi/">http://www.sanmayce.com/Nakamichi/</a></li>
+<li>Homepage: <a href="http://www.satanichi.net/">http://www.satanichi.net/</a></li>
+</ul>
+<p>Version tested: Nakamichi 2020-May-09 (<a href="tools/compressors/Nakamichi-2020-05-09-minimal.zip">archived</a>),
+  built from source, using command:
+  <span class="code">gcc -O3 -static -msse4.1 -fomit-frame-pointer Nakamichi_Ryuugan-ditto-1TB_btree.c -o nakamichi
+  -D_N_XMM -D_N_prefetch_4096 -D_N_alone -DHashInBITS=24 -DHashChunkSizeInBITS=24 -DRAMpoolInKB=5120
+  -DBtreeHEURISTIC -D_POSIX_ENVIRONMENT_ -DLongestLineInclusive=128 -DSpeedUpBuilding=32 -DLITE</span>.</p>
+<p class="cons"><b>Comments:</b>
+Requires massive amount of memory.
+Does not support streaming for compression.
+Fills console with ASCII art and irrelevant texts.
+Creates multiple log files.
+Refuses to decompress any files with names not ending with ".Nakamichi".
+Version 2020-May-09 is already unavailable on both homepages, so I mirror it here in minimal form.
+Due to slowness it is currently only tested on datasest smaller than 200 MB.</p>
+
+
+<h3 id="pbzip2">pbzip2</h3>
+<ul>
+<li>Homepage: <a href="https://launchpad.net/pbzip2/">https://launchpad.net/pbzip2/</a></li>
+</ul>
+<p>Version tested: 1.1.13, 2015-12-18.</p>
+
+
+<h3 id="pigz">pigz</h3>
+<ul>
+<li>Homepage: <a href="https://zlib.net/pigz/">https://zlib.net/pigz/</a></li>
+</ul>
+<p>Version tested: 2.4, 2017-12-26.</p>
+
+
+<h3 id="snzip">snzip</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/kubo/snzip">https://github.com/kubo/snzip</a></li>
+</ul>
+<p>Based on the Snappy compression library.</p>
+<p>Version tested: 1.0.4, 2016-10-02.</p>
+
+
+<h3 id="xz">xz</h3>
+<ul>
+<li>Homepage: <a href="https://tukaani.org/xz/">https://tukaani.org/xz/</a></li>
+</ul>
+<p>Based on the LZMA algorithm.</p>
+<p>Version tested: 5.2.2, 2015-09-29.</p>
+
+
+<h3 id="zpaq">zpaq</h3>
+<ul>
+<li>Homepage: <a href="http://www.mattmahoney.net/dc/zpaq.html">http://www.mattmahoney.net/dc/zpaq.html</a></li>
+</ul>
+<p>Version tested: 7.15, 2016-08-17.</p>
+<p class="cons"><b>Comments:</b> No streaming mode.</p>
+
+
+<h3 id="zpipe">zpipe</h3>
+<ul>
+<li>ZPAQ homepage: <a href="http://www.mattmahoney.net/dc/zpaq.html">http://www.mattmahoney.net/dc/zpaq.html</a></li>
+<li>zpipe documentation: <a href="http://mattmahoney.net/dc/zpipedoc.html">http://mattmahoney.net/dc/zpipedoc.html</a></li>
+</ul>
+<p>Version tested: 2.01, 2010-12-23, built from source (<a href="http://mattmahoney.net/dc/zpipe.201">http://mattmahoney.net/dc/zpipe.201</a>)
+  with libzpaq 4.00, 2011-11-13 (<a href="http://mattmahoney.net/dc/libzpaq400.zip">http://mattmahoney.net/dc/libzpaq400.zip</a>),
+  built with: <span class="code">g++ -o zpipe -O3 -march=native -ffast-math -s zpipe.cpp libzpaq.cpp</span>.</p>
+
+
+<h3 id="zstd">zstd</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/facebook/zstd">https://github.com/facebook/zstd</a></li>
+<li>Homepage: <a href="https://facebook.github.io/zstd/">https://facebook.github.io/zstd/</a></li>
+</ul>
+<p>Version tested: 1.4.5, 2020-05-22, built from source using bundled makefile.</p>
+
+
+</div>

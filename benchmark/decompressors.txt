@@ -1,0 +1,138 @@
+# Fields: extension, command
+
+2bit        2bit-decompress.pl --in '{IN}'
+2bit0       2bit-decompress.pl --in '{IN}' --wrapper-only
+2bitr       2bit-decompress.pl --in '{IN}' --rna
+2bitr0      2bit-decompress.pl --in '{IN}' --rna --wrapper-only
+acfa        ac-fa-decompress.pl --in '{IN}'
+acfa0       ac-fa-decompress.pl --in '{IN}' --wrapper-only
+acseq       ac-seq-decompress.pl --in '{IN}'
+acseq0      ac-seq-decompress.pl --in '{IN}' --wrapper-only
+alapy       alapy-decompress.pl -in '{IN}'
+alapy0      alapy-decompress.pl -in '{IN}' --wrapper-only
+alapyr      alapy-decompress.pl -in '{IN}' --rna
+alapyr0     alapy-decompress.pl -in '{IN}' --rna --wrapper-only
+bcm         bcm-decompress.pl '{IN}'
+beetl       beetl-decompress.pl --in '{IN}'
+beetl0      beetl-decompress.pl --in '{IN}' --wrapper-only
+beetlr      beetl-decompress.pl --in '{IN}' --rna
+beetlr0     beetl-decompress.pl --in '{IN}' --rna --wrapper-only
+bsc         bsc-decompress.pl '{IN}'
+blast       blast-decompress.pl --in '{IN}'
+blast0      blast-decompress.pl --in '{IN}' --wrapper-only
+blastr      blast-decompress.pl --in '{IN}' --rna
+blastr0     blast-decompress.pl --in '{IN}' --rna --wrapper-only
+br          brotli -dc '{IN}'
+brieflz        brieflz-decompress.pl --in '{IN}'
+brieflz3600m   brieflz-decompress.pl --in '{IN}' --block-size 3600m
+bz2         bzip2 -dc '{IN}'
+cmix        cmix-decompress.pl '{IN}'
+copy        cat '{IN}'
+dcom        dcom-decompress.pl --in '{IN}'
+dcom0       dcom-decompress.pl --in '{IN}' --wrapper-only
+dlim        dlim-decompress.pl --in '{IN}'
+dlimr       dlim-decompress.pl --in '{IN}' --rna
+dnax        dnax-decompress.pl --in '{IN}'
+dnax0       dnax-decompress.pl --in '{IN}' --wrapper-only
+dnaxr       dnax-decompress.pl --in '{IN}' --rna
+dnaxr0      dnax-decompress.pl --in '{IN}' --rna --wrapper-only
+dsrc1t      dsrc-decompress.pl --in '{IN}' --threads 1
+dsrc4t      dsrc-decompress.pl --in '{IN}' --threads 4
+dsrc0       dsrc-decompress.pl --in '{IN}' --threads 1 --wrapper-only
+dsrcr1t     dsrc-decompress.pl --in '{IN}' --threads 1 --rna
+dsrcr4t     dsrc-decompress.pl --in '{IN}' --threads 4 --rna
+dsrcr0      dsrc-decompress.pl --in '{IN}' --threads 1 --rna --wrapper-only
+fa          cat '{IN}'
+faa         cat '{IN}'
+fasta       cat '{IN}'
+fastqzf     fastqz-decompress.pl --in '{IN}' --mode fast
+fastqzs     fastqz-decompress.pl --in '{IN}' --mode slow
+fastqz0     fastqz-decompress.pl --in '{IN}' --mode fast --wrapper-only
+fastqzfr    fastqz-decompress.pl --in '{IN}' --mode fast --rna
+fastqzsr    fastqz-decompress.pl --in '{IN}' --mode slow --rna
+fastqzr0    fastqz-decompress.pl --in '{IN}' --mode fast --rna --wrapper-only
+fna         cat '{IN}'
+fqs         fqsqueezer-decompress.pl --in '{IN}'
+fqs0        fqsqueezer-decompress.pl --in '{IN}' --wrapper-only
+fqzcomp     fqzcomp-decompress.pl --in '{IN}'
+fqzcompr    fqzcomp-decompress.pl --in '{IN}' --rna
+fqzcomp0    fqzcomp-decompress.pl --in '{IN}' --wrapper-only
+fqzcompr0   fqzcomp-decompress.pl --in '{IN}' --rna --wrapper-only
+fra         cat '{IN}'
+geco        geco-decompress.pl --in '{IN}'
+geco0       geco-decompress.pl --in '{IN}' --wrapper-only
+geco2       geco2-decompress.pl --in '{IN}'
+geco20      geco2-decompress.pl --in '{IN}' --wrapper-only
+gtz1t       gtz-decompress.pl --in '{IN}' --threads 1
+gtz4t       gtz-decompress.pl --in '{IN}' --threads 4
+gtz0        gtz-decompress.pl --in '{IN}' --threads 1 --wrapper-only
+gz          gzip -dc '{IN}'
+harc1t      harc-decompress.pl --in '{IN}' --threads 1
+harc4t      harc-decompress.pl --in '{IN}' --threads 4
+harc0       harc-decompress.pl --in '{IN}' --threads 1 --wrapper-only
+harcr1t     harc-decompress.pl --in '{IN}' --threads 1 --rna
+harcr4t     harc-decompress.pl --in '{IN}' --threads 4 --rna
+harcr0      harc-decompress.pl --in '{IN}' --threads 1 --rna --wrapper-only
+jarvis      jarvis-decompress.pl --in '{IN}'
+jarvis0     jarvis-decompress.pl --in '{IN}' --wrapper-only
+kic         kic-decompress.pl --in '{IN}'
+kic0        kic-decompress.pl --in '{IN}' --wrapper-only
+kicr        kic-decompress.pl --in '{IN}' --rna
+kicr0       kic-decompress.pl --in '{IN}' --rna --wrapper-only
+leon        leon-decompress.pl --in '{IN}'
+leon0       leon-decompress.pl --in '{IN}' --wrapper-only
+leonr       leon-decompress.pl --in '{IN}' --rna
+leonr0      leon-decompress.pl --in '{IN}' --rna --wrapper-only
+lfastqc     lfastqc-decompress.pl --in '{IN}'
+lfastqc0    lfastqc-decompress.pl --in '{IN}' --wrapper-only
+lfastqcr    lfastqc-decompress.pl --in '{IN}' --rna
+lfastqcr0   lfastqc-decompress.pl --in '{IN}' --rna --wrapper-only
+lfqc        lfqc-decompress.pl --in '{IN}'
+lfqc0       lfqc-decompress.pl --in '{IN}' --wrapper-only
+liz         lizard -dc '{IN}'
+lz4         lz4 -dc '{IN}'
+lzop        lzop -dc '{IN}'
+lzt         lzturbo-static-decompress.pl '{IN}'
+mfc         mfc-decompress.pl --in '{IN}'
+mfcr        mfc-decompress.pl --in '{IN}' --rna
+minicom1t    minicom-decompress.pl --in '{IN}' --threads 1
+minicom4t    minicom-decompress.pl --in '{IN}' --threads 4
+minicom0     minicom-decompress.pl --in '{IN}' --threads 1 --wrapper-only
+minicomr1t   minicom-decompress.pl --in '{IN}' --threads 1 --rna
+minicomr4t   minicom-decompress.pl --in '{IN}' --threads 4 --rna
+minicomr0    minicom-decompress.pl --in '{IN}' --threads 1 --rna --wrapper-only
+naf         unnaf '{IN}'
+naf1        unnaf '{IN}'
+Nakamichi   nakamichi '{IN}'
+nuht        nuht-decompress.pl --in '{IN}'
+nuht0       nuht-decompress.pl --in '{IN}' --wrapper-only
+nuhtr       nuht-decompress.pl --in '{IN}' --rna
+nuhtr0      nuht-decompress.pl --in '{IN}' --rna --wrapper-only
+pbz2        pbzip2 -dc '{IN}'
+pfish       pfish-decompress.pl --in '{IN}'
+pfish0      pfish-decompress.pl --in '{IN}' --wrapper-only
+pfishr      pfish-decompress.pl --in '{IN}' --rna
+pfishr0     pfish-decompress.pl --in '{IN}' --rna --wrapper-only
+pigz        pigz -dc '{IN}'
+quip        quip-decompress.pl --in '{IN}'
+quip0       quip-decompress.pl --in '{IN}' --wrapper-only
+quipr       quip-decompress.pl --in '{IN}' --rna
+quipr0      quip-decompress.pl --in '{IN}' --rna --wrapper-only
+spring1t    spring-long-decompress.pl --in '{IN}' --threads 1
+spring4t    spring-long-decompress.pl --in '{IN}' --threads 4
+spring0     spring-long-decompress.pl --in '{IN}' --threads 1 --wrapper-only
+springshort1t    spring-short-decompress.pl --in '{IN}' --threads 1
+springshort4t    spring-short-decompress.pl --in '{IN}' --threads 4
+springshort0     spring-short-decompress.pl --in '{IN}' --threads 1 --wrapper-only
+springshortr1t   spring-short-decompress.pl --in '{IN}' --threads 1 --rna
+springshortr4t   spring-short-decompress.pl --in '{IN}' --threads 4 --rna
+springshortr0    spring-short-decompress.pl --in '{IN}' --threads 1 --rna --wrapper-only
+sz          snzip -dc '{IN}'
+uht         uht-decompress.pl --in '{IN}'
+uht0        uht-decompress.pl --in '{IN}' --wrapper-only
+xm          xm-decompress.pl --in '{IN}'
+xm0         xm-decompress.pl --in '{IN}' --wrapper-only
+xz          xz -dc '{IN}'
+zpaq        zpaq-decompress.pl '{IN}'
+zpipe       zpipe -d <'{IN}'
+zstd        zstd -dc '{IN}' 2>/dev/null

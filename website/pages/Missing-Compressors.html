@@ -1,0 +1,475 @@
+<div class="text">
+
+<h2>Missing Compressors</h2>
+
+<p>This page lists some sequence compressors that we did not benchmark (yet).</p>
+
+<p>We'll appreciate any help with getting any of these compressors to work.</p>
+
+
+<h3 id="afresh">AFRESh</h3>
+<ul>
+<li>Paper: Tom Paridaens, Glenn Van Wallendael, Wesley De Neve, Peter Lambert (2017)
+  "AFRESh: an adaptive framework for compression of reads and assembled sequences with random access functionality"
+  Bioinformatics, 33(10), 1464-1472,
+  <a href="https://doi.org/10.1093/bioinformatics/btx001">https://doi.org/10.1093/bioinformatics/btx001</a>
+<li>GitHub: <a href="https://github.com/tparidae/AFresh">https://github.com/tparidae/AFresh</a></li>
+</ul>
+<p><i>"We propose AFRESh, an adaptive framework for no-reference compression of genomic data with random access functionality,
+  targeting the effective representation of the raw genomic symbol streams of both reads and assembled sequences.
+  AFRESh makes use of a configurable set of prediction and encoding tools,
+  extended by a Context-Adaptive Binary Arithmetic Coding scheme (CABAC), to compress raw genetic codes."</i></p>
+<p>Only Windows executable is available.
+Therefore we can't include it in current form, since this benchmark is done under Linux.</p>
+<p>To do: Contact authors about releasing source or Linux binary, possibly try running it using Wine.</p>
+
+
+<h3 id="aqua">AQUa</h3>
+<ul>
+<li>Paper: Tom Paridaens, Glenn Van Wallendael, Wesley De Neve, Peter Lambert (2018)
+  "AQUa: an adaptive framework for compression of sequencing quality scores with random access functionality"
+  Bioinformatics, 34(3), 425-433,
+  <a href="https://doi.org/10.1093/bioinformatics/btx607">https://doi.org/10.1093/bioinformatics/btx607</a></li>
+<li>GitHub: <a href="https://github.com/tparidae/AQUa">https://github.com/tparidae/AQUa</a>
+</ul>
+<p><i>"This article proposes AQUa, an adaptive framework for lossless compression of quality scores.
+  To compress these quality scores, AQUa makes use of a configurable set of coding tools,
+  extended with a Context-Adaptive Binary Arithmetic Coding scheme."</i></p>
+<p>It's a compressor for quality scores only.</p>
+
+
+<h3 id="assembltrie">Assembltrie</h3>
+<ul>
+<li>Paper: Antonio A. Ginart, Joseph Hui, Kaiyuan Zhu, Ibrahim Numanagic, Thomas A. Courtade, S. Cenk Sahinalp, David N. Tse (2018)
+  "Optimal compressed representation of high throughput sequence data via light assembly"
+  Nature Communications, 9, 566,
+  <a href="https://doi.org/10.1038/s41467-017-02480-6">https://doi.org/10.1038/s41467-017-02480-6</a></li>
+<li>GitHub: <a href="https://github.com/kyzhu/assembltrie">https://github.com/kyzhu/assembltrie</a></li>
+</ul>
+<p>A compressor for FASTQ data:
+<i>"Assembltrie is a software tool for compressing collections of (fixed length) Illumina reads"</i>.
+Therefore it will need a wrapper.</p>
+<p><i>"Currently, Assembltrie is the only FASTQ compressor that approaches the information theory limit
+ for a given short read collection uniformly sampled from an underlying reference genome.
+ Assembltrie becomes the first FASTQ compressor that achieves both combinatorial optimality
+ and information theoretic optimality under fair assumptions."</i></p>
+<p>To do: Download, build, test, make wrapper, benchmark.</p>
+
+
+<h3 id="bdbg">BdBG</h3>
+<ul>
+<li>Paper: Rongjie Wang, Junyi Li, Yang Bai, Tianyi Zang, Yadong Wang (2018)
+  "BdBG: a bucket-based method for compressing genome sequencing data with dynamic de Bruijn graphs"
+  PeerJ, 6, e5611,
+  <a href="https://www.doi.org/10.7717/peerj.5611">https://www.doi.org/10.7717/peerj.5611</a></li>
+<li>GitHub: <a href="https://github.com/rongjiewang/BdBG">https://github.com/rongjiewang/BdBG</a></li>
+</ul>
+<p><i>"BdBG: a bucket-based method for compressing genome sequencing data with dynamic de Bruijn graphs."</i></p>
+<p>It seems that it always reorders reads.
+This makes it incompatible with our requirements, since we only benchmark lossless compression.</p>
+
+
+<h3 id="bind">BIND</h3>
+<ul>
+<li>Paper: Tungadri Bose, Monzoorul Haque Mohammed, Anirban Dutta, Sharmila S. Mande (2012)
+  "BIND - An algorithm for loss-less compression of nucleotide sequence data"
+  Journal of Biosciences, 37, 785-789,
+  <a href="https://www.doi.org/10.1007/s12038-012-9230-6">https://www.doi.org/10.1007/s12038-012-9230-6</a></li>
+</ul>
+<p><i>"By adopting a unique 'block-length' encoding for representing binary data (as a key step),
+  BIND achieves significant compression gains as compared to the widely used general purpose compression algorithms (gzip, bzip2 and lzma)."</i></p>
+<p>Link from the paper is dead: <a href="http://metagenomics.atc.tcs.com/compression/BIND">http://metagenomics.atc.tcs.com/compression/BIND</a></p>
+<p>To do: Try contacting the authors for obtaining a copy of this compressors.</p>
+
+
+<h3 id="biocompress">biocompress</h3>
+<ul>
+<li>Paper: Stephane Grumbach, Fariza Tahi (1993) "Compression of DNA sequences"
+  Data Compression Conference, 1993 (DCC'93), 340-350,
+  <a href="https://www.doi.org/10.1109/DCC.1993.253115">https://www.doi.org/10.1109/DCC.1993.253115</a></li>
+</ul>
+<p><i>"We propose a lossless algorithm to compress the information contained in DNA sequences.
+  None of the available universal algorithms compress such data."</i></p>
+<p>Not sure where to find this compressor.</p>
+
+
+<h3 id="biocompress2">biocompress-2</h3>
+<ul>
+<li>Paper: Stephane Grumbach, Fariza Tahi (1994)
+   "A New Challenge for Compression Algorithms: Genetic Sequences"
+   Information Processing & Management, 30(6), 875-886,
+   <a href="https://www.doi.org/10.1016/0306-4573(94)90014-0">https://www.doi.org/10.1016/0306-4573(94)90014-0</a></li>
+<li>Homepage: <a href="https://who.rocq.inria.fr/Stephane.Grumbach/biocompress.html">https://who.rocq.inria.fr/Stephane.Grumbach/biocompress.html</a></li>
+</ul>
+<p><i>"We then present a lossless algorithm, biocompress-2, to compress the information contained in DNA and RNA sequences,
+  based on the detection of regularities, such as the presence of palindromes.
+  The algorithm combines substitutional and statistical methods, and to the best of our knowledge, leads to the highest compression of DNA."</i></p>
+<p>Does not seem to compile with recent GCC.</p>
+<p>To do: Try to investigate and fix the issues.</p>
+
+
+<h3 id="darrc">DARRC</h3>
+<ul>
+<li>Paper: Guillaume Holley, Roland Wittler, Jens Stoye, Faraz Hach (2018)
+  "Dynamic Alignment-Free and Reference-Free Read Compression"
+  Journal of Computational Biology, 25(7), 825-836,
+  <a href="https://doi.org/10.1089/cmb.2018.0068">https://doi.org/10.1089/cmb.2018.0068</a></li>
+</ul>
+<p><i>"In this article, we present dynamic alignment-free and reference-free read compression (DARRC),
+  a new alignment-free and reference-free compression method.
+  It addresses the problem of pangenome compression by encoding the sequences of a pangenome as a guided de Bruijn graph."</i></p>
+<p>Paper is not open access.
+Abstract has no link to software.</p>
+
+
+<h3 id="dnacompress">DNACompress</h3>
+<ul>
+<li>Paper: Xin Chen, Ming Li, Bin Ma, John Tromp (2002)
+  "DNACompress: fast and effective DNA sequence compression"
+  Bioinformatics, 18(12), 1696-1698,
+  <a href="https://doi.org/10.1093/bioinformatics/18.12.1696">https://doi.org/10.1093/bioinformatics/18.12.1696</a></li>
+</ul>
+<p><i>"While achieving the best compression ratios for DNA sequences,
+  our new DNACompress program significantly improves the running time of all previous DNA compression programs."</i></p>
+<p>Not available anymore, link from paper is dead.</p>
+<p>Requires PatternHunter.
+  Therefore it's an officially dead project, because PatternHunter is not available anymore:
+  <i>"Unfortunately PatternHunter is an old product and is not distributed anymore."</i>
+  - email from its vendor.</p>
+
+
+<h3 id="dnacsbe">DNAC-SBE</h3>
+<ul>
+<li>Paper: Deloula Mansouri, Xiaohui Yuan, Abdeldjalil Saidani (2020)
+  "A New Lossless DNA Compression Algorithm Based on A Single-Block Encoding Scheme"
+  Algorithms, 13, 99,
+  <a href="https://doi.org/10.3390/a13040099">https://doi.org/10.3390/a13040099</a></li>
+</ul>
+<p><i>"DNAC-SBE is a lossless hybrid compressor that consists of three phases.
+  First, starting from the largest base (Bi), the positions of each Bi are replaced with ones
+  and the positions of other bases that have smaller frequencies than Bi are replaced with zeros.
+  Second, to encode the generated streams, we propose a new single-block encoding scheme (SEB)
+  based on the exploitation of the position of neighboring bits within the block using two different techniques.
+  Finally, the proposed algorithm dynamically assigns the shorter length code to each block.
+  Results show that DNAC-SBE outperforms state-of-the-art compressors and proves its efficiency
+  in terms of special conditions imposed on compressed data,
+  storage space and data transfer rate regardless of the file format or the size of the data."</i></p>
+<p>No software is shared in the paper.</p>
+
+
+<h3 id="dualfqz">DualFqz</h3>
+<ul>
+<li>Paper: Guillermo Dufort y Alvarez, Gadiel Seroussi, Pablo Smircich, Jose Sotelo, Idoia Ochoa, Alvaro Martin (2019)
+  "Compression of Nanopore FASTQ Files"
+  In: Rojas I., Valenzuela O., Rojas F., Ortuno F. (eds) Bioinformatics and Biomedical Engineering, IWBBIO 2019, Lecture Notes in Computer Science, vol 11465. Springer, Cham,
+  <a href="https://doi.org/10.1007/978-3-030-17938-0_4">https://doi.org/10.1007/978-3-030-17938-0_4</a></li>
+<li>GitHub: <a href="https://github.com/guidufort/DualFqz">https://github.com/guidufort/DualFqz</a></li>
+</ul>
+<p><i>We propose a nanopore quality scores compressor, called DualCtx,
+which yields significant improvements in compression performance with
+respect to the state-of-the-art. We also extend DualCtx to a full FASTQ
+compressor, termed DualFqz, by substituting DualCtx for the quality score
+compression module in a variant of Fqzcomp.</i></p>
+<p>fqzcomp is already included in the benchmark, and currently we don't use any FASTQ test data.
+Therefore adding this compressor would be redundant.</p>
+
+
+<h3 id="fastore">FaStore</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/refresh-bio/FaStore">https://github.com/refresh-bio/FaStore</a></li>
+</ul>
+<p><i>"FaStore is a high-performance short FASTQ sequencing reads compressor."</i></p>
+<p>Always reorders the reads, making it unsuitable for lossless compression.</p>
+
+
+<h3 id="gabac">GABAC</h3>
+<ul>
+<li>Paper: Jan Voges, Tom Paridaens, Fabian Muntefering, Liudmila S. Mainzer, Brian Bliss, Mingyu Yang, Idoia Ochoa, Jan Fostier, Jorn Ostermann, Mikel Hernaez (2020)
+  "GABAC: an arithmetic coding solution for genomic data"
+  Bioinformatics, 36(7), 2275-2277,
+  <a href="https://doi.org/10.1093/bioinformatics/btz922">https://doi.org/10.1093/bioinformatics/btz922</a></li>
+<li>GitHub: <a href="https://github.com/mitogen/gabac">https://github.com/mitogen/gabac</a></li>
+</ul>
+<p>It seems this is not a complete standalone compressor, but an "entropy codec", supposed to be used within the context of other actual compressors.
+Therefore it's those other compressors that should be benchmarked, not this codec by itself. (As far as I understand).</p>
+
+
+<h3 id="gencompress">GenCompress</h3>
+<ul>
+<li>Paper: Xin Chen, Sam Kwong, Ming Li (1999)
+  "A Compression Algorithm for DNA Sequences and Its Applications in Genome Comparison"
+   Genome Informatics Workshop 1999 (GIW99),
+  <a href="https://pubmed.ncbi.nlm.nih.gov/11072342/">https://pubmed.ncbi.nlm.nih.gov/11072342/</a>,
+  PDF: <a href="https://www.jsbi.org/pdfs/journal1/GIW99/GIW99F06.pdf">https://www.jsbi.org/pdfs/journal1/GIW99/GIW99F06.pdf</a></li>
+<li>Homepage: <a href="https://www.cs.cityu.edu.hk/~cssamk/gencomp/GenCompress1.htm">https://www.cs.cityu.edu.hk/~cssamk/gencomp/GenCompress1.htm</a></li>
+</ul>
+<p><i>"We present a lossless compression algorithm, GenCompress, for genetic sequences, based on searching for approximate repeats.
+  Our algorithm achieves the best compression ratios for benchmark DNA sequences"</i></p>
+<p>Executable files are offered at the download page (<a href="">https://www.cs.cityu.edu.hk/~cssamk/gencomp/downGen.htm</a>).
+Therefore they are most likely Windows binaries.
+Thus we can't easily use them in current form.</p>
+<p>To do: Try running the binaries, may be using Wine.</p>
+
+
+<h3 id="genie">Genie</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/mitogen/genie">https://github.com/mitogen/genie</a></li>
+</ul>
+<p>A compressor for FASTQ data.</p>
+<p>To do: Download, build, test, make wrapper, benchmark.</p>
+
+
+<h3 id="gsqz">G-SQZ</h3>
+<ul>
+<li>Paper: Waibhav Tembe, James Lowey, Edward Suh (2010)
+  "G-SQZ: compact encoding of genomic sequence and quality data"
+  Bioinformatics, 26(17), 2192-2194,
+  <a href="https://doi.org/10.1093/bioinformatics/btq346">https://doi.org/10.1093/bioinformatics/btq346</a></li>
+</ul>
+<p><i>"We present G-SQZ, a Huffman coding-based sequencing-reads-specific representation scheme
+  that compresses data without altering the relative order."</i></p>
+<p>Link from the paper is dead: <a href="http://public.tgen.org/sqz">http://public.tgen.org/sqz</a></p>
+<p>Does not seem to be available anymore. Email from the paper is dead too.</p>
+
+
+<h3 id="kungfq">KungFQ</h3>
+<ul>
+<li>Paper: Elena Grassi, Federico Di Gregorio, Ivan Molineris (2012)
+  "KungFQ: A Simple and Powerful Approach to Compress fastq Files"
+  IEEE/ACM Transactions on Computational Biology and Bioinformatics, 9(6), 1837-1842,
+  <a href="https://doi.org/10.1109/TCBB.2012.123">https://doi.org/10.1109/TCBB.2012.123</a></li>
+<li>Homepage: <a href="http://quicktsaf.sourceforge.net/">http://quicktsaf.sourceforge.net/</a></li>
+</ul>
+<p><i>"We developed a tool that takes advantages of fastq characteristics and encodes them in a binary format
+  optimized in order to be further compressed with standard tools (such as gzip or lzma)."</i></p>
+<p>Made with C# + .net.</p>
+<p>To do: Try running it on Linux, possibly using Mono.</p>
+
+
+<h3 id="lctd">LCTD</h3>
+<ul>
+<li>Paper: Jiabing Fu, Yacong Ma, Bixin Ke, Shoubin Dong (2016)
+  "LCTD: a Lossless Compression Tool of FASTQ File Based on Transformation of Original File Distribution"
+  2016 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), 864-869,
+  <a href="https://doi.org/10.1109/BIBM.2016.7822639">https://doi.org/10.1109/BIBM.2016.7822639</a></li>
+</ul>
+<p><i>"Instead of elaborating excellent data structure and compression technique based on the original FASTQ file,
+  we try to change the distribution of original FASTQ file so as to make it better for further compression by existing compression tools."</i></p>
+<p><i>"The source program is available by sending email to us."</i></p>
+<p>No web-site. Author does not return emails.</p>
+
+
+<h3 id="lwfqzip">LW-FQZip</h3>
+<ul>
+<li>Paper: Yongpeng Zhang, Linsen Li, Yanli Yang, Xiao Yang, Shan He, Zexuan Zhu (2015)
+  "Light-weight reference-based compression of FASTQ data"
+  BMC Bioinformatics, 16, 188,
+  <a href="https://doi.org/10.1186/s12859-015-0628-7">https://doi.org/10.1186/s12859-015-0628-7</a></li>
+<li>Homepage: <a href="http://csse.szu.edu.cn/staff/zhuzx/LWFQZip/">http://csse.szu.edu.cn/staff/zhuzx/LWFQZip/</a></li>
+</ul>
+<p><i>"This paper presents a lossless light-weight reference-based compression algorithm namely LW-FQZip to compress FASTQ data."</i></p>
+<p>This is a reference-based compressor, therefore can't participate in our benchmark.</p>
+
+
+<h3 id="lwfqzip2">LW-FQZip 2</h3>
+<ul>
+<li>Paper: Zhi-An Huang, Zhenkun Wen, Qingjin Deng, Ying Chu, Yiwen Sun, Zexuan Zhu (2017)
+  "LW-FQZip 2: a parallelized reference-based compression of FASTQ files"
+  BMC Bioinformatics, 18, 179,
+  <a href="https://doi.org/10.1186/s12859-017-1588-x">https://doi.org/10.1186/s12859-017-1588-x</a></li>
+<li>Homepage: <a href="http://csse.szu.edu.cn/staff/zhuzx/lwfqzip2/">http://csse.szu.edu.cn/staff/zhuzx/lwfqzip2/</a></li>
+</ul>
+<p><i>"LW-FQZip 2 is improved from LW-FQZip 1 by introducing more efficient coding scheme and parallelism.
+  Particularly, LW-FQZip 2 is equipped with a light-weight mapping model, bitwise prediction by partial matching model,
+  arithmetic coding, and multi-threading parallelism."</i></p>
+<p>This is a reference-based compressor, therefore can't participate in our benchmark.</p>
+
+
+<h3 id="mince">MINCE</h3>
+<ul>
+<li>Paper: Rob Patro, Carl Kingsford (2015)
+  "Data-dependent Bucketing Improves Reference-Free Compression of Sequencing Reads"
+  Bioinformatics, 31(17), 2770-2777,
+  <a href="https://doi.org/10.1186/10.1093/bioinformatics/btv248">https://doi.org/10.1186/10.1093/bioinformatics/btv248</a></li>
+<li>Homepage: <a href="http://www.cs.cmu.edu/~ckingsf/software/mince">http://www.cs.cmu.edu/~ckingsf/software/mince</a></li>
+</ul>
+<p><i>"We present a novel technique to boost the compression of sequencing that is based on the concept of bucketing similar reads so that they appear nearby in the file."</i></p>
+<p>Looks like it is based on reordering reads, therefore it can't take part in our lossless compression benchmark.</p>
+
+
+<h3 id="mzpaq">MZPAQ</h3>
+<ul>
+<li>Paper: Achraf El Allali, Mariam Arshad (2019)
+  "MZPAQ: a FASTQ data compression tool"
+  Source Code for Biology and Medicine, 14, 3,
+  <a href="https://doi.org/10.1186/s13029-019-0073-5">https://doi.org/10.1186/s13029-019-0073-5</a></li>
+</ul>
+<p><i>"Our tool is a hybrid of MFCompress (v 1.01) and ZPAQ (v 7.15), hence the name MZPAQ.
+In order to compress a FASTQ file, MZPAQ scans the input file and divides it into the four streams of FASTQ format.
+The first two streams (i.e. read identifier and read sequence) are compressed using MFCompress
+after the identifier stream is pre-processed to comply with the format restrictions of MFCompress.
+The third stream is discarded [...]. The fourth stream is compressed using the strong context-mixing algorithm ZPAQ."</i></p>
+<p>Paper has no link to software. Despite journal name, no source code is shared in the paper.</p>
+<p>To do: possibly re-implement and benchmark, if anyone has interest.</p>
+
+
+<h3 id="offline">Off-Line</h3>
+<ul>
+<li>Paper: Alberto Apostolico, Stefano Lonardi (2020)
+   "Off-line Compression by Greedy Textual Substitution",
+   Proceedings of the IEEE, 88(11), November 2000, 1733-1744</li>
+<li>Homepage: <a href="http://www.cs.ucr.edu/~stelo/Offline/">http://www.cs.ucr.edu/~stelo/Offline/</a></li>
+</ul>
+<p><i>"Compression of texts via greedy off-line textual substitution refers to the possibility
+  to identify a particularly redundant word in the text and to replace all of its non-overlapped occurrences (but one) with pointers,
+  in order to get the highest possible compression;
+  the process is then iterated on the compressed text
+  until a word capable of producing further compression can no longer be found."</i></p>
+<p>Can't build it so far with modern GCC.</p>
+<p>To do: Try to investigate and fix compilation issues.</p>
+
+
+<h3 id="orcom">ORCOM</h3>
+<ul>
+<li>Paper: Szymon Grabowski, Sebastian Deorowicz, Lukasz Roguski (2015)
+  "Disk-based compression of data from genome sequencing"
+  Bioinformatics, 31(9), 1389-1395,
+  <a href="https://doi.org/10.1093/bioinformatics/btu844">https://doi.org/10.1093/bioinformatics/btu844</a></li>
+<li>Homepage: <a href="http://sun.aei.polsl.pl/REFRESH/index.php?page=projects&project=orcom&subpage=about">http://sun.aei.polsl.pl/REFRESH/index.php?page=projects&project=orcom&subpage=about</a></li>
+</ul>
+<p><i>"Overlaping Reads COmpression with Minimizers is a compressor of sequencing reads.
+  It takes as an input FASTQ files (possibly gzipped) and stores the DNA symbols of each read in a highly-compressed form.
+  Id and quality fields are not stored. Thus, ORCOM cannot be treated as a full-fledged FASTQ compressor."</i></p>
+<p>It seems to always re-order the reads. This makes it impossible to use it for lossless compression.</p>
+
+
+<h3 id="pgrc">PgRC</h3>
+<ul>
+<li>Paper: Tomasz M. Kowalski, Szymon Grabowski (2020)
+  "PgRC: pseudogenome-based read compressor"
+  Bioinformatics, 36(7), 2082-2089, 
+  <a href="https://doi.org/10.1093/bioinformatics/btz919">https://doi.org/10.1093/bioinformatics/btz919</a></li>
+<li>GitHub: <a href="https://github.com/kowallus/PgRC">https://github.com/kowallus/PgRC</a></li>
+</ul>
+<p><i>"Pseudogenome-based Read Compressor (PgRC) is an in-memory algorithm for compressing the DNA stream of FASTQ datasets,
+based on the idea of building an approximation of the shortest common superstring over high-quality reads."</i></p>
+<p>To do: Download, build, test, make wrapper, benchmark.</p>
+
+
+<h3 id="quicktsaf">QuickTsaf</h3>
+<p>Former name for <a href="#kungfq">KungFQ</a>.</p>
+
+
+<h3 id="recoil">ReCoil</h3>
+<ul>
+<li>Paper: Vladimir Yanovsky (2011)
+  "ReCoil - an algorithm for compression of extremely large datasets of dna data"
+  Algorithms for Molecular Biology, 6, 23,
+  <a href="https://doi.org/10.1186/1748-7188-6-23">https://doi.org/10.1186/1748-7188-6-23</a></li>
+</ul>
+<p><i>"In this work we present ReCoil - an I/O efficient external memory algorithm designed for compression of very large collections of short reads DNA data."</i></p>
+<p>Paper has no link to software. Author does not return emails.</p>
+
+
+<h3 id="rpgp2">RP/GP<sup>2</sup></h3>
+<ul>
+<li>Paper: Syed Mahamud Hossein, Debashis De, Pradeep Kumar Das Mohapatra (2019)
+  "DNA sequence compression using RP/GP<sup>2</sup> method with information storage and security"
+  Microsystem Technologies,
+  <a href="https://doi.org/10.1007/s00542-019-04481-5">https://doi.org/10.1007/s00542-019-04481-5</a></li>
+</ul>
+<p><i>"Proposed algorithm will be based on combinations of reverse and palindrome (RP) technique
+  or genetic palindrome and palindrome (GP<sup>2</sup>) technique substring substitution.
+  The variable substring will be replaced by the corresponding
+  American Standard Code for Information Interchange (ASCII) code which is extracted RP/GP<sup>2</sup>"</i></p>
+<p><i>"The DNA sequence security is ensured by signature which depends on ASCII code and dynamic library file acting as a key.
+  This approach shows that 95% of original file is modified when 44-45% is encrypted.
+  The experimental results shows that the compression rate is 3.7750 bits/base."</i></p>
+<p>No software is shared in the paper.</p>
+
+
+<h3 id="scalce">SCALCE</h3>
+<ul>
+<li>Paper: Faraz Hach, Ibrahim Numanagic, Can Alkan, S. Cenk Sahinalp (2012)
+  "SCALCE: boosting sequence compression algorithms using locally consistent encoding"
+  Bioinformatics, 28(23), 3051-3057,
+  <a href="https://doi.org/10.1093/bioinformatics/bts593">https://doi.org/10.1093/bioinformatics/bts593</a></li>
+<li>GitHub: <a href="https://github.com/sfu-compbio/scalce">https://github.com/sfu-compbio/scalce</a></li>
+<li>Homepage: <a href="http://sfu-compbio.github.io/scalce/">http://sfu-compbio.github.io/scalce/</a></li>
+</ul>
+<p><i>"Here we present SCALCE, a 'boosting' scheme based on Locally Consistent Parsing technique,
+  which reorganizes the reads in a way that results in a higher compression speed and compression rate,
+  independent of the compression algorithm in use and without using a reference genome."</i></p>
+<p>Can't use it because of "Segmentation fault" crash (<a href="https://github.com/sfu-compbio/scalce/issues/8">Issue #8</a>).
+<p>In addition, it seems that it always reorders reads, which makes it lossy and therefore incompatible with our requirements.</p>
+
+
+<h3 id="seqcompress">SeqCompress</h3>
+<ul>
+<li>Paper: Muhammad Sardaraz, Muhammad Tahir, Ataul Aziz Ikram, Hassan Bajwa (2014)
+  "SeqCompress: An algorithm for biological sequence compression"
+  Genomics, 104, 225-228,
+  <a href="https://doi.org/10.1016/j.ygeno.2014.08.00">https://doi.org/10.1016/j.ygeno.2014.08.007</a></li>
+</ul>
+<p><i>"This article presents a DNA sequence compression algorithm SeqCompress that copes with the space complexity of biological sequences.
+  The algorithm is based on lossless data compression and uses statistical model as well as arithmetic coding to compress DNA sequences."</i></p>
+<p>No software is shared in the paper. None of the authors return emails.</p>
+
+
+<h3 id="solidzipper">SOLiDzipper</h3>
+<ul>
+<li>Paper: Young Jun Jeon, Sang Hyun Park, Sung Min Ahn, Hee Joung Hwang (2011)
+  "SOLiDzipper: A High Speed Encoding Method for the Next-Generation Sequencing Data"
+  Evolutionary Bioinformatics Online, 7, 1-6,
+  <a href="https://doi.org/10.4137/EBO.S6618">https://doi.org/10.4137/EBO.S6618</a></li>
+</ul>
+<p><i>"In SOLiDzipper, the non-sequence information including the sequence IDs and number in plain text format
+  is encoded by a general purpose compression algorithm (ie, gzip, bzip2, lzma(LZMA SDK)),
+  whereas the sequence information consisting of '0123' in csfasta format,
+  which has random patterns and thus a low encoding efficiency, is encoded by bitwise and shift operations."</i></p>
+<p>Link from the paper is dead: <a href="http://szipper.dinfree.com/">http://szipper.dinfree.com/</a></p>
+<p>Author's email response: "Unfortunately we couldn't continue the research and there is no left software materials."</p>
+
+
+<h3 id="srcomp">SRComp</h3>
+<ul>
+<li>Paper: Jeremy John Selva, Xin Chen (2013)
+  "SRComp: Short Read Sequence Compression Using Burstsort and Elias Omega Coding"
+  PLoS ONE, 8(12), e81414,
+  <a href="https://doi.org/10.1371/journal.pone.0081414">https://doi.org/10.1371/journal.pone.0081414</a></li>
+</ul>
+<p><i>"In this paper, we introduce a new non-reference based read sequence compression tool called SRComp.
+  It works by first employing a fast string-sorting algorithm called burstsort to sort read sequences in lexicographical order
+  and then Elias omega-based integer coding to encode the sorted read sequences."</i></p>
+<p>Links from the paper are dead:
+   <a href="http://www1.spms.ntu.edu.sg/~chenxin/SRComp">http://www1.spms.ntu.edu.sg/~chenxin/SRComp</a>,
+   <a href="http://www.cs.mu.oz.au/~rsinha/resources/source/sort/allsorts/allsorts.zip">http://www.cs.mu.oz.au/~rsinha/resources/source/sort/allsorts/allsorts.zip</a>.</p>
+<p>Email from paper is dead as well.</p>
+
+
+<h3 id="slimfastq">slimfastq</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/Infinidat/slimfastq">https://github.com/Infinidat/slimfastq</a></li>
+<li>SourceForge: <a href="https://sourceforge.net/projects/slimfastq/">https://sourceforge.net/projects/slimfastq/</a></li>
+</ul>
+<p><i>"slimfastq would efficiently compresses/decompresses fastq files."</i></p>
+<p>To do: Download, build, test, make wrapper, benchmark.</p>
+
+
+<h3 id="wbfqc">WBFQC</h3>
+<ul>
+<li>Paper: Sanjeev Kumar, Suneeta Agarwal, Ranvijay (2018)
+  "WBFQC: A New Approach for Compressing Next-Generation Sequencing Data Splitting Into Homogeneous Streams"
+  Journal of Bioinformatics and Computational Biology, 16(5), 1850018,
+  <a href="https://doi.org/10.1142/S021972001850018X">https://doi.org/10.1142/S021972001850018X</a></li>
+<li>Homepage: <a href="http://www.algorithm-skg.com/wbfqc/home.html">http://www.algorithm-skg.com/wbfqc/home.html</a></li>
+</ul>
+<p><i>"This paper presents a lossless non-reference-based FastQ file compression approach,
+  segregating the data into three different streams and then applying appropriate and efficient compression algorithms on each.
+  Experiments show that the proposed approach (WBFQC) outperforms other state-of-the-art approaches for compressing NGS data
+  in terms of compression ratio (CR), and compression and decompression time."</i></p>
+<p>To do: Download, build, test, make wrapper, benchmark.</p>
+
+
+</div>
+

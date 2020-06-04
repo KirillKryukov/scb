@@ -1,0 +1,84 @@
+<div class="text">
+
+<h2>About</h2>
+
+<h4>Why?</h4>
+
+<p>Sequence databases store massive amounts of data, and keep growing rapidly.
+Efficiently storing and using such data is a major challenge.
+Currently most databases continue depending on gzip for sequence compression,
+even though more efficient compressors are now available.</p>
+
+<p>In our own experience, we work with massive sequence data every day, and it's a headache to wait for data transfers.
+Decompression time also often impacts our data analysis pipelines.
+We'd like to minimize such costs, by choosing an optimal compressor depending on application.</p>
+
+<p>We decided to benchmark available compressors and to explore these questions:</p>
+
+<ul class="dense">
+<li>How different compressors perform on common sequence datasets? (including DNA, RNA and protein)</li>
+<li>Which compressor is best for sequence archival? (Has highest compression ratio)</li>
+<li>Which compressor is best for databases? (Gives the shortest transfer + decompression time)</li>
+<li>Which compressor is best for one-time data transfer (Gives the shortest compression + transfer + decompression time)</li>
+<li>How much can be gained by switching from gzip to a more efficient compressor?</li>
+</ul>
+
+<h4>Scope</h4>
+
+<p>We benchmark lossless compression of FASTA files, without using reference sequences.
+Compression of FASTQ files or other data types, as well as compression with reference, are currently outside the scope of this project.
+Please see our <a href="?page=Links">Links</a> page for other projects.</p>
+
+<p>Note that some of the included compressors, particularly compressors for short reads in FASTQ format,
+are designed for a different task and under different assumptions than those used in our benchmark.
+Performance shown by such compressors in our benchmark should not be taken as indicative
+of their normal performance on the data they were designed for.</p>
+
+<h4>Disclaimer</h4>
+
+<p>Even though we did our best effort to conduct a fair and relevant benchmark, we provide no guarantees of any kind.
+Our results may be influenced by our hardware, test data and methodology,
+including the design of wrappers for compressors that need them.
+We recommend doing your own tests on your own machine and with your own data
+before deciding which compressor to use.</p>
+
+<h4>Disclosure</h4>
+
+<p>Our own compressor (NAF) is included in this benchmark.
+It did not receive any special treatment or unfair advantage.</p>
+
+<h4>Latest changes</h4>
+
+<ul>
+<li>Added protein sequence compressor AC.</li>
+<li>Added two viral datasets: "NCBI Virus RefSeq Protein" and "NCBI Virus Complete Nucleotide Human".</li>
+<li>Added general purpose compressor BriefLZ.</li>
+<li>Added specialized compressors: Minicom, FQSqueezer.</li>
+<li>Updated zstd, GTZ, fqzcomp, Nakamichi.</li>
+<li>Added <a href="?page=Missing-Compressors">"Missing Compressors" page</a>.</li>
+</ul>
+
+<h4>Next steps</h4>
+<ul>
+<li>Benchmark GeCo3.</li>
+</ul>
+
+<h4>Future plans</h4>
+
+<p>We will continue adding and updating compressors, datasets, and improving presentation, as our time permits.
+Suggestions are welcome!</p>
+
+<p>Eventually we may also add FASTQ data.</p>
+
+<h4>Citation</h4>
+
+<p>While peer review is underway, please feel free to cite our preprint:</p>
+
+<ul class="dense">
+<li>Kirill Kryukov, Mahoko Takahashi Ueda, So Nakagawa, Tadashi Imanishi (2019)
+  "Is it time to replace gzip? Comparison of modern compressors for molecular sequence databases"
+   <a href="https://www.biorxiv.org/content/10.1101/642553v1">bioRxiv 642553</a>,
+   <a href="https://doi.org/10.1101/642553">doi:10.1101/642553</a>.</li>
+</ul>
+
+</div>

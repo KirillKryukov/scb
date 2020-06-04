@@ -1,0 +1,202 @@
+<div class="text">
+
+<h2>Examples</h2>
+
+<p>Each of these examples uses
+ <script>document.write("<a href=\"" + window.location.href.split("?")[0].split("#")[0] + "#CustomComparison\">Custom Comparison</a>");</script>
+ to answer a specific question.
+After clicking each link, feel free to tweak the options to construct additional outputs or explore the data in more detail.</p>
+
+<p>If you can think of other interesting questions to explore using this benchmark data, please send them to us for inclusion here.</p>
+
+<h3>General questions</h3>
+
+<h4>Q: What is the entire data visualized by this benchmark?</h4>
+<table class="ex"><tr><td>Data:</td><td><ul>
+<li><a href="?d=all&amp;cs=1&amp;cg=1&amp;cc=1&amp;com=yes&amp;src=all&amp;nt=4&amp;sm=name&amp;tm0=name&amp;tm1=size&amp;tm2=ctime&amp;tm3=dtime&amp;tm4=cmem&amp;tm5=dmem&amp;tm6=datasize&amp;tm7=dataname&amp;button=Show+table">Table</a></li>
+<li><a href="?d=all&amp;cs=1&amp;cg=1&amp;cc=1&amp;com=yes&amp;src=all&amp;nt=4&amp;sm=name&amp;tm0=name&amp;tm1=size&amp;tm2=ctime&amp;tm3=dtime&amp;tm4=cmem&amp;tm5=dmem&amp;tm6=datasize&amp;tm7=dataname&amp;button=Save+CSV">CSV</a></li>
+</ul></td></tr></table>
+<p>Note that this data includes only the numbers, and does not contain extra information such as which compressors are free or open source.</p>
+
+<h4>Q: Which compressor provides strongest compression?</h4>
+<h4 class="dense">Q: And how much space can be saved by switching from gzip to a better compressor?</h4>
+<table class="ex"><tr><td>Data:</td><td><ul>
+<li><a href="?d=genomes&amp;cs=1&amp;cg=1&amp;com=yes&amp;src=all&amp;nt=4&amp;only-best=1&amp;bn=1&amp;bm=ratio&amp;rl=1&amp;rr=gzip-9&amp;sxm=datasize&amp;sxl=log&amp;sym=ratio&amp;syl=lin&amp;button=Show+scatterplot">Separate for genome datasets, relative to gzip-9 (scatterplot)</a></li>
+<li><a href="?d=non-genomes&amp;cs=1&amp;cg=1&amp;com=yes&amp;src=all&amp;nt=4&amp;only-best=1&amp;bn=1&amp;bm=ratio&amp;rl=1&amp;rr=gzip-9&amp;sxm=datasize&amp;sxl=log&amp;sym=ratio&amp;syl=lin&amp;button=Show+scatterplot">Separate for non-genome datasets, relative to gzip-9 (scatterplot)</a></li>
+<li><a href="?d=genomes&amp;doagg=1&amp;agg=average&amp;cs=1&amp;cg=1&amp;com=yes&amp;src=all&amp;nt=4&amp;only-best=1&amp;bn=1&amp;bm=ratio&amp;sm=same&amp;bs=100&amp;rl=1&amp;rr=gzip-9&amp;gm=same&amp;cyl=lin&amp;ccw=1200&amp;cch=500&amp;button=Show+column+chart">Average for genome datasets, relative to gzip-9 (column chart)</a></li>
+<li><a href="?d=non-genomes&amp;doagg=1&amp;agg=average&amp;cs=1&amp;cg=1&amp;com=yes&amp;src=all&amp;nt=4&amp;only-best=1&amp;bn=1&amp;bm=ratio&amp;sm=same&amp;bs=100&amp;rl=1&amp;rr=gzip-9&amp;gm=same&amp;cyl=lin&amp;ccw=1200&amp;cch=500&amp;button=Show+column+chart">Average for non-genome datasets, relative to gzip-9 (column chart)</a></li>
+</ul></td></tr></table>
+<p>Analysis: cmix probably gives the best compression.
+Since it is very slow, it seems usable only with small data.
+But it's the large data where compression is needed the most.
+In case of DNA sequences there are other strong and extremely slow compressors: XM, GeCo, DNA-COMPACT and JARVIS.</p>
+<p>Of the remaining compressors, mfc-3, naf-22 and dlim seem to offer the strongest compression for genome data.</p>
+<p>For non-genome, more repetitive data, naf-22, xz-e9 and brotli-11w30 offer strong compression.</p>
+<p>Advantage of better compressors over gzip-9 is about ~1.4 times for genome data and over 3 times for non-genome data.</p>
+
+<h4>Q: Which compressor provides the best Transfer+Decompression speed?</h4>
+<h4 class="dense">Q: In other words, which compressor is most suitable for compressing data in a public database?</h4>
+<table class="ex"><tr><td>Data:</td><td><ul>
+<li><a href="?d=all&amp;cs=1&amp;cg=1&amp;com=yes&amp;src=all&amp;nt=4&amp;only-best=1&amp;bn=1&amp;bm=tdspeed&amp;rl=1&amp;rr=gzip-9&amp;sxm=datasize&amp;sxl=log&amp;sym=tdspeed&amp;syl=lin&amp;button=Show+scatterplot">For each dataset, relative to gzip-9</a></li>
+<li><a href="?d=all&amp;doagg=1&amp;agg=average&amp;cs=1&amp;cg=1&amp;com=yes&amp;src=all&amp;nt=4&amp;only-best=1&amp;bn=1&amp;bm=tdspeed&amp;sm=same&amp;bs=100&amp;rl=1&amp;rr=gzip-9&amp;gm=same&amp;cyl=lin&amp;ccw=1200&amp;cch=500&amp;button=Show+column+chart">Average for all datasets, relative to gzip-9</a></li>
+</ul></td></tr></table>
+<p>Note: Link speed of 100 Mbit/sec is used for calculating the transfer time.</p>
+<p>Interpretation: naf-22, zstd-22 and brotli-11 seem to perform the best overall.</p>
+
+<h4>Q: Which compressor provides the best Compression+Transfer+Decompression speed?</h4>
+<table class="ex"><tr><td>Data:</td><td><ul>
+<li><a href="?d=all&amp;cs=1&amp;cg=1&amp;com=yes&amp;src=all&amp;nt=4&amp;only-best=1&amp;bn=1&amp;bm=ctdspeed&amp;rl=1&amp;rr=gzip-9&amp;sxm=datasize&amp;sxl=log&amp;sym=ctdspeed&amp;syl=lin&amp;button=Show+scatterplot">For each dataset, relative to gzip-9</a></li>
+<li><a href="?d=all&amp;doagg=1&amp;agg=average&amp;cs=1&amp;cg=1&amp;com=yes&amp;src=all&amp;nt=4&amp;only-best=1&amp;bn=1&amp;bm=ctdspeed&amp;sm=same&amp;bs=100&amp;rl=1&amp;rr=gzip-9&amp;gm=same&amp;cyl=lin&amp;ccw=1200&amp;cch=500&amp;button=Show+column+chart">Average for all datasets, relative to gzip-9</a></li>
+</ul></td></tr></table>
+<p>Note: Link speed of 100 Mbit/sec is used for calculating the transfer time.</p>
+<p>Interpretation: naf-1, zstd-3-4t and brotli-1 perform well.</p>
+
+<h4>Q: How much memory does strongest setting of each compressor use?</h4>
+<table class="ex"><tr><td>Data:</td><td><ul>
+<li><a href="?d=all&amp;cs=1&amp;cg=1&amp;cc=1&amp;com=yes&amp;src=all&amp;nt=4&amp;only-best=1&amp;bn=1&amp;bm=ratio&amp;sxm=datasize&amp;sxl=log&amp;sym=cmem&amp;syl=log&amp;button=Show+scatterplot">Compression memory</a></li>
+<li><a href="?d=all&amp;cs=1&amp;cg=1&amp;cc=1&amp;com=yes&amp;src=all&amp;nt=4&amp;only-best=1&amp;bn=1&amp;bm=ratio&amp;sxm=datasize&amp;sxl=log&amp;sym=dmem&amp;syl=log&amp;button=Show+scatterplot">Decompression memory</a></li>
+</ul></td></tr></table>
+<p>Apparent memory leaks:
+ <a href="?d=all&amp;c=pfish&amp;sxm=datasize&amp;sxl=log&amp;sym=dmem&amp;syl=log&amp;button=Show+scatterplot">Pufferfish</a>,
+ <a href="?d=all&amp;src=all&amp;c=nuht&amp;sxm=datasize&amp;sxl=log&amp;sym=cmem&amp;syl=log&amp;button=Show+scatterplot">NUHT</a>.</p>
+
+<h4>Q: How much memory does fastest setting of each compressor use?</h4>
+<table class="ex"><tr><td>Data:</td><td><ul>
+<li><a href="?d=all&amp;cs=1&amp;cg=1&amp;cc=1&amp;com=yes&amp;src=all&amp;nt=4&amp;only-best=1&amp;bn=1&amp;bm=cdspeed&amp;sxm=datasize&amp;sxl=log&amp;sym=cmem&amp;syl=log&amp;button=Show+scatterplot">Compression memory</a></li>
+<li><a href="?d=all&amp;cs=1&amp;cg=1&amp;cc=1&amp;com=yes&amp;src=all&amp;nt=4&amp;only-best=1&amp;bn=1&amp;bm=cdspeed&amp;sxm=datasize&amp;sxl=log&amp;sym=dmem&amp;syl=log&amp;button=Show+scatterplot">Decompression memory</a></li>
+</ul></td></tr></table>
+
+<h4>Q: What proportion of calculation time is spent in the wrappers?</h4>
+<p>We can understand this by comparing timing of an entire wrapped compressor with that of the corresponding "wrapper-only" run.</p>
+<p>Data for sequence compressors:</p>
+<table class="ex2">
+<tr><td>2bit</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-2bit&amp;c=2bit&amp;s=wrap-2bit&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-2bit&amp;c=2bit&amp;s=wrap-2bit&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>ac (ac-fa)</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-ac-fa&amp;s=ac-fa-1&amp;s=ac-fa-2&amp;s=ac-fa-3&amp;s=ac-fa-4&amp;s=ac-fa-5&amp;s=ac-fa-6&amp;s=ac-fa-7&amp;s=wrap-ac-fa&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-ac-fa&amp;s=ac-fa-1&amp;s=ac-fa-2&amp;s=ac-fa-3&amp;s=ac-fa-4&amp;s=ac-fa-5&amp;s=ac-fa-6&amp;s=ac-fa-7&amp;s=wrap-ac-fa&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>ac (ac-seq)</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-ac-seq&amp;s=ac-seq-1&amp;s=ac-seq-2&amp;s=ac-seq-3&amp;s=ac-seq-4&amp;s=ac-seq-5&amp;s=ac-seq-6&amp;s=ac-seq-7&amp;s=wrap-ac-seq&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-ac-seq&amp;s=ac-seq-1&amp;s=ac-seq-2&amp;s=ac-seq-3&amp;s=ac-seq-4&amp;s=ac-seq-5&amp;s=ac-seq-6&amp;s=ac-seq-7&amp;s=wrap-ac-seq&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>blast</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-blast&amp;c=blast&amp;s=wrap-blast&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-blast&amp;c=blast&amp;s=wrap-blast&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>dcom</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-dcom&amp;c=dcom&amp;s=wrap-dcom&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-dcom&amp;c=dcom&amp;s=wrap-dcom&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>dnax</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-dnax&amp;c=dnax&amp;s=wrap-dnax&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-dnax&amp;c=dnax&amp;s=wrap-dnax&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>geco</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-geco&amp;c=geco&amp;s=wrap-geco&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-geco&amp;c=geco&amp;s=wrap-geco&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>jarvis</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-jarvis&amp;c=jarvis&amp;s=wrap-jarvis&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-jarvis&amp;c=jarvis&amp;s=wrap-jarvis&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>nuht</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-nuht&amp;c=nuht&amp;s=wrap-nuht&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-nuht&amp;c=nuht&amp;s=wrap-nuht&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>pfish</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-pfish&amp;c=pfish&amp;s=wrap-pfish&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-pfish&amp;c=pfish&amp;s=wrap-pfish&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>uht</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-uht&amp;c=uht&amp;s=wrap-uht&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-uht&amp;c=uht&amp;s=wrap-uht&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>xm</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-xm&amp;c=xm&amp;s=wrap-xm&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-xm&amp;c=xm&amp;s=wrap-xm&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+</table>
+
+<p>Data for FASTQ compressors:</p>
+<table class="ex2">
+<tr><td>alapy</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-alapy&amp;c=alapy&amp;s=wrap-alapy&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-alapy&amp;c=alapy&amp;s=wrap-alapy&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>beetl</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-beetl&amp;c=beetl&amp;s=wrap-beetl&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-beetl&amp;c=beetl&amp;s=wrap-beetl&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>dsrc</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-dsrc&amp;c=dsrc&amp;s=wrap-dsrc&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-dsrc&amp;c=dsrc&amp;s=wrap-dsrc&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>fastqz</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-fastqz&amp;c=fastqz&amp;s=wrap-fastqz&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-fastqz&amp;c=fastqz&amp;s=wrap-fastqz&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>fqs</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-fqs&amp;c=fqs&amp;s=wrap-fqs&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-fqs&amp;c=fqs&amp;s=wrap-fqs&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>fqzcomp</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-fqzcomp&amp;c=fqzcomp&amp;s=wrap-fqzcomp&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-fqzcomp&amp;c=fqzcomp&amp;s=wrap-fqzcomp&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>gtz</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-gtz&amp;c=gtz&amp;s=wrap-gtz&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-gtz&amp;c=gtz&amp;s=wrap-gtz&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>harc</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-harc&amp;c=harc&amp;s=wrap-harc&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-harc&amp;c=harc&amp;s=wrap-harc&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>kic</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-kic&amp;c=kic&amp;s=wrap-kic&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-kic&amp;c=kic&amp;s=wrap-kic&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>leon</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-leon&amp;c=leon&amp;s=wrap-leon&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-leon&amp;c=leon&amp;s=wrap-leon&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>lfastqc</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-lfastqc&amp;c=lfastqc&amp;s=wrap-lfastqc&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-lfastqc&amp;c=lfastqc&amp;s=wrap-lfastqc&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>lfqc</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-lfqc&amp;c=lfqc&amp;s=wrap-lfqc&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-lfqc&amp;c=lfqc&amp;s=wrap-lfqc&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>minicom</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-minicom&amp;c=minicom&amp;s=wrap-minicom&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-minicom&amp;c=minicom&amp;s=wrap-minicom&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>quip</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-quip&amp;c=quip&amp;s=wrap-quip&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-quip&amp;c=quip&amp;s=wrap-quip&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>spring (spring-l)</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-spring-l&amp;s=spring-l-1t&amp;s=spring-l-4t&amp;s=wrap-spring-l&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-spring-l&amp;s=spring-l-1t&amp;s=spring-l-4t&amp;s=wrap-spring-l&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+<tr><td>spring (spring-s)</td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-spring-s&amp;s=spring-s-1t&amp;s=spring-s-4t&amp;s=wrap-spring-s&amp;sxm=datasize&amp;sxl=log&amp;sym=ctime&amp;syl=lin&amp;button=Show+scatterplot">Compression time</a></td>
+    <td><a href="?d=all&amp;com=yes&amp;src=all&amp;nt=4&amp;bs=100&amp;rl=1&amp;rr=wrap-spring-s&amp;s=spring-s-1t&amp;s=spring-s-4t&amp;s=wrap-spring-s&amp;sxm=datasize&amp;sxl=log&amp;sym=dtime&amp;syl=lin&amp;button=Show+scatterplot">Decompression time</a></td></tr>
+</table>
+<p>(Note how GTZ is relatively much slower on small data, most likely because it phones home.)</p>
+
+<hr>
+
+<h3>Questions about specific compressors</h3>
+
+<h4>Q: Does zpaq benefit from multiple CPU cores?</h4>
+<table class="ex"><tr><td>Data:</td><td><ul>
+<li><a href="?d=all&amp;rl=1&amp;rr=zpaq-1-1t&amp;s=zpaq-1-4t&amp;sxm=datasize&amp;sxl=log&amp;sym=cspeed&amp;syl=lin&amp;button=Show+scatterplot">zpaq level 1</a></li>
+<li><a href="?d=all&amp;rl=1&amp;rr=zpaq-2-1t&amp;s=zpaq-2-4t&amp;sxm=datasize&amp;sxl=log&amp;sym=cspeed&amp;syl=lin&amp;button=Show+scatterplot">zpaq level 2</a></li>
+<li><a href="?d=all&amp;rl=1&amp;rr=zpaq-3-1t&amp;s=zpaq-3-4t&amp;sxm=datasize&amp;sxl=log&amp;sym=cspeed&amp;syl=lin&amp;button=Show+scatterplot">zpaq level 3</a></li>
+<li><a href="?d=all&amp;rl=1&amp;rr=zpaq-4-1t&amp;s=zpaq-4-4t&amp;sxm=datasize&amp;sxl=log&amp;sym=cspeed&amp;syl=lin&amp;button=Show+scatterplot">zpaq level 4</a></li>
+<li><a href="?d=all&amp;rl=1&amp;rr=zpaq-5-1t&amp;s=zpaq-5-4t&amp;sxm=datasize&amp;sxl=log&amp;sym=cspeed&amp;syl=lin&amp;button=Show+scatterplot">zpaq level 5</a></li>
+</ul></td></tr></table>
+<p>Analysis: Yes, starting from certain data size: ~20 MB for level 1, and ~70 MB for levels 2-5.
+Speedup of up to 3.7x times can be reached on our data.
+With level 1, however, 4-core advantage is sensitive to redundancy of the data, it disappears for highly repetitive data.</p>
+
+<h4>Q: How does single core pbzip2 compare to bzip2 (level 9)?</h4>
+<table class="ex"><tr><td>Data:</td><td><ul>
+<li><a href="?d=all&amp;rl=1&amp;rr=bzip2-9&amp;s=pbzip2-9-1t&amp;sxm=datasize&amp;sxl=log&amp;sym=ratio&amp;syl=lin&amp;button=Show+scatterplot">Compression ratio</a></li>
+<li><a href="?d=all&amp;rl=1&amp;rr=bzip2-9&amp;s=pbzip2-9-1t&amp;sxm=datasize&amp;sxl=log&amp;sym=cspeed&amp;syl=lin&amp;button=Show+scatterplot">Compression speed</a></li>
+<li><a href="?d=all&amp;rl=1&amp;rr=bzip2-9&amp;s=pbzip2-9-1t&amp;sxm=datasize&amp;sxl=log&amp;sym=dspeed&amp;syl=lin&amp;button=Show+scatterplot">Decompression speed</a></li>
+<li><a href="?d=all&amp;rl=1&amp;rr=bzip2-9&amp;s=pbzip2-9-1t&amp;sxm=datasize&amp;sxl=log&amp;sym=cmem&amp;syl=lin&amp;button=Show+scatterplot">Compression memory</a></li>
+<li><a href="?d=all&amp;rl=1&amp;rr=bzip2-9&amp;s=pbzip2-9-1t&amp;sxm=datasize&amp;sxl=log&amp;sym=dmem&amp;syl=lin&amp;button=Show+scatterplot">Decompression memory</a></li>
+</ul></td></tr></table>
+<p>Analysis: At compression level 9, pbzip2 has same compression strength and compression speed with bzip2.
+Interestingly it has 10 times faster decompression.
+It uses 2 times more memory during compression and 20 times more memory during decompression.</p>
+
+<!--h4>Q: When is zpaq's level 4 preferable to level 3?</h4>
+<p>Data:</p>
+<ul class="dense">
+<li><a href="?d=all&amp;rl=1&amp;rr=zpaq-3-1t&amp;s=zpaq-4-1t&amp;sxm=datasize&amp;sxl=log&amp;sym=cspeed&amp;syl=lin&amp;button=Show+scatterplot">Compression speed</a></li>
+<li><a href="?d=all&amp;rl=1&amp;rr=zpaq-3-1t&amp;s=zpaq-4-1t&amp;sxm=datasize&amp;sxl=log&amp;sym=dspeed&amp;syl=lin&amp;button=Show+scatterplot">Decompression speed</a></li>
+<li><a href="?d=all&amp;rl=1&amp;rr=zpaq-3-1t&amp;s=zpaq-4-1t&amp;sxm=datasize&amp;sxl=log&amp;sym=ratio&amp;syl=lin&amp;button=Show+scatterplot">Compression strength</a></li>
+</ul>
+<p>Analysis: Possibly with protein data, where level 4 gives ~1.35 times stronger compression,
+at the expense of being 3 times slower during compression.</p-->
+
+</div>
