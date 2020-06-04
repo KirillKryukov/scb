@@ -1,0 +1,2 @@
+# scb
+Sequence Compression Benchmark
