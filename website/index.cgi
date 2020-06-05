@@ -2237,8 +2237,8 @@ sub print_header
     if (($show_bar_graph or $show_column_chart or $show_scatterplot) and $n_datasets_selected > 0 and scalar(keys %use_setting) > 0)
     {
         print qq`<script src="https://www.gstatic.com/charts/loader.js"></script>\n`;
-        print qq`<script src="/libs/Blob.js"></script>\n`;
-        print qq`<script src="/libs/FileSaver.min.js"></script>\n`;
+        print qq`<script src="libs/Blob.js"></script>\n`;
+        print qq`<script src="libs/FileSaver.min.js"></script>\n`;
     }
 
     print qq`</head>\n`;
